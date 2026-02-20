@@ -1,0 +1,117 @@
+{
+  "sharov_origin": 9.640349831506347,
+  "markov_origin": 10.867144183539326,
+  "leading_edge_origin": 11.021670558254892,
+  "extended_origin": 11.152671126097498,
+  "markov_mc_pct_pre_earth": 100.0,
+  "leading_edge_mc_pct_pre_earth": 100.0,
+  "markov_data": [
+    {
+      "group": "All living beings (Bacteria)",
+      "mgs_mb": 1.3,
+      "time_ma": 4000,
+      "species": "Pelagibacter ubique HTCC1062",
+      "log_bp": 6.113943352306837
+    },
+    {
+      "group": "Eukaryotes",
+      "mgs_mb": 9.2,
+      "time_ma": 2000,
+      "species": "Ashbya gossypii (sac fungus)",
+      "log_bp": 6.963787827345556
+    },
+    {
+      "group": "Animals (Metazoa)",
+      "mgs_mb": 19.6,
+      "time_ma": 1250,
+      "species": "Pratylenchus coffeae (nematode)",
+      "log_bp": 7.292256071356476
+    },
+    {
+      "group": "Chordates",
+      "mgs_mb": 68.6,
+      "time_ma": 575,
+      "species": "Oikopleura dioica (tunicate)",
+      "log_bp": 7.836324115706752
+    },
+    {
+      "group": "Vertebrates",
+      "mgs_mb": 342,
+      "time_ma": 540,
+      "species": "Tetraodon fluviatilis (puffer fish)",
+      "log_bp": 8.534026106056135
+    },
+    {
+      "group": "Tetrapods",
+      "mgs_mb": 931,
+      "time_ma": 375,
+      "species": "Limnodynastes ornatus (frog)",
+      "log_bp": 8.968949680981343
+    },
+    {
+      "group": "Amniotes",
+      "mgs_mb": 951,
+      "time_ma": 315,
+      "species": "Phasianus colchicus (pheasant)",
+      "log_bp": 8.978180516937414
+    },
+    {
+      "group": "Mammals",
+      "mgs_mb": 1695,
+      "time_ma": 220,
+      "species": "Miniopterus schreibersi (bat)",
+      "log_bp": 9.229169702539101
+    },
+    {
+      "group": "Primates",
+      "mgs_mb": 2215,
+      "time_ma": 65,
+      "species": "Callicebus torquatus (titi monkey)",
+      "log_bp": 9.34537373055909
+    }
+  ],
+  "additional_taxa": [
+    {
+      "name": "Cyanobacteria (earliest photosynthesizers)",
+      "time_bya": 2.7,
+      "genome_mb": 1.44,
+      "log_bp": 6.158362492095249,
+      "source": "Prochlorococcus marinus (smallest free-living cyanobacterium)"
+    },
+    {
+      "name": "Red algae (early multicellular)",
+      "time_bya": 1.6,
+      "genome_mb": 13.7,
+      "log_bp": 7.136720567156407,
+      "source": "Cyanidioschyzon merolae"
+    },
+    {
+      "name": "Fungi (terrestrial)",
+      "time_bya": 1.0,
+      "genome_mb": 9.2,
+      "log_bp": 6.963787827345556,
+      "source": "Ashbya gossypii"
+    },
+    {
+      "name": "Land plants (earliest)",
+      "time_bya": 0.47,
+      "genome_mb": 82,
+      "log_bp": 7.913813852383717,
+      "source": "Genlisea tuberosa (~82 Mb, smallest angiosperm)"
+    },
+    {
+      "name": "Insects (earliest)",
+      "time_bya": 0.4,
+      "genome_mb": 99,
+      "log_bp": 7.99563519459755,
+      "source": "Belgica antarctica (smallest insect genome)"
+    },
+    {
+      "name": "Flowering plants",
+      "time_bya": 0.14,
+      "genome_mb": 63,
+      "log_bp": 7.799340549453582,
+      "source": "Utricularia gibba (~82 Mb total, ~63 Mb functional)"
+    }
+  ]
+}

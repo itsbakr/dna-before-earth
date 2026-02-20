@@ -1,0 +1,6 @@
+group,time_bya,time_err_byr,genome_bp,log10_bp,log_err,species,source,notes
+Prokaryotes,3.5,0.3,500000,5.70,0.3,Mycoplasma genitalium,GenBank,Parasitically reduced - smallest known free-living at the time
+Eukaryotes,2.0,0.25,2900000,6.46,0.3,Encephalitozoon cuniculi,GenBank,Intracellular parasite - reduced genome
+Worms,1.0,0.15,73000000,7.86,0.15,Caenorhabditis elegans,GenBank,Model organism ~75% functional
+Fish,0.5,0.05,130000000,8.11,0.15,Takifugu rubripes,GenBank,Known for compact genome
+Mammals,0.0,0.0,480000000,8.68,0.1,Homo sapiens (functional),GenBank,~15% conserved/functional fraction of 3.2e9 bp total

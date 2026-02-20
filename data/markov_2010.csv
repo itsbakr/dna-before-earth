@@ -1,0 +1,10 @@
+group,time_bya,time_err_byr,genome_mb,genome_bp,log10_bp,species,source,notes
+All living beings (Bacteria),4.0,0.3,1.3,1300000,6.11,Pelagibacter ubique HTCC1062,GenBank,Free-living marine bacterium - smallest known free-living
+Eukaryotes,2.0,0.25,9.2,9200000,6.96,Ashbya gossypii,GenBank,Free-living sac fungus - smallest free-living eukaryote
+Animals (Metazoa),1.25,0.15,19.6,19600000,7.29,Pratylenchus coffeae,Animal Genome Size Database,Nematode
+Chordates,0.575,0.05,68.6,68600000,7.84,Oikopleura dioica,GenBank,Tunicate (subphylum Tunicata)
+Vertebrates,0.54,0.03,342,342000000,8.53,Tetraodon fluviatilis,GenBank,Puffer fish
+Tetrapods,0.375,0.025,931,931000000,8.97,Limnodynastes ornatus,Animal Genome Size Database,Frog
+Amniotes,0.315,0.02,951,951000000,8.98,Phasianus colchicus,Animal Genome Size Database,Pheasant
+Mammals,0.22,0.02,1695,1695000000,9.23,Miniopterus schreibersi,Animal Genome Size Database,Bat
+Primates,0.065,0.01,2215,2215000000,9.35,Callicebus torquatus,Animal Genome Size Database,Collared titi monkey
