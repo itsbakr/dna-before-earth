@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream text-text-primary font-sans;
+  }
+
+  ::selection {
+    @apply bg-accent/10 text-accent;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.15em] uppercase text-text-tertiary mb-3;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl font-serif font-semibold text-text-primary tracking-tight mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-base text-text-secondary leading-relaxed max-w-2xl;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-xl p-6 sm:p-8;
+  }
+
+  .stat-value {
+    @apply text-2xl sm:text-3xl font-mono font-bold tracking-tight;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium tracking-wide uppercase text-text-tertiary mt-1;
+  }
+
+  .chart-container {
+    @apply bg-surface border border-border rounded-xl p-4 sm:p-6;
+  }
+}
+
+@layer utilities {
+  .fade-section {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #E8E6E1;
+}
+
+.recharts-text {
+  fill: #9C9B97;
+  font-size: 11px;
+}
