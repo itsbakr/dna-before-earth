@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <h1 align="center">AI Proved DNA Existed Before Earth.<br>The Scientific Establishment Ignored It for 20 Years.</h1>
+  <h1 align="center">AI Shows DNA Existed Before Earth.<br>The Scientific Establishment Ignored It for 20 Years.</h1>
 </p>
 
 <p align="center">
-  <strong>We used AI to replicate, stress-test, and extend a dismissed scientific finding.<br>10,000 simulations later, the result got stronger -- not weaker.</strong>
+  <strong>We used AI to replicate, stress-test, and extend a dismissed scientific finding.<br>10,000 simulations later, the result is consistent with a pre-Earth origin under every model tested.</strong>
 </p>
 
 <p align="center">
@@ -45,15 +45,17 @@ So we did. We used AI to run every test the scientific community should have run
 
 | What We Tested | Result |
 |---------------|--------|
-| Replicate original regression | **Confirmed.** R² = 0.967, origin = 9.8 Bya |
+| Replicate original regression | **Approximately confirmed.** R² = 0.967, origin = 9.8 Bya (Sharov reported R² = 0.97, origin ~9.7 Bya -- minor rounding differences in data points) |
 | Monte Carlo (10,000 simulations) | **100% pre-Earth.** Not 99%. Every single one. |
 | Logistic (S-curve) model | **Makes it worse.** Origin = 20.5 Bya |
-| Expand from 5 to 9 data points | **Strengthens it.** Origin = 10.9 Bya |
+| Expand from 5 to 9 data points (Markov 2010) | **Strengthens it.** Origin = 10.9 Bya (different metric -- see note below) |
 | Expand to 14 data points | **Still strengthens.** Origin = 11.2 Bya |
 | Hyperexponential model | **Even worse.** Origin > 10 Bya |
 | Bootstrap resampling (10,000x) | **100% pre-Earth.** |
 
 **Every model we tested either confirms the pre-Earth origin or pushes it further back.**
+
+> **Note on metrics**: Sharov measured *functional non-redundant* genome size (e.g., human = 3.2 Gbp x 15% functional = 480 Mbp). Markov et al. measured *minimal genome size (MGS)* -- the total genome of the smallest free-living species in each group (e.g., bat = 1,695 Mbp total). These are conceptually different metrics that both track complexity, and both independently produce pre-Earth origins. Our extended 14-point dataset mixes both approaches. We flag this as a methodological choice, not a hidden assumption.
 
 The data comes from the same databases (NCBI GenBank, Animal Genome Size Database) that every evolutionary biologist on Earth uses daily. The fossil dates are standard paleontological consensus. The method is standard quantitative biology.
 
@@ -134,11 +136,12 @@ The logistic model -- the one most commonly assumed to "fix" the problem -- push
 
 To place the origin within Earth's history, life must have started at ~100,000+ base pairs. But:
 
-- Random assembly of a minimal genome (300,000 bp): **10^-180,618**
+- Random assembly of a specific 400 bp functional sequence: **10^-241** (our calculation) or **10^-126** (Sharov's estimate, which may allow sequence degeneracy)
+- Random assembly of a minimal genome (300,000 bp): **10^-180,618** (specific sequence probability)
 - All possible events in universe history: **~10^150**
-- **Gap: over 180,000 orders of magnitude**
+- **Gap: tens of thousands of orders of magnitude minimum**
 
-No amount of time in the observable universe bridges this through random processes alone.
+Even using Sharov's more generous estimate, the probability wall is enormous. Real chemistry isn't purely random (there are thermodynamic biases, catalytic surfaces, self-organizing processes), which reduces the effective search space -- but even generous corrections cannot close a gap of this magnitude.
 
 ---
 
@@ -155,7 +158,9 @@ This is the core of the project -- not the regression, not the Monte Carlo. This
 | Fossil dates | Consensus paleontology (Hedges & Kumar 2003) | Every biology textbook |
 | Method | Log-linear regression | Standard allometric scaling |
 
-Markov et al. (2010) independently expanded the dataset using **more conservative** estimates (free-living organisms, not parasites) and got a **stronger** result.
+Markov et al. (2010) independently expanded the dataset using **more conservative** estimates (free-living organisms, not parasites) and got a **stronger** result. They used a different metric (minimal genome size vs. Sharov's functional non-redundant fraction), but both metrics track complexity and both produce pre-Earth origins independently.
+
+**Important transparency note**: Sharov deliberately excluded plants from his analysis because their genomes are "often highly redundant due to polyploidy." Our 14-point extended dataset includes plants, fungi, and insects -- taxa Sharov excluded. This is a defensible expansion (more data, more taxa) but it departs from Sharov's original selection criteria. The core 5-point and 9-point analyses remain faithful to the original methodology.
 
 **You cannot accept this data for phylogenetics, divergence timing, and comparative genomics -- and reject it here.** The data isn't the problem. The conclusion is what they reject. And selectively rejecting conclusions while accepting the premises that produce them has a name:
 
@@ -165,9 +170,12 @@ Markov et al. (2010) independently expanded the dataset using **more conservativ
 
 | Person | What They Said | What They Tested |
 |--------|---------------|-----------------|
-| Chris Adami (Caltech) | "An example of how not to analyze data" | Nothing. Zero alternative models. |
-| Eugene Koonin (NCBI/NIH) | Suggested piecewise rates might differ | Didn't test it. We did. It makes it worse. |
-| Marzban et al. (2014) | Confidence interval barely includes 4.5 Bya | Didn't test logistic, MC, or expanded data. |
+| Chris Adami (Caltech) | "An example of how not to analyze data." Used a marathon-times analogy to argue extrapolation is absurd. | Nothing. Zero alternative models. |
+| Eugene Koonin (NCBI/NIH) | Suggested piecewise rates might differ between prokaryotes and eukaryotes | Didn't test it. We did. Both scenarios still pre-Earth. |
+| Arcady Mushegian (Stowers) | Most balanced. Agreed approach is "qualitatively correct." Noted LUCA had 600-1000 genes -- which *strengthens* the early-overload argument. | No alternative analysis. |
+| Marzban et al. (2014) | Confidence interval barely includes 4.5 Bya at extreme lower bound | Didn't test logistic, MC, or expanded data. |
+
+**On Adami's marathon analogy**: He compared Sharov's extrapolation to predicting when he'd break the speed of sound based on his marathon improvement curve. The analogy fails on three counts: (1) marathon times have known physical ceilings (human physiology); genome complexity has documented positive feedback mechanisms that Sharov cites (gene cooperation, duplication, niche creation); (2) Adami's marathon data doesn't have R² = 0.97 across billions of years; (3) Adami suggested a "piecewise exponential" as more reasonable but never tested it -- we did, and it doesn't resolve the problem.
 
 In 20 years: **one statistical critique, zero systematic replications, zero alternative model tests** -- until this project.
 
@@ -273,17 +281,25 @@ dna-before-earth/
 
 We're committed to intellectual honesty. If this analysis has weaknesses, we'd rather name them ourselves than have them discovered later:
 
-1. **Selection bias**: We track *maximum* complexity at each era, not average. The growth rate of the extreme may not represent the typical.
+1. **"Consistent with" is not "proved"**: Sharov himself wrote: *"this regression cannot be viewed as a proof of the exponential hypothesis. We can only say that regression is consistent with this model."* We agree. The data is *consistent with* a pre-Earth origin under every model we tested. That is a strong statement, but it is not mathematical proof. Our title is editorially provocative -- the body is scientifically precise.
 
-2. **Complexity != genome size**: The C-value paradox (amoeba genomes 200x larger than human) means genome size is an imperfect proxy. Functional genome fraction is better but harder to estimate.
+2. **Our replication doesn't match Sharov's coefficients exactly**: Sharov reported log10(y) = 8.64 + 0.89x (R² = 0.97, 7.8-fold/Byr). We get log10(y) = 8.59 + 0.88x (R² = 0.967, 7.5-fold/Byr). The difference is small (likely rounding in data points) and both land at ~10 Bya, but we flag it.
 
-3. **Extrapolation beyond data range**: All origin estimates extrapolate well beyond the observed data (3.5 Byr of data, extrapolating to 9.8+ Bya).
+3. **Sharov and Markov measure different things**: Sharov used *functional non-redundant* genome (e.g., 15% of human genome). Markov used *minimal genome size* (total genome of smallest free-living species). Both track complexity, both produce pre-Earth origins, but they are conceptually different metrics.
 
-4. **Phase transitions**: Prokaryote-to-eukaryote involved endosymbiosis -- a discrete event, not a smooth trend.
+4. **Selection bias**: We track *maximum* complexity at each era, not average. The growth rate of the extreme may not represent the typical.
 
-5. **5 to 14 points is still sparse**: More data strengthens the trend, but 14 points over 4 billion years is thin.
+5. **Complexity != genome size**: The C-value paradox (amoeba genomes 200x larger than human) means genome size is an imperfect proxy. Functional genome fraction is better but harder to estimate.
 
-6. **Random assembly assumption**: Real chemistry isn't random -- there are thermodynamic biases and catalytic surfaces. But even generous corrections barely dent a gap of 180,000 orders of magnitude.
+6. **Extrapolation beyond data range**: All origin estimates extrapolate well beyond the observed data (3.5 Byr of data, extrapolating to 9.8+ Bya).
+
+7. **Phase transitions**: Prokaryote-to-eukaryote involved endosymbiosis -- a discrete event, not a smooth trend.
+
+8. **5 to 14 points is still sparse**: More data strengthens the trend, but 14 points over 4 billion years is thin.
+
+9. **Extended dataset includes taxa Sharov excluded**: Sharov deliberately excluded plants (polyploidy/redundancy). Our 14-point dataset includes plants, fungi, and insects. The core 5-point and 9-point results are unaffected.
+
+10. **Random assembly assumption**: Real chemistry isn't random -- there are thermodynamic biases and catalytic surfaces. But even generous corrections barely dent a gap of tens of thousands of orders of magnitude.
 
 ### What We Invite
 

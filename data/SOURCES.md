@@ -60,6 +60,15 @@ genome size and organismal complexity in the lineage leading from prokaryotes to
 - Genome sizes are **2.6x to 3.2x larger** than Sharov's early points
 - Result: origin pushed **further back** (10.9 Bya vs 9.8 Bya)
 
+**Important metric difference**: Sharov measured *functional non-redundant* genome --
+the fraction of the genome that is coding + regulatory (e.g., human = 3.2 Gbp x 15%
+= 480 Mbp). Markov measured *minimal genome size (MGS)* -- the total genome of the
+smallest free-living species in each taxonomic group (e.g., bat = 1,695 Mbp total).
+These are conceptually different metrics. Sharov's metric estimates how much of the
+genome *does work*. Markov's metric finds the *smallest total genome* in each group.
+Both track biological complexity, and both independently produce pre-Earth origins,
+but they should not be treated as directly comparable numbers.
+
 ## Extended Dataset (This Study) -- 6 Additional Taxa
 
 | Taxon | Time (Bya) | Genome (Mb) | Species | Source |
@@ -71,6 +80,19 @@ genome size and organismal complexity in the lineage leading from prokaryotes to
 | Insects | 0.4 | 99 | *Belgica antarctica* | Published genome |
 | Flowering plants | 0.14 | 63 | *Utricularia gibba* | Published genome |
 
+**Methodological note**: Sharov (2006) deliberately excluded plants from his analysis,
+writing: *"I have not included plants into this graph for the following two reasons.
+First, their genomes are often highly redundant due to polyploidy, which makes it
+difficult to estimate the size of the functional non-redundant fraction. Second,
+functional non-redundant genomes in plants did not increase as fast as in vertebrates,
+and our goal was to trace the genomes in best performing groups of organisms."*
+
+Our extended dataset includes plants, fungi, and insects to test whether expanding
+beyond the "leading edge" lineage affects the result. It does not -- the trend
+strengthens. However, we acknowledge this is a departure from Sharov's original
+selection criteria. The core 5-point (Sharov) and 9-point (Markov) analyses are
+unaffected by this choice.
+
 ## Verification Checklist
 
 - [x] Pelagibacter ubique HTCC1062: 1,308,759 bp (NCBI Genome ID 491) -- matches 1.3 Mb
@@ -78,3 +100,17 @@ genome size and organismal complexity in the lineage leading from prokaryotes to
 - [x] Oldest stromatolites: ~3.48 Bya (Dresser Formation, Pilbara, Western Australia)
 - [x] Markov et al. published in Paleontological Journal, Russian Academy of Sciences
 - [x] All fossil dates consistent with standard paleontological consensus
+- [x] Adami "how not to analyze data" quote verified verbatim from Biology Direct open review
+- [ ] Minor regression coefficient discrepancy: Sharov reports 8.64 + 0.89x (R²=0.97, 7.8x/Byr);
+      we get 8.592 + 0.877x (R²=0.967, 7.5x/Byr). Likely due to rounding of data points.
+      Both produce origin ~10 Bya. Flagged, not hidden.
+
+## Probability Calculation Note
+
+Sharov states spontaneous assembly probability for 400 bp DNA as p = 10^-126.
+Our calculation for a *specific* 400 bp sequence: (1/4)^400 = 10^-241.
+The discrepancy (10^-126 vs 10^-241) likely reflects Sharov allowing for sequence
+degeneracy (many possible functional sequences, not just one specific one) or
+calculating physical assembly probability rather than information-theoretic sequence
+probability. Both numbers represent astronomically low probabilities. Our README uses
+both estimates where relevant.
