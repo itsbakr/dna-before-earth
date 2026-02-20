@@ -78,6 +78,10 @@ This repo is the template. **Fork it. Apply it to other dismissed findings. Buil
 
 ### 1. The Exponential Trend Is Real and Robust
 
+<p align="center">
+  <img src="assets/regression_timeline.png" alt="Genome Complexity vs Time" width="700"/>
+</p>
+
 | Dataset | Points | R² | p-value | Origin (Bya) | Source |
 |---------|--------|-----|---------|--------------|--------|
 | Sharov (2006) | 5 | 0.967 | 0.003 | 9.8 | [Biology Direct 1:17](https://pmc.ncbi.nlm.nih.gov/articles/PMC1526419/) |
@@ -86,7 +90,15 @@ This repo is the template. **Fork it. Apply it to other dismissed findings. Buil
 
 More data points make the result **stronger**, not weaker. The origin estimate moves **further** from Earth's age with each expansion.
 
+<p align="center">
+  <img src="assets/datasets_progression.png" alt="More Data Makes It Stronger" width="700"/>
+</p>
+
 ### 2. Monte Carlo -- 100% Pre-Earth
+
+<p align="center">
+  <img src="assets/monte_carlo_histogram.png" alt="10,000 Monte Carlo Simulations" width="700"/>
+</p>
 
 10,000 simulations, each randomly perturbing every data point within its measurement uncertainty:
 
@@ -95,6 +107,10 @@ More data points make the result **stronger**, not weaker. The origin estimate m
 - The lowest single estimate across all simulations: **~7.7 Bya** -- still 3.2 billion years before Earth
 
 ### 3. Alternative Models Don't Help
+
+<p align="center">
+  <img src="assets/model_comparison.png" alt="Alternative Growth Models" width="700"/>
+</p>
 
 | Model | R² | Origin | What Happened |
 |-------|-----|--------|---------------|
@@ -107,6 +123,10 @@ More data points make the result **stronger**, not weaker. The origin estimate m
 The logistic model -- the one most commonly assumed to "fix" the problem -- pushes the origin to **20.5 Bya**. This is a genuinely novel finding.
 
 ### 4. The Information-Theoretic Wall
+
+<p align="center">
+  <img src="assets/probability_gap.png" alt="The Information-Theoretic Wall" width="700"/>
+</p>
 
 To place the origin within Earth's history, life must have started at ~100,000+ base pairs. But:
 
@@ -191,8 +211,8 @@ The scientific method doesn't belong to institutions. It belongs to anyone willi
 ## Run It Yourself
 
 ```bash
-git clone https://github.com/[username]/genome-complexity-clock.git
-cd genome-complexity-clock
+git clone https://github.com/itsbakr/dna-before-earth.git
+cd dna-before-earth
 
 pip install -r requirements.txt
 
@@ -211,8 +231,10 @@ python3 analysis/extended_analysis.py   # Markov 9-pt + hyperexponential + 14-pt
 ## Repository Structure
 
 ```
-genome-complexity-clock/
+dna-before-earth/
 ├── README.md                              # You are here
+├── assets/                                # Visuals for README (generated with Gemini 3 Pro)
+├── web/                                   # Interactive visualization (Vite + React + Tailwind)
 ├── data/
 │   ├── sharov_2006.csv                    # Original 5 data points (Sharov 2006)
 │   ├── markov_2010.csv                    # Expanded 9 data points (free-living organisms)
