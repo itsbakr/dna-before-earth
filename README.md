@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="assets/hero_banner.png" alt="DNA Before Earth" width="800"/>
+</p>
+
+<p align="center">
   <h1 align="center">AI Proved DNA Existed Before Earth.<br>The Scientific Establishment Ignored It for 20 Years.</h1>
 </p>
 
