@@ -1,0 +1,513 @@
+{
+  "replication": {
+    "sharov_printed": {
+      "a": 8.64,
+      "b": 0.89,
+      "r2": 0.97,
+      "fold_per_gyr": 7.8
+    },
+    "sharov_mammals_0125": {
+      "n": 5,
+      "a": 8.643574616612327,
+      "b": 0.896603833645499,
+      "r2": 0.9628110171278331,
+      "p": 0.00307841095214346,
+      "fold_per_gyr": 7.881408422144081,
+      "doubling_myr": 335.7447117307364,
+      "origin_1bp": 9.640349831506342,
+      "fieller95": [
+        7.428571106503274,
+        14.315955366797851
+      ],
+      "fieller99": [
+        6.306575101712546,
+        25.844778022517435
+      ]
+    },
+    "sharov_mammals_0_legacy_repo": {
+      "n": 5,
+      "a": 8.596034446518125,
+      "b": 0.878657352036169,
+      "r2": 0.9670398704130572,
+      "p": 0.00256520558907065,
+      "fold_per_gyr": 7.562360074558783,
+      "doubling_myr": 342.6022612414101,
+      "origin_1bp": 9.783147465389078,
+      "fieller95": [
+        7.628748329335043,
+        14.117621734884281
+      ],
+      "fieller99": [
+        6.509574571720036,
+        23.66845534919274
+      ]
+    },
+    "markov_published_ages": {
+      "n": 9,
+      "a": 8.999662677186766,
+      "b": 0.8281534251490597,
+      "r2": 0.8363660120038756,
+      "p": 0.0005523637568543156,
+      "fold_per_gyr": 6.73214443749556,
+      "doubling_myr": 363.4954424173258,
+      "origin_1bp": 10.867144183539317,
+      "fieller95": [
+        8.053812437083602,
+        17.321810208116176
+      ],
+      "fieller99": [
+        7.196900180543937,
+        24.768062154223095
+      ]
+    },
+    "markov_current_ages": {
+      "n": 9,
+      "a": 8.872958318418728,
+      "b": 0.7527711204310144,
+      "r2": 0.7378538205928609,
+      "p": 0.0030121811798132633,
+      "fold_per_gyr": 5.659409512395833,
+      "doubling_myr": 399.89578172395926,
+      "origin_1bp": 11.78705994105929,
+      "fieller95": [
+        7.9913259047027045,
+        24.152449522511475
+      ],
+      "fieller99": [
+        6.964757557129033,
+        52.130697058325545
+      ]
+    },
+    "extended_corrected": {
+      "n": 13,
+      "a": 8.76045693240491,
+      "b": 0.8041222207155165,
+      "r2": 0.7704950865766766,
+      "p": 7.995572005360768e-05,
+      "fold_per_gyr": 6.369747554135742,
+      "doubling_myr": 374.3585090785347,
+      "origin_1bp": 10.894434585590437,
+      "fieller95": [
+        8.263637053300089,
+        16.485641164984717
+      ],
+      "fieller99": [
+        7.544541416664083,
+        21.176535909997547
+      ]
+    },
+    "readme_claims": {
+      "markov_r2": 0.914,
+      "hyperexponential_r2": 0.979,
+      "extended_r2": 0.713
+    }
+  },
+  "errors_in_variables": {
+    "york_sharov": {
+      "a": 8.751551331431829,
+      "b": 0.9624199183351496,
+      "a_se": 0.09469521560885612,
+      "b_se": 0.10937708629597116,
+      "reduced_chi2": 0.8967401550183881,
+      "origin_1bp": 9.09327744023708,
+      "chi2": 2.690220465055164,
+      "dof": 3,
+      "p_line_fits": 0.4418917830027512
+    },
+    "york_markov": {
+      "a": 9.210413715076712,
+      "b": 1.1074344149947306,
+      "a_se": 0.07978846586707945,
+      "b_se": 0.09748692247492388,
+      "reduced_chi2": 6.768483254886105,
+      "origin_1bp": 8.31689316348412,
+      "chi2": 47.37938278420273,
+      "dof": 7,
+      "p_line_fits": 4.707193777169628e-08
+    },
+    "deming_sharov": [
+      {
+        "ratio": 0,
+        "b": 0.8966038336454989,
+        "origin_1bp": 9.640349831506345
+      },
+      {
+        "ratio": 0.1,
+        "b": 0.8991875874548305,
+        "origin_1bp": 9.616743587694385
+      },
+      {
+        "ratio": 0.5,
+        "b": 0.9066118012147468,
+        "origin_1bp": 9.549661673053544
+      },
+      {
+        "ratio": 1,
+        "b": 0.9121848157919945,
+        "origin_1bp": 9.500023861553887
+      },
+      {
+        "ratio": 2,
+        "b": 0.918149351925916,
+        "origin_1bp": 9.447566413859253
+      },
+      {
+        "ratio": 5,
+        "b": 0.9245038338594808,
+        "origin_1bp": 9.392424129456957
+      },
+      {
+        "ratio": 1000000.0,
+        "b": 0.9312354945678853,
+        "origin_1bp": 9.334829679640213
+      }
+    ],
+    "attenuation_route_sharov": {
+      "age_error_sd_for_origin_4p5": 0.9598667748178664,
+      "reliability_factor_at_that_sd": 2.6716584817906814,
+      "grid": [
+        {
+          "age_error_sd": 0,
+          "origin_1bp": 9.640349831506345
+        },
+        {
+          "age_error_sd": 0.3,
+          "origin_1bp": 9.138223186456722
+        },
+        {
+          "age_error_sd": 0.5,
+          "origin_1bp": 8.245553595257391
+        },
+        {
+          "age_error_sd": 0.7,
+          "origin_1bp": 6.906549208458395
+        },
+        {
+          "age_error_sd": 0.9,
+          "origin_1bp": 5.121210026059732
+        },
+        {
+          "age_error_sd": 1.0,
+          "origin_1bp": 4.061164886510526
+        }
+      ]
+    }
+  },
+  "curves": {
+    "published": {
+      "exponential": {
+        "params": [
+          8.999662675611678,
+          0.8281534236313047
+        ],
+        "rss": 1.7154481051815391,
+        "name": "exponential",
+        "converged": true,
+        "n": 9,
+        "k": 3,
+        "aicc": -4.117952205246346,
+        "origin_1bp": 10.867144201553579,
+        "at_bounds": [
+          false,
+          false
+        ]
+      },
+      "hyperbolic": {
+        "params": [
+          7.886862669818063,
+          1.0000000000001577e-06
+        ],
+        "rss": 3.5549102979342138,
+        "name": "hyperbolic",
+        "converged": true,
+        "n": 9,
+        "k": 3,
+        "aicc": 2.439947276568293,
+        "origin_1bp": null,
+        "at_bounds": [
+          false,
+          true
+        ]
+      },
+      "biexponential": {
+        "params": [
+          6.0277086053483275,
+          3.653750738896861,
+          0.7973920991904144
+        ],
+        "rss": 0.42439018364311637,
+        "name": "biexponential",
+        "converged": true,
+        "n": 9,
+        "k": 4,
+        "aicc": -9.488939218293705,
+        "origin_1bp": null,
+        "at_bounds": [
+          false,
+          false,
+          false
+        ]
+      },
+      "logistic4": {
+        "params": [
+          6.07947510818899,
+          29.999999999999996,
+          0.9027427415124559,
+          1.9254110209514952
+        ],
+        "rss": 0.42951187522437356,
+        "name": "logistic4",
+        "converged": true,
+        "n": 9,
+        "k": 5,
+        "aicc": 2.619025803070862,
+        "origin_1bp": null,
+        "at_bounds": [
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    },
+    "current": {
+      "exponential": {
+        "params": [
+          8.872958328513167,
+          0.7527711308014782
+        ],
+        "rss": 2.748195361193589,
+        "name": "exponential",
+        "converged": true,
+        "n": 9,
+        "k": 3,
+        "aicc": 0.12347897970926258,
+        "origin_1bp": 11.787059792085937,
+        "at_bounds": [
+          false,
+          false
+        ]
+      },
+      "hyperbolic": {
+        "params": [
+          7.861410814130161,
+          1.0000000000000002e-06
+        ],
+        "rss": 3.862324774737447,
+        "name": "hyperbolic",
+        "converged": true,
+        "n": 9,
+        "k": 3,
+        "aicc": 3.186402282853374,
+        "origin_1bp": null,
+        "at_bounds": [
+          false,
+          true
+        ]
+      },
+      "biexponential": {
+        "params": [
+          6.1459634771166325,
+          3.7507313055957723,
+          1.095537464083348
+        ],
+        "rss": 0.713279592805787,
+        "name": "biexponential",
+        "converged": true,
+        "n": 9,
+        "k": 4,
+        "aicc": -4.815957392970361,
+        "origin_1bp": null,
+        "at_bounds": [
+          false,
+          false,
+          false
+        ]
+      },
+      "logistic4": {
+        "params": [
+          6.53907846777553,
+          9.388225533019273,
+          7.299504318588733,
+          -0.5947749123764084
+        ],
+        "rss": 0.48256096168839163,
+        "name": "logistic4",
+        "converged": true,
+        "n": 9,
+        "k": 5,
+        "aicc": 3.667146617531433,
+        "origin_1bp": null,
+        "at_bounds": [
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    }
+  },
+  "broken_stick": {
+    "published": {
+      "break_gya": 0.8819095477386935,
+      "rss": 0.3034877352502037,
+      "rate_young": 2.568820799394051,
+      "rate_old": 0.4271117568635874,
+      "aicc_two_segment": -12.50674791905314,
+      "aicc_two_segment_with_break_param": -0.5067479190531401,
+      "aicc_one_line": -4.117952205246344
+    },
+    "current": {
+      "break_gya": 0.8141231155778894,
+      "rss": 0.3640229781402812,
+      "rate_young": 3.1914103457828613,
+      "rate_old": 0.3444040897883882,
+      "aicc_two_segment": -10.869865775235102,
+      "aicc_two_segment_with_break_param": 1.1301342247648982,
+      "aicc_one_line": 0.12347897970926258
+    }
+  },
+  "rate_constancy": {
+    "leave_one_out": [
+      {
+        "dropped": 0,
+        "b": 1.316566610995627,
+        "origin": 7.042801028322302,
+        "group": "All living beings"
+      },
+      {
+        "dropped": 1,
+        "b": 0.793163123941474,
+        "origin": 11.365890324014732,
+        "group": "Eukaryotes"
+      },
+      {
+        "dropped": 2,
+        "b": 0.8155497477520712,
+        "origin": 11.12249018097409,
+        "group": "Metazoa"
+      },
+      {
+        "dropped": 3,
+        "b": 0.85667416298112,
+        "origin": 10.64209112085403,
+        "group": "Chordates"
+      },
+      {
+        "dropped": 4,
+        "b": 0.8289788860680146,
+        "origin": 10.860198071019063,
+        "group": "Vertebrates"
+      },
+      {
+        "dropped": 5,
+        "b": 0.8111757062093579,
+        "origin": 11.028013271532789,
+        "group": "Tetrapods"
+      },
+      {
+        "dropped": 6,
+        "b": 0.8121940487403759,
+        "origin": 11.021670558254902,
+        "group": "Amniotes"
+      },
+      {
+        "dropped": 7,
+        "b": 0.7966736448486669,
+        "origin": 11.186905940608378,
+        "group": "Mammals"
+      },
+      {
+        "dropped": 8,
+        "b": 0.7908448738393601,
+        "origin": 11.261962670406499,
+        "group": "Primates"
+      }
+    ],
+    "phanerozoic_fit": {
+      "b": 2.573582133747239,
+      "origin_1bp": 3.7736513728089793,
+      "predictions": [
+        {
+          "group": "All living beings",
+          "t": 4.0,
+          "observed": 6.113943352306837,
+          "predicted": -0.5825267829370251,
+          "error_log10": 6.696470135243862
+        },
+        {
+          "group": "Eukaryotes",
+          "t": 2.0,
+          "observed": 6.963787827345556,
+          "predicted": 4.564637484557453,
+          "error_log10": 2.3991503427881025
+        },
+        {
+          "group": "Metazoa",
+          "t": 1.25,
+          "observed": 7.292256071356476,
+          "predicted": 6.494824084867883,
+          "error_log10": 0.7974319864885935
+        }
+      ]
+    },
+    "precambrian_fit": {
+      "b": 0.42774433900801273,
+      "origin_1bp": 18.290624849451866
+    }
+  },
+  "early_rate": {
+    "sharov_first_point": {
+      "t_first": 3.5,
+      "y_first": 5.698970004336019,
+      "b": 0.896603833645499,
+      "required_multiplier_origin_4p4": 7.062415591020458,
+      "required_multiplier_origin_4p5": 6.356174031918415,
+      "doubling_myr_at_4p4": 47.5396424075667
+    },
+    "markov_first_point": {
+      "t_first": 4.0,
+      "y_first": 6.113943352306837,
+      "b": 0.8281534251490597,
+      "required_multiplier_origin_4p4": 18.456553962831165,
+      "required_multiplier_origin_4p5": 14.765243170264945,
+      "doubling_myr_at_4p4": 19.694653896353195
+    },
+    "luca_moody2024": {
+      "t_first": 4.2,
+      "y_first": 6.3979400086720375,
+      "b": 0.896603833645499,
+      "required_multiplier_origin_4p4": 35.67874555397932,
+      "required_multiplier_origin_4p5": 23.78583036931958,
+      "doubling_myr_at_4p4": 9.410216265108854
+    },
+    "observed_segment_rate_ratios_markov": [
+      0.5165037371318278,
+      3.107615153899797
+    ]
+  },
+  "current_age_sampling": {
+    "n": 20000,
+    "median": 11.789689068795866,
+    "p2_5": 11.406304492210465,
+    "p97_5": 12.182550321952743
+  },
+  "metric_reductio": {
+    "protein_coding_genes": {
+      "luca": 2600,
+      "human": 20000,
+      "luca_age": 4.2,
+      "sources": "LUCA ~2,600 proteins (Moody et al. 2024); human ~20,000 genes",
+      "rate_log10_per_gyr": 0.2109658684983722,
+      "origin_of_one_unit_gya": 20.387326283053067
+    },
+    "constrained_dna_bp": {
+      "luca": 2300000.0,
+      "human": 332000000.0,
+      "luca_age": 4.2,
+      "sources": "LUCA >=2.5 Mb mostly coding, ~2.3 Mb assumed functional; human 10.7% constrained, ~332 Mb (Zoonomia 2023)",
+      "rate_log10_per_gyr": 0.5141452970682009,
+      "origin_of_one_unit_gya": 16.573404701538514
+    }
+  }
+}

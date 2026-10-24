@@ -1,6 +1,6 @@
-group,time_bya,time_err_byr,genome_bp,log10_bp,log_err,species,source,notes
-Prokaryotes,3.5,0.3,500000,5.70,0.3,Mycoplasma genitalium,GenBank,Parasitically reduced - smallest known free-living at the time
-Eukaryotes,2.0,0.25,2900000,6.46,0.3,Encephalitozoon cuniculi,GenBank,Intracellular parasite - reduced genome
-Worms,1.0,0.15,73000000,7.86,0.15,Caenorhabditis elegans,GenBank,Model organism ~75% functional
-Fish,0.5,0.05,130000000,8.11,0.15,Takifugu rubripes,GenBank,Known for compact genome
-Mammals,0.0,0.0,480000000,8.68,0.1,Homo sapiens (functional),GenBank,~15% conserved/functional fraction of 3.2e9 bp total
+group,time_bya,genome_bp,species,time_sd_assumed,log10_sd_assumed,provenance,notes
+Prokaryotes,3.5,500000,Nanoarchaeum equitans / Mycoplasma genitalium,0.3,0.3,Sharov 2006 table (as reprinted in Markov et al. 2010),"Both parasitic/symbiotic; Sharov chose them 'to get the most conservative estimate'"
+Eukaryotes,2.0,2900000,Encephalitozoon cuniculi,0.25,0.3,Sharov 2006 table (as reprinted in Markov et al. 2010),"Intracellular parasite (microsporidian), reduced genome"
+Worms,1.0,72800000,Caenorhabditis elegans,0.15,0.15,Sharov 2006 table (as reprinted in Markov et al. 2010),"About 75% of ~97 Mb treated as functional"
+Fish,0.5,133300000,Takifugu rubripes,0.05,0.15,Sharov 2006 table (as reprinted in Markov et al. 2010),"~400 Mb genome; gene loci about one third"
+Mammals,0.125,480000000,Homo sapiens (functional fraction),0.02,0.1,Sharov 2006 table (as reprinted in Markov et al. 2010),"15% of 3.2 Gb; dated at 125 Ma (earliest placental fossil), not at the present"

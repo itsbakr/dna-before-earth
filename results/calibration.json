@@ -1,0 +1,682 @@
+{
+  "settings": {
+    "root_age_gya": 4.0,
+    "start_log10_bp": 6.0,
+    "reps": 25,
+    "checkpoint_ages": [
+      4.0,
+      2.0,
+      1.25,
+      0.575,
+      0.54,
+      0.375,
+      0.315,
+      0.22,
+      0.065
+    ],
+    "seed": 20261024,
+    "true_origin_gya": 4.0
+  },
+  "observed_markov": {
+    "slope": 0.8281534251490597,
+    "r2": 0.8363660120038756
+  },
+  "invariance": {
+    "0.0": {
+      "nested": [
+        1.693116535759684,
+        3.387682856772013,
+        3.558524589427536,
+        3.558524589427536,
+        3.558524589427536,
+        3.842629126163816,
+        3.842629126163816,
+        3.842629126163816,
+        3.842629126163816
+      ],
+      "ancestor": [
+        6.0,
+        5.123089644515077,
+        4.609275444238297,
+        4.288051392331937,
+        4.2938700706187625,
+        4.224228959244442,
+        4.1195286633895405,
+        3.883911475408764,
+        3.8621414993176906
+      ],
+      "nested_fit": [
+        0.5156684237174285,
+        7.744690858146004,
+        0.9085230369507734
+      ],
+      "ancestor_fit": [
+        -0.5357216413097278,
+        Infinity,
+        0.9800395882212506
+      ]
+    },
+    "0.8": {
+      "nested": [
+        4.893116535759331,
+        6.587682856771659,
+        6.758524589427183,
+        6.758524589427183,
+        6.758524589427183,
+        7.0426291261634635,
+        7.0426291261634635,
+        7.0426291261634635,
+        7.0426291261634635
+      ],
+      "ancestor": [
+        6.0,
+        6.723089644514901,
+        6.810875444238055,
+        7.030451392331635,
+        7.061870070618458,
+        7.1266289592441225,
+        7.0699286633892156,
+        6.90791147540843,
+        7.010941499317343
+      ],
+      "nested_fit": [
+        0.5156684237174286,
+        13.950228860513887,
+        0.908523036950774
+      ],
+      "ancestor_fit": [
+        0.26465965805607494,
+        26.958572138754814,
+        0.9224088793949266
+      ]
+    }
+  },
+  "null_grid": [
+    {
+      "sigma": 0.25,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 0.4330127018922193,
+      "runs": 25,
+      "median_tips": 241,
+      "nested_slope_median": 0.2755622986800205,
+      "nested_slope_iqr": [
+        0.1907935408402154,
+        0.39679760245655943
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9139054594656743,
+      "inferred_origin_median": 21.185072223740324,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": -0.00974026994644961
+    },
+    {
+      "sigma": 0.25,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 0.4330127018922193,
+      "runs": 25,
+      "median_tips": 241,
+      "nested_slope_median": 0.5643482906357941,
+      "nested_slope_iqr": [
+        0.474676675076494,
+        0.6475371882114395
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9470632408292374,
+      "inferred_origin_median": 12.613625167100464,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.25349705339428713
+    },
+    {
+      "sigma": 0.25,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 0.5,
+      "runs": 25,
+      "median_tips": 3513,
+      "nested_slope_median": 0.38504399825052116,
+      "nested_slope_iqr": [
+        0.20438694613812314,
+        0.49992702639228187
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9369201670249429,
+      "inferred_origin_median": 15.912419241029687,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.011740796569255524
+    },
+    {
+      "sigma": 0.25,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 0.5,
+      "runs": 25,
+      "median_tips": 3513,
+      "nested_slope_median": 0.7170767800726764,
+      "nested_slope_iqr": [
+        0.6243424232005038,
+        0.8699671915058106
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9657395422414412,
+      "inferred_origin_median": 10.450445132282159,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.3608578808483972
+    },
+    {
+      "sigma": 0.25,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 0.5590169943749475,
+      "runs": 25,
+      "median_tips": 9019,
+      "nested_slope_median": 0.40817397054060195,
+      "nested_slope_iqr": [
+        0.34185494219493623,
+        0.46968787296044856
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.931600100729008,
+      "inferred_origin_median": 14.643865979428677,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.0042145499048466765
+    },
+    {
+      "sigma": 0.25,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 0.5590169943749475,
+      "runs": 25,
+      "median_tips": 9019,
+      "nested_slope_median": 0.8209986671560509,
+      "nested_slope_iqr": [
+        0.740639415445507,
+        0.914910508622083
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9688082518056673,
+      "inferred_origin_median": 9.52683682798681,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.41991968051962675
+    },
+    {
+      "sigma": 0.5,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 0.8660254037844386,
+      "runs": 25,
+      "median_tips": 319,
+      "nested_slope_median": 0.5725717360341074,
+      "nested_slope_iqr": [
+        0.39483472950947573,
+        0.7448258019545178
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.8576691925277059,
+      "inferred_origin_median": 11.11068712975354,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": -0.048868880842558075
+    },
+    {
+      "sigma": 0.5,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 0.8660254037844386,
+      "runs": 25,
+      "median_tips": 319,
+      "nested_slope_median": 1.1287378723269952,
+      "nested_slope_iqr": [
+        1.023159224723819,
+        1.2482039175676007
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.939996787849965,
+      "inferred_origin_median": 7.378065028310791,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.5445021265121477
+    },
+    {
+      "sigma": 0.5,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 1.0,
+      "runs": 25,
+      "median_tips": 2014,
+      "nested_slope_median": 0.6079155192389751,
+      "nested_slope_iqr": [
+        0.5103452919158781,
+        0.8236287809315455
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9218579864271564,
+      "inferred_origin_median": 8.660693823714308,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": -0.11074073807706769
+    },
+    {
+      "sigma": 0.5,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 1.0,
+      "runs": 25,
+      "median_tips": 2014,
+      "nested_slope_median": 1.3964706490759524,
+      "nested_slope_iqr": [
+        1.291561096273908,
+        1.5275028926229581
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9614859782523612,
+      "inferred_origin_median": 6.335837116431862,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.6336589539630777
+    },
+    {
+      "sigma": 0.5,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 1.118033988749895,
+      "runs": 25,
+      "median_tips": 15250,
+      "nested_slope_median": 0.8581886804098022,
+      "nested_slope_iqr": [
+        0.6703699511482969,
+        0.9309736923692506
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9412127278328799,
+      "inferred_origin_median": 7.412948607524588,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.04593708942608673
+    },
+    {
+      "sigma": 0.5,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 1.118033988749895,
+      "runs": 25,
+      "median_tips": 15250,
+      "nested_slope_median": 1.6847226773299182,
+      "nested_slope_iqr": [
+        1.5664864098560378,
+        1.8910283983595115
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9699550571962268,
+      "inferred_origin_median": 5.613828829698188,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.8926746763309982
+    },
+    {
+      "sigma": 0.75,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 1.299038105676658,
+      "runs": 25,
+      "median_tips": 289,
+      "nested_slope_median": 0.8871373044133651,
+      "nested_slope_iqr": [
+        0.7579179707568889,
+        1.1153040756379986
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9160394288206644,
+      "inferred_origin_median": 6.602111606159895,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": -0.009612378564923236
+    },
+    {
+      "sigma": 0.75,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 1.299038105676658,
+      "runs": 25,
+      "median_tips": 289,
+      "nested_slope_median": 1.6450612327634564,
+      "nested_slope_iqr": [
+        1.4807062394100776,
+        1.9589773705310973
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9420552989449672,
+      "inferred_origin_median": 5.612504251893291,
+      "pre_earth_frac": 0.96,
+      "ancestor_slope_median": 0.7748474292088516
+    },
+    {
+      "sigma": 0.75,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 1.5,
+      "runs": 25,
+      "median_tips": 2750,
+      "nested_slope_median": 0.8799475059302815,
+      "nested_slope_iqr": [
+        0.6724432385251907,
+        1.1263792150729648
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.94232280236393,
+      "inferred_origin_median": 5.7077698207534056,
+      "pre_earth_frac": 0.88,
+      "ancestor_slope_median": -0.1691326335481222
+    },
+    {
+      "sigma": 0.75,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 1.5,
+      "runs": 25,
+      "median_tips": 2750,
+      "nested_slope_median": 2.1854321244551893,
+      "nested_slope_iqr": [
+        2.05095844497967,
+        2.5287895984651225
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9752219491096177,
+      "inferred_origin_median": 4.847209755332762,
+      "pre_earth_frac": 0.6,
+      "ancestor_slope_median": 1.0637259854964007
+    },
+    {
+      "sigma": 0.75,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 1.6770509831248424,
+      "runs": 25,
+      "median_tips": 10518,
+      "nested_slope_median": 1.0425193593537112,
+      "nested_slope_iqr": [
+        0.8241068654576781,
+        1.3506410764949823
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9470455553385454,
+      "inferred_origin_median": 5.446316218623124,
+      "pre_earth_frac": 0.72,
+      "ancestor_slope_median": -0.08704060000032907
+    },
+    {
+      "sigma": 0.75,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 1.6770509831248424,
+      "runs": 25,
+      "median_tips": 10518,
+      "nested_slope_median": 2.5836228230822735,
+      "nested_slope_iqr": [
+        2.2502282720969657,
+        2.749646921462372
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9601013824719409,
+      "inferred_origin_median": 4.432742725114076,
+      "pre_earth_frac": 0.4,
+      "ancestor_slope_median": 1.228840250010458
+    },
+    {
+      "sigma": 1.0,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 1.7320508075688772,
+      "runs": 25,
+      "median_tips": 442,
+      "nested_slope_median": 1.5666657465613647,
+      "nested_slope_iqr": [
+        0.9981575702835944,
+        1.6746813378829586
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.8987277757601011,
+      "inferred_origin_median": 4.676020278296723,
+      "pre_earth_frac": 0.52,
+      "ancestor_slope_median": 0.14203181477124463
+    },
+    {
+      "sigma": 1.0,
+      "lam": 1.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 1.7320508075688772,
+      "runs": 25,
+      "median_tips": 442,
+      "nested_slope_median": 2.396672110486633,
+      "nested_slope_iqr": [
+        2.2520954277033973,
+        2.6992454528360255
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9530871603241525,
+      "inferred_origin_median": 4.449587689934057,
+      "pre_earth_frac": 0.48,
+      "ancestor_slope_median": 1.1471443825920133
+    },
+    {
+      "sigma": 1.0,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 2.0,
+      "runs": 25,
+      "median_tips": 2714,
+      "nested_slope_median": 1.523565102990219,
+      "nested_slope_iqr": [
+        1.0180573214298343,
+        1.8011594411131187
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9423762818604648,
+      "inferred_origin_median": 4.195067502793437,
+      "pre_earth_frac": 0.44,
+      "ancestor_slope_median": 0.013318792221803438
+    },
+    {
+      "sigma": 1.0,
+      "lam": 2.0,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 2.0,
+      "runs": 25,
+      "median_tips": 2714,
+      "nested_slope_median": 2.909638955996147,
+      "nested_slope_iqr": [
+        2.7352103534000056,
+        3.2950407312043652
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9628310756462746,
+      "inferred_origin_median": 4.118915192710885,
+      "pre_earth_frac": 0.2,
+      "ancestor_slope_median": 1.4577792267885723
+    },
+    {
+      "sigma": 1.0,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "random",
+      "theory_speed": 2.23606797749979,
+      "runs": 25,
+      "median_tips": 12404,
+      "nested_slope_median": 1.6564574534066714,
+      "nested_slope_iqr": [
+        1.2065555694396026,
+        1.8997741085915543
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9537771565414384,
+      "inferred_origin_median": 3.692291178743843,
+      "pre_earth_frac": 0.16,
+      "ancestor_slope_median": -0.14279013140777777
+    },
+    {
+      "sigma": 1.0,
+      "lam": 2.5,
+      "mu": 0.0,
+      "focal": "max",
+      "theory_speed": 2.23606797749979,
+      "runs": 25,
+      "median_tips": 12404,
+      "nested_slope_median": 3.3971167692728352,
+      "nested_slope_iqr": [
+        3.145171908274321,
+        3.6244955924612676
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.976331478917547,
+      "inferred_origin_median": 3.7497825285062913,
+      "pre_earth_frac": 0.08,
+      "ancestor_slope_median": 1.6505585419887787
+    },
+    {
+      "sigma": 0.5,
+      "lam": 4.0,
+      "mu": 1.5,
+      "focal": "random",
+      "theory_speed": 1.118033988749895,
+      "runs": 25,
+      "median_tips": 19340,
+      "nested_slope_median": 0.8436262373866582,
+      "nested_slope_iqr": [
+        0.5611897417826919,
+        0.9733230611974562
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9444971325959217,
+      "inferred_origin_median": 8.58850659505271,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": -0.038107363185259334
+    },
+    {
+      "sigma": 0.5,
+      "lam": 4.0,
+      "mu": 1.5,
+      "focal": "max",
+      "theory_speed": 1.118033988749895,
+      "runs": 25,
+      "median_tips": 19340,
+      "nested_slope_median": 1.6429575204186437,
+      "nested_slope_iqr": [
+        1.4783776076492108,
+        1.7768649622152128
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.969451509745672,
+      "inferred_origin_median": 5.692820932675173,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.759763641829766
+    }
+  ],
+  "null_floor": {
+    "random": {
+      "runs": 25,
+      "median_tips": 11576,
+      "nested_slope_median": 0.28449763051833865,
+      "nested_slope_iqr": [
+        0.1449948769544633,
+        0.4882209933202868
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.7195546247534256,
+      "inferred_origin_median": 22.4969886597711,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.13267991268460988
+    },
+    "max": {
+      "runs": 25,
+      "median_tips": 11576,
+      "nested_slope_median": 0.9762008468651092,
+      "nested_slope_iqr": [
+        0.8348664670432762,
+        1.13324059503958
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.7955059366504631,
+      "inferred_origin_median": 8.78498529875626,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.7498392404171126
+    }
+  },
+  "trend_recovery": [
+    {
+      "true_drift": 0.0,
+      "runs": 25,
+      "median_tips": 12989,
+      "nested_slope_median": 0.8064940743530647,
+      "nested_slope_iqr": [
+        0.6543459869361631,
+        0.9498683585807719
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9428244433854815,
+      "inferred_origin_median": 7.531684543516648,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": -0.0339654143159086
+    },
+    {
+      "true_drift": 0.4,
+      "runs": 25,
+      "median_tips": 14257,
+      "nested_slope_median": 0.8869206501920089,
+      "nested_slope_iqr": [
+        0.7061272751663052,
+        1.0434007554888622
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9538264820814072,
+      "inferred_origin_median": 9.10621702861986,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.3940405736868399
+    },
+    {
+      "true_drift": 0.8,
+      "runs": 25,
+      "median_tips": 14443,
+      "nested_slope_median": 0.7873658740082016,
+      "nested_slope_iqr": [
+        0.6291682022042121,
+        0.9069826293869909
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9515036799457297,
+      "inferred_origin_median": 11.786225889566058,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 0.7848046791801668
+    },
+    {
+      "true_drift": 1.2,
+      "runs": 25,
+      "median_tips": 21505,
+      "nested_slope_median": 0.8229503871445282,
+      "nested_slope_iqr": [
+        0.5889411620975153,
+        1.0067493039526463
+      ],
+      "positive_slope_frac": 1.0,
+      "r2_median": 0.9430782164033243,
+      "inferred_origin_median": 13.85278031001841,
+      "pre_earth_frac": 1.0,
+      "ancestor_slope_median": 1.1208418133166302
+    }
+  ]
+}

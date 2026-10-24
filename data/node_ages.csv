@@ -1,0 +1,10 @@
+node,dataset_group,published_bya,current_low_bya,current_high_bya,current_source,verification
+LUCA / all living beings,All living beings,4.0,4.09,4.33,Moody et al. 2024 Nat Ecol Evol,abstract
+Crown eukaryotes (LECA),Eukaryotes,2.0,1.67,1.80,Kay et al. 2025 Nature,abstract
+Crown Metazoa,Metazoa,1.25,0.65,0.833,dos Reis et al. 2015 Curr Biol,abstract
+Crown chordates,Chordates,0.575,,,not found,none
+Crown vertebrates,Vertebrates,0.54,0.50,0.564,TimeTree / Hedges (secondary),secondary
+Crown tetrapods,Tetrapods,0.375,0.352,0.352,TimeTree point estimate (secondary; no interval found),secondary
+Crown amniotes,Amniotes,0.315,0.319,0.319,TimeTree point estimate (secondary; no interval found),secondary
+Crown mammals,Mammals,0.22,0.204,0.237,TimeTree (secondary),secondary
+Crown primates,Primates,0.065,0.0637,0.0872,relaxed-clock range (secondary),secondary
