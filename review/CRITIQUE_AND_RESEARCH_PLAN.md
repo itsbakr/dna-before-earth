@@ -31,7 +31,7 @@ I re-ran both scripts unchanged (numpy 2.5, scipy 1.18). Items marked **Blocker*
 | 2 | **Blocker** | The hyperexponential row (R² = 0.979, origin ">10 Bya") is hard-coded. With the parameters the script itself uses, it computes **R² = -54** and prints "never reaches 1 bp". The parameters are mis-transcribed, or the functional form is wrong. | Analysis 5 output |
 | 3 | **Blocker** | "3x faster early rate gives 5.7 Bya" is not computed anywhere in the code (it is 3.5 + 5.70/(3 x 0.877)). README says "Every number in this README is reproduced by these scripts". That statement is false. | grep of `analysis/` |
 | 4 | **Blocker** | Logistic "origin 20.5 Bya" is a boundary artifact. The fitted carrying capacity L sits exactly on the arbitrary upper bound (15). Raising the bound changes the answer (L = 17.2, "origin" 21.4). The "1% of L" origin rule is arbitrary. Fixing the lower asymptote at 1 bp builds the conclusion into the model. | pilot `stat_checks.py` section 3 |
-| 5 | **Blocker** | Extended dataset errors. (a) *Ashbya gossypii* (9.2 Mb) is used twice, as "Eukaryotes" at 2.0 Gya and "Fungi" at 1.0 Gya. (b) *Cyanidioschyzon merolae* is unicellular but is labelled "multicellular" and dated with *Bangiomorpha*. (c) *Genlisea* is a flowering plant (angiosperm) but is used for "earliest land plants" at 470 Mya. (d) The "63 Mb functional" for *Utricularia* has no source. (e) The "free-living only" claim is wrong: *Pratylenchus coffeae* is a plant-parasitic nematode and *Ashbya gossypii* is a cotton pathogen. | `data/extended_dataset.csv`, `SOURCES.md` |
+| 5 | **Blocker** | Extended dataset errors. (a) *Ashbya gossypii* (9.2 Mb) is used twice: as "Eukaryotes" at 2.0 Gya and as "Fungi" at 1.0 Gya. (b) *Cyanidioschyzon merolae* is unicellular, not multicellular, and its genome is 16.5 Mb, not 13.7 (Matsuzaki et al. 2004). (c) *Genlisea tuberosa* is a flowering plant of about **61 Mb** (Fleischmann et al. 2014). The repo lists it at 82 Mb, which is *Utricularia gibba*'s figure, and uses it for "earliest land plants" at 470 Mya. (d) *Utricularia gibba* is 82 to 100 Mb; the "63 Mb functional" figure has no source. (e) *Prochlorococcus* genomes are 1.66 Mb at the smallest (MED4, Rocap et al. 2003), not 1.44. (f) The "free-living only" claim is false. *Pratylenchus coffeae* is a plant-parasitic nematode, and *Ashbya gossypii* is a cotton pathogen. The smallest free-living eukaryote usually cited is *Ostreococcus tauri* at 12.6 Mb. | `data/extended_dataset.csv`, `SOURCES.md` |
 | 6 | High | The CSV files are never read by the code. All data are re-typed inside the scripts. The scripts' 14-point set differs from `extended_dataset.csv` (code has Flowering plants and no Amniotes; the CSV is the reverse). Two different "Sharov" datasets exist: mammals at 0.0 Gya in one script and 0.125 Gya in the other, with different values. | both scripts |
 | 7 | High | The README lists files that do not exist: `paper/genome_clock_paper.docx`, `conversation/`, `visualization/`. | `find` |
 | 8 | High | The best-fitting model by the repo's own AIC is the **quadratic** (-12.76 vs -12.00). It has no origin at all: going back in time, genome size reaches a minimum at about 5.9 Gya and then *grows*. That contradicts "every model confirms pre-Earth". Really it shows the extrapolation is arbitrary. With n = 5, AICc for any 3-parameter curve is undefined (n - k - 1 = 0), so none of these model comparisons are meaningful. | `full_analysis.py` Part 5; pilot section 2 |
@@ -39,7 +39,7 @@ I re-ran both scripts unchanged (numpy 2.5, scipy 1.18). Items marked **Blocker*
 | 10 | Medium | The Monte Carlo only jiggles points around the *assumed* straight line. "100% pre-Earth" means "the straight-line extrapolation is insensitive to the stated measurement errors". It does **not** test whether the straight line is right. | Part 2 |
 | 11 | Medium | R² falling from 0.97 to 0.84 to 0.71 as points are added is described as the result "strengthening". It means the scatter around the line grows. The p-value falls only because n grows. | README table |
 | 12 | Medium | `sharov_2006.csv` calls *Mycoplasma genitalium* "smallest known free-living", but it is an obligate parasite. | CSV note |
-| 13 | Medium | Divergence dates are outdated (e.g. Metazoa at 1.25 Gya; see Section 4 for current ages). | |
+| 13 | Medium | Divergence dates are outdated. Crown Metazoa is about 0.65 to 0.83 Gya (dos Reis et al. 2015), not 1.25. Crown eukaryotes (LECA) are about 1.67 to 1.80 Gya (Kay et al. 2025), not 2.0. Crown tetrapods are about 352 Mya, not 375. See Section 4.4. | |
 | 14 | Framing | "Nobody ever actually tested whether he was wrong" is false. Marzban et al. (2014) is a published statistical re-test, and Markov et al. (2010) is itself an extension. See Section 4. | |
 
 **What is already good and worth keeping:** open code and data, an explicit limitations list, flagging the Sharov/Markov metric difference, flagging the coefficient mismatch with Sharov, the threshold table (which honestly shows the date depends on the assumed starting size), and the instinct to turn critics' verbal objections into quantitative tests.
@@ -95,7 +95,7 @@ The method has essentially a 100% false-positive rate for "pre-Earth". The param
 
 ### 3.5 Early complexity cuts both ways
 
-Mushegian's "early overload" point is real: LUCA was already a complex cell (Moody et al. 2024: ~2.5 Mb, ~2,600 proteins, ~4.2 Gya). But reconstructed prokaryotic genome sizes have stayed roughly flat from LUCA to today (median modern prokaryote ~3 to 4 Mb). That is direct evidence of **stasis** for about 2 Gyr of prokaryote-only history, exactly as Koonin argued. So the constant-rate model is contradicted in the very era closest to the extrapolation. A complex LUCA shortly after Earth became habitable means early evolution was fast. Panspermia is one explanation for that, but the data do not single it out.
+Mushegian's "early overload" point is real. LUCA was already a complex cell: at least 2.5 Mb and about 2,600 proteins, about 4.2 Gya (Moody et al. 2024; 95% CI 4.09 to 4.33). But LUCA's genome already sits inside the range of modern free-living prokaryotes. Prokaryote genome size behaves like an equilibrium between gene gain and deletion bias (Sela, Wolf & Koonin 2016). So the prokaryote-only era shows **stasis**, as Koonin argued, and the constant-rate model is contradicted in the very era closest to the extrapolation. Fossil proxies tell the same story in a different group: land-plant genome sizes show no steady within-lineage increase over 400 Myr (Lomax et al. 2014). A complex LUCA soon after Earth became habitable (liquid water by about 4.4 Gya, Wilde et al. 2001) means early evolution was fast. Panspermia is one explanation for that, but the data do not single it out. WP3 should quantify the prokaryote stasis directly from GTDB.
 
 ### 3.6 The probability "wall" argument should be removed from the scientific paper
 
@@ -110,7 +110,83 @@ Sharov's claim is about *heritable information* (life), extrapolated to a "1 nuc
 The data-provenance argument ("accept GenBank, accept the conclusion") is a non sequitur. Critics accept the *measurements*. They reject the *inference*: constant rate, extant species as ancestors, and extrapolation 3x beyond the data. Kuhn, "paradigm protection", the critics-scorecard table, the "Argument They Can't Answer" heading, the theological material and the "AI shows" headline all signal advocacy. For the paper, cut all of it. The philosophy essay can live separately, clearly labelled as opinion.
 
 ---
-<!-- SECTION 4+ appended below -->
+## 4. Literature and data
+
+*Verification note: facts below were checked against abstracts, publisher pages and database home pages. Full texts were often blocked by the network proxy, so confirm exact figures against the full paper before citing.*
+
+### 4.1 The core dispute
+
+<!-- 4.1 pending: core-paper verification -->
+
+### 4.2 Wider literature the paper must engage
+
+**Early life and LUCA**
+- **Moody et al. 2024**, *Nat Ecol Evol* 8:1654. LUCA about 4.2 Ga (4.09 to 4.33). Genome at least 2.5 Mb (2.49 to 2.99), about 2,600 proteins. doi:10.1038/s41559-024-02461-1
+- **Weiss et al. 2016**, *Nat Microbiol* (355 families, later largely disputed). **Crapitto et al. 2022**, *Ecol Evol* 12:e8930: eight LUCA reconstructions barely agree with each other, so treat LUCA gene content as uncertain.
+- **Oldest evidence for life:**
+  - Generally accepted: Dresser Formation, about 3.48 Ga (Djokic et al. 2017).
+  - Contested:
+    - zircon graphite at 4.1 Ga (Bell et al. 2015)
+    - vent tubes at 3.77 to 4.28 Ga (Dodd et al. 2017)
+    - Isua "stromatolites" at 3.7 Ga (Nutman et al. 2016, rebutted by Allwood et al. 2018)
+    - graphite older than 3.95 Ga (Tashiro et al. 2017)
+- **Habitability:** the Moon formed at least 4.51 Ga (Barboni et al. 2017). Liquid water by about 4.4 Ga (Wilde et al. 2001).
+- **Eukaryogenesis:** LECA radiated 1.80 to 1.67 Ga, with mitochondrial endosymbiosis about 2.2 Ga (Kay et al. 2025, *Nature*). LECA gene-content estimates run about 6,400 to 12,900 orthogroups, with no consensus (Richards et al. 2024).
+
+**Genome size, complexity and trends**
+- **Lynch & Conery 2003**, *Science* 302:1401. Genome complexity can arise passively through drift in small populations.
+- **Oliver et al. 2007**, *Genome Res* 17:594. Genome size evolves proportionally to its size: a multiplicative random walk, the H0a null.
+- **Wolf & Koonin 2013**, *BioEssays* 35:829: short bursts of complexification followed by long reduction. **Sela, Wolf & Koonin 2016**, *PNAS*: prokaryote genome size is an equilibrium.
+- **McShea 1994**, *Evolution* 48:1747: driven versus passive trends, with explicit tests (minimum, ancestor-descendant, subclade skew). Use these tests directly in WP2 and WP4. Also McShea & Brandon 2010 (ZFEL).
+- **Maynard Smith & Szathmáry 1995**; **Szathmáry 2015**, *PNAS* 112:10104: complexity rises in major transitions (supports H0b).
+
+**Tempo of early evolution**
+- **Vetsigian, Woese & Goldenfeld 2006**, *PNAS* 103:10696: communal, horizontal-transfer-driven evolution before vertical descent. A mechanism for a fast pre-LUCA rate.
+- **Spiegel & Turner 2012**, *PNAS*: life's early start says little about how likely abiogenesis is, because the prior dominates. **Kipping 2020**, *PNAS*: Bayes factor of at least 3 favouring fast abiogenesis.
+
+**Functional information (to replace the (1/4)^N argument)**
+- **Szostak 2003**, *Nature* 423:689; **Hazen et al. 2007**, *PNAS* 104:8574.
+- **Keefe & Szostak 2001**, *Nature* 410:715: about 1 in 10^11 random 80-mers bind ATP.
+
+**Panspermia feasibility (for WP5 priors)**
+- **Adams & Spergel 2005**, *Astrobiology* 5(4): rock exchange within a birth cluster.
+- **Belbruno et al. 2012**, *Astrobiology*: weak-transfer lithopanspermia.
+- **Kepler-444**: 11.2 ± 1.0 Gyr, the oldest known system of terrestrial-size planets (Campante et al. 2015, *ApJ* 799:170).
+
+### 4.3 Data inventory
+
+| Need | Source | Scale (latest found) | Use in plan |
+|---|---|---|---|
+| Eukaryote genome sizes | **Genomes on a Tree (GoaT)**, goat.genomehubs.org (Challis et al. 2023) | All eukaryotes, with phylogenetic gap-filling; API and command line | WP3 master table |
+| Animal C-values | **Animal Genome Size Database**, genomesize.com | 6,534 species, 8,416 records | WP3 |
+| Plant C-values | **Kew Plant DNA C-values**, release 7.1 | 12,273 species | WP3; plant lineage for P4 |
+| Fungal genome sizes | Fungal Genome Size Database (Kullman et al. 2005); NCBI assemblies | About 2,400 entries | WP3 |
+| Prokaryote genomes | **GTDB R11-RS232** (April 2026), with CheckM completeness metadata | 901,341 genomes, 199,923 species clusters | WP3 stasis test; P6 |
+| Assemblies, any taxon | **NCBI Datasets** (command line and API) | All of GenBank and RefSeq | WP3 cross-check |
+| Divergence times | **TimeTree 5** (Kumar et al. 2022) | 137,306 species, node ages with confidence intervals | Node ages throughout |
+| Topology | **Open Tree of Life** v15.1 | 2.38M tips | WP2 and WP3 trees |
+| Ancestral gene content | **eggNOG 6** (hierarchical orthologous groups at 1,601 taxonomic levels); **OrthoDB v12** | 12,535 and about 24,000 genomes | WP4 gene-family time series |
+| Gene ages | **GenEra** (Barrera-Redondo et al. 2023); Domazet-Lošo & Tautz 2010 | Any proteome | WP4 human-lineage phylostratigraphy |
+| Constrained (functional) DNA | **Siepel et al. 2005** (human 3 to 8%, fly 37 to 53%, worm 18 to 37%, yeast 47 to 68%); **Rands et al. 2014** (human 8.2%); **Zoonomia**, Christmas et al. 2023 (human 10.7%, about 332 Mb) | Across taxa | WP4 functional-DNA metric, replacing Sharov's ad hoc fractions |
+| Fossil genome-size proxies | **Organ et al. 2007** (dinosaur osteocytes, 31 species); *J Evol Biol* 2011 (ancestral amniote); **Lomax et al. 2014** (plant guard cells, 400 Myr); **Davesne et al. 2021** (61 fossil ray-finned fishes); Thomson 1972 (lungfish) | Dozens of dated fossil taxa | WP4 validation: the only *real* time series of genome size |
+| LUCA proteome | Moody et al. 2024 supplementary data; Crapitto et al. 2022 (Dryad doi:10.5061/dryad.5hqbzkh7s) | | WP5 |
+
+### 4.4 Dates to use instead of the repo's
+
+| Node | Repo | Current estimate | Source |
+|---|---|---|---|
+| LUCA | 4.0 (Markov) / 3.5 (Sharov) | about 4.2 Ga (4.09 to 4.33) | Moody et al. 2024 |
+| Crown eukaryotes (LECA) | 2.0 Ga | 1.80 to 1.67 Ga | Kay et al. 2025; Betts et al. 2018 (<1.84) |
+| Crown Metazoa | 1.25 Ga | 0.83 to 0.65 Ga | dos Reis et al. 2015 |
+| Crown Tetrapoda | 375 Ma | about 352 Ma | TimeTree |
+| Crown Amniota | 315 Ma | about 319 Ma | TimeTree |
+| Crown Mammalia | 220 Ma | about 220 Ma (range 237 to 204) | TimeTree |
+| Crown Primates | 65 Ma | about 63 to 87 Ma | various clocks |
+
+In the final analysis, sample node ages from their published intervals rather than fixing point values.
+
+---
+
 
 ## 5. Reframed research question and pre-registered hypotheses
 
@@ -205,8 +281,8 @@ Keep the philosophy, the AI-augmentation narrative and the critics-scorecard out
 ## 8. Where to publish and who to involve
 
 - **Biology Direct.** The original venue, with open peer review that publishes reviewer reports. A follow-up there is natural, and Sharov's reviewers or Marzban may well review it.
-- **Royal Society Open Science.** Accepts replications and Registered Reports, and judges soundness rather than novelty.
-- **Origins of Life and Evolution of Biospheres** or **Astrobiology.** Best fit for WP5 if that becomes the centre of gravity.
+- **Royal Society Open Science.** Has offered Registered Reports since 2015 and accepts PCI RR-recommended Stage 2 reports. Judges soundness rather than novelty. Alternatively, pre-register through **PCI Registered Reports**, which covers all fields.
+- ***Discover Life*** (formerly *Origins of Life and Evolution of Biospheres*, renamed in 2024) or **Astrobiology.** Best fit for WP5 if that becomes the centre of gravity.
 - **Journal of Molecular Evolution**, **Genome Biology and Evolution** or **BMC Ecology and Evolution.** Best fit for the WP3 and WP4 genome-evolution results.
 - **Co-authors to recruit:** someone in phylogenetic comparative methods (for WP2 and WP4) and a genome-size or gene-content evolution specialist. A co-author from the field roughly doubles the chance of a fair review.
 
