@@ -212,6 +212,36 @@ Arabidopsis and yeast lineages: rates 0.166 and 0.169, R² 0.74 and 0.69; one fa
 
 **Pre-registered verdict: gene content does not support a constant-rate clock.** Ancestral gene content does grow along every lineage, at about 0.2 log10 per Gyr (roughly a fifth of Sharov's genome-size rate), but a constant rate extrapolates to a single gene family before the Big Bang, and log-linearity misses the registered threshold. The LUCA count (2,728 families) agrees with Moody et al.'s independent estimate of about 2,600 proteins. Both known biases (coarser clustering and weaker homology detection at deep nodes) make old ancestors look smaller, so the true early content, and the implied origin, are if anything older.
 
+## 11. Genome sizes of extinct species (WP4b, pre-registered)
+
+Rows: 294 (31 extant calibrators excluded). Sources and proxy methods: `data/fossil_SOURCES.md`.
+
+| Lineage group | Fossil taxa | Age range (Ma) | Rate toward present (95% CI) | Detectable at 80% power | Consistent with H1 (0.89) |
+|---|---|---|---|---|---|
+| amphibians / early tetrapods | 10 | 366 to 167 | 4.69 (1.05 to 8.33) | 5.04 | no |
+| archosaurs / dinosaurs+birds | 40 | 221 to 3 | 0.36 (-0.15 to 0.88) | 0.73 | no |
+| lobe-finned fishes | 1 | 377 to 377 | not tested (fewer than 5 taxa or under 50 Myr) | | |
+| non-avian sauropsids | 1 | 275 to 275 | not tested (fewer than 5 taxa or under 50 Myr) | | |
+| synapsids / mammals | 1 | 282 to 282 | not tested (fewer than 5 taxa or under 50 Myr) | | |
+
+F2 pooled rate: 1.00 (95% CI 0.20 to 1.79; detectable at 80% power: 1.13). F3 signs: [1, 1]. 
+Relative proxy, vascular plants: sign -1 (n = 210). 
+
+**Pre-registered verdict, as implemented in the script written before the data were seen (relative-proxy groups outside F3): H1 supported. Under the inclusive reading of the registration (relative-proxy signs are part of the sign test F3): H1 not supported.** The registration is ambiguous on this point; both readings are reported.
+
+Exploratory diagnostics (not pre-registered):
+
+| Check | n | Rate (95% CI) |
+|---|---|---|
+| Amphibians without *Marmorerpeton* | 9 | -0.25 (-1.32 to 0.82) |
+| Pooled (F2) without *Marmorerpeton* | 49 | 0.32 (-0.14 to 0.78) |
+| Pooled, reported (not digitized) values only | 40 | 0.36 (-0.15 to 0.88) |
+| Ornithischians only | 17 | 0.18 (-0.98 to 1.35) |
+| Theropods (incl. birds) only | 12 | -0.02 (-0.92 to 0.88) |
+| Sauropodomorphs only | 10 | 0.34 (-0.50 to 1.18) |
+
+The positive pooled rate rests on one point: *Marmorerpeton* (167 Ma, 36.7 pg), a stem salamander whose value is a phylogenetic prediction anchored on the huge genomes of living salamanders. The nine Palaeozoic and Triassic tetrapods are flat (3.0 to 4.0 pg over 366 to 249 Ma). Without it, or with reported values only, no trend is detectable and Sharov's rate is at or beyond the upper confidence limit. Dinosaur subclades show no trend, and the plant guard-cell proxy declines toward the present. Fossil cell-size estimates also carry known biases (D'Emic and Benson 2013; guard-cell size tracks CO2).
+
 ## 12. Before LUCA (WP5, exploratory)
 
 - A terrestrial origin from 1 bp needs a median 34x Sharov's rate (95%: 20 to 97x), i.e. a genome doubling every 10.0 Myr (3.5 to 16.6).

@@ -32,8 +32,10 @@ def load():
     fos = df[~df.extant_calibration].copy()
     fos["age_gyr"] = pd.to_numeric(fos.age_ma, errors="coerce") / 1000
     fos["pg"] = pd.to_numeric(fos.genome_size_pg, errors="coerce")
-    rel = fos.notes.astype(str).str.extract(r"relative_proxy\s*=\s*(-?[0-9.]+)", flags=re.I)[0]
-    fos["relative_proxy"] = pd.to_numeric(rel, errors="coerce")
+    # e.g. "relative_proxy=guard_cell_length_um:57.4"; fitted on log10 (sign-only test, as pre-registered)
+    rel = fos.notes.astype(str).str.extract(r"relative_proxy\s*=\s*(?:[A-Za-z_]+\s*:)?\s*(-?[0-9.]+)", flags=re.I)[0]
+    rel = pd.to_numeric(rel, errors="coerce")
+    fos["relative_proxy"] = np.log10(rel.where(rel > 0))
     return df, fos
 
 
@@ -96,10 +98,45 @@ def main():
     out["F3_sign_consistency"] = {"qualifying_groups": qualifying, "signs": [int(s) for s in signs],
                                   "pass": bool(signs and all(s > 0 for s in signs))}
     out["verdict_H1_supported"] = bool(out["F2_pooled"].get("pass") and out["F3_sign_consistency"]["pass"])
+    # The registration also says relative-proxy groups are "tested for sign"; read inclusively, they enter F3.
+    rel_signs = [v["rate_sign"] for v in out["relative_proxy_groups"].values()]
+    out["F3_inclusive_reading"] = {"signs_absolute_then_relative": [int(x) for x in signs] + rel_signs,
+                                   "pass": bool(signs and all(x > 0 for x in list(signs) + rel_signs))}
+    out["verdict_H1_supported_inclusive_reading"] = bool(out["F2_pooled"].get("pass") and out["F3_inclusive_reading"]["pass"])
+    out["exploratory"] = exploratory(absolute, qualifying)
     with open(ROOT / "results" / "fossils.json", "w") as fh:
         json.dump(out, fh, indent=2)
     figure(absolute, out, qualifying)
     print(json.dumps(out, indent=1))
+
+
+def pooled_rate(d):
+    groups = sorted(d.lineage_group.unique())
+    X = np.column_stack([(d.lineage_group == g).astype(float) for g in groups] + [-d.age_gyr.to_numpy()])
+    y = np.log10(d.pg.to_numpy())
+    beta, *_ = np.linalg.lstsq(X, y, rcond=None)
+    resid = y - X @ beta
+    dof = len(y) - X.shape[1]
+    se = np.sqrt(resid @ resid / dof * np.linalg.inv(X.T @ X)[-1, -1])
+    q = stats.t.ppf(0.975, dof)
+    return {"n": int(len(y)), "rate": float(beta[-1]), "ci95": [float(beta[-1] - q * se), float(beta[-1] + q * se)]}
+
+
+def exploratory(absolute, qualifying):
+    """Not pre-registered: leverage and composition checks."""
+    q = absolute[absolute.lineage_group.isin(qualifying)]
+    amph = q[q.lineage_group.str.startswith("amphib")]
+    no_marm = amph[~amph.taxon.str.contains("Marmorerpeton")]
+    res = {"amphibians_without_Marmorerpeton": fit(no_marm.age_gyr.to_numpy(), np.log10(no_marm.pg.to_numpy())),
+           "pooled_without_Marmorerpeton": pooled_rate(q[~q.taxon.str.contains("Marmorerpeton")]),
+           "pooled_reported_values_only": pooled_rate(q[q.value_type == "reported"][
+               q[q.value_type == "reported"].groupby("lineage_group").lineage_group.transform("size") >= 5])}
+    arch = q[q.lineage_group.str.startswith("archo")]
+    for clade in ("Ornithischia", "Theropoda", "Sauropodomorpha"):
+        d = arch[arch.higher_clade.str.contains(clade)]
+        if len(d) >= 5:
+            res[f"archosaurs_{clade}"] = fit(d.age_gyr.to_numpy(), np.log10(d.pg.to_numpy()))
+    return res
 
 
 def figure(absolute, out, qualifying):
@@ -118,6 +155,11 @@ def figure(absolute, out, qualifying):
         xs = np.array([t0, 0])
         ax.plot(xs * 1000, y0 + SHAROV_RATE * (t0 - xs), color=MUTED, lw=1.5, ls="--",
                 label="Sharov's rate (0.89 log10/Gyr), for scale")
+    m = absolute[absolute.taxon.str.contains("Marmorerpeton")]
+    if len(m):
+        ax.annotate("Marmorerpeton, a stem salamander:\nthe only young amphibian point\n(phylogenetic prediction)",
+                    (m.age_gyr.iloc[0] * 1000, np.log10(m.pg.iloc[0])), xytext=(12, -6), textcoords="offset points",
+                    fontsize=8, color=INK2, va="top")
     ax.invert_xaxis()
     ax.set_xlabel("Age (Ma)")
     ax.set_ylabel("log10 genome size estimated from fossils (pg)")

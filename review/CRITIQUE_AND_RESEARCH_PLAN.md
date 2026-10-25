@@ -25,7 +25,8 @@
 - **Better no-trend models (exploratory):** in animals every trendless model reproduces the observed nested-minimum slope. In plants an Ornstein-Uhlenbeck model fits far better than Brownian motion (ΔAIC 178) and reproduces the plant slope too.
 - **Before LUCA (exploratory):** a terrestrial origin needs the genome to double every 10 to 15 Myr before LUCA (23 to 34 times Sharov's rate). The inferred origin is entirely determined by the prior on that early rate.
 - **Marzban et al. (2014):** their prediction bands cannot be reproduced from their printed equations; a query to the authors is drafted (`review/drafts/`, not sent).
-- **Manuscript draft:** `paper/manuscript.md`. The fossil test (WP4b) is pending the data compilation.
+- **Fossil genome sizes (pre-registered):** 53 extinct vertebrates with genome estimates and 210 fossil plants (guard cells). As scripted before the data were seen, the registered criteria pass (pooled rate 1.00, CI 0.20 to 1.79). Under the inclusive reading (plant sign counted) they fail. Diagnostics show the pass rests on one stem salamander (*Marmorerpeton*, a phylogenetic prediction); without it the pooled rate is 0.32 (CI −0.14 to 0.78). **Lesson for the registration:** it should have fixed the treatment of relative proxies and required per-group consistency. Both readings are reported.
+- **Manuscript draft:** `paper/manuscript.md`.
 
 ---
 

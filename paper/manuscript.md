@@ -26,7 +26,8 @@ origins from 5.5 to 16.4 Gya, and the prokaryotic genome has barely grown since 
 ancestor (LUCA). Third, in a pre-registered test using ancestral gene content from eggNOG 6, gene families
 increase along the human, *Arabidopsis* and yeast lineages at about 0.19 log10 units per Gyr, but a constant
 rate fails the registered linearity criterion and extrapolates to a single gene family 22.5 Gya, before the
-Big Bang. Genome size and gene content therefore cannot date the origin of life. What the data do constrain
+Big Bang. Genome sizes estimated from fossils show no common trend once a single influential point is set aside.
+Genome size and gene content therefore cannot date the origin of life. What the data do constrain
 is the tempo of early evolution: a terrestrial origin requires the pre-LUCA genome to have doubled roughly
 every 10 to 15 Myr.
 
@@ -151,7 +152,19 @@ Backcasting, cross-lineage agreement and the prokaryotic-era rate pass. The verd
 second statistic, with literature node ages, and in an exploratory subset restricted to well-sampled nodes.
 
 ### 3.7 Pre-registered test: genome sizes of extinct species
-**[Pending: WP4b. Insert results from `results/fossils.json` / `results/RESULTS.md` Section 11.]**
+Published fossil cell-size estimates gave genome sizes for 53 extinct vertebrates (40 archosaurs, 3 to 221 Ma;
+10 amphibians and early tetrapods, 167 to 366 Ma) and guard-cell lengths for 210 fossil plants. As implemented
+in the analysis script written before the data were seen, the pre-registered criteria are met: the pooled rate
+is 1.00 log10 per Gyr (95% CI 0.20 to 1.79) and both qualifying groups have positive signs. Under the inclusive
+reading of the registration, in which the plant proxy's sign also enters the sign test, they are not met,
+because plant guard cells decline toward the present. Neither group matches Sharov's rate individually
+(amphibians 4.7 per Gyr, CI 1.05 to 8.33; archosaurs 0.36, CI −0.15 to 0.88), and the pooled result rests on a
+single point: *Marmorerpeton*, a stem salamander whose 36.7 pg is a phylogenetic prediction anchored on living
+salamanders. The nine older tetrapods are flat at 3 to 4 pg. Without that point the pooled rate is 0.32 (CI
+−0.14 to 0.78), and with reported values only it is 0.36 (CI −0.15 to 0.88); dinosaur subclades show no trend.
+We therefore regard the fossil evidence as showing lineage-specific genome expansion (in salamanders), not a
+common clock, and we flag that our registration should have specified the treatment of relative proxies and
+required per-group consistency.
 
 ### 3.8 Before LUCA, and a reproduction of Marzban et al.
 A terrestrial origin requires an average rate 34 times Sharov's from a single nucleotide (95% range 20 to 97),

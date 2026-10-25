@@ -335,7 +335,30 @@ def fossil_section(d, w):
           f"{f(p['min_detectable_rate_80pct_power'])}). F3 signs: {d['F3_sign_consistency']['signs']}. ")
     for g, r in d["relative_proxy_groups"].items():
         w(f"Relative proxy, {g}: sign {r['rate_sign']} (n = {r['n']}). ")
-    w(f"\n**Pre-registered verdict: H1 {'supported' if d['verdict_H1_supported'] else 'not supported'} by the fossil data.**\n")
+    w(f"\n**Pre-registered verdict, as implemented in the script written before the data were seen (relative-proxy "
+      f"groups outside F3): {'H1 supported' if d['verdict_H1_supported'] else 'H1 not supported'}. Under the inclusive "
+      f"reading of the registration (relative-proxy signs are part of the sign test F3): "
+      f"{'H1 supported' if d['verdict_H1_supported_inclusive_reading'] else 'H1 not supported'}.** The registration is "
+      f"ambiguous on this point; both readings are reported.\n")
+    e = d["exploratory"]
+    w("Exploratory diagnostics (not pre-registered):\n")
+    w("| Check | n | Rate (95% CI) |")
+    w("|---|---|---|")
+    for key, lab in [("amphibians_without_Marmorerpeton", "Amphibians without *Marmorerpeton*"),
+                     ("pooled_without_Marmorerpeton", "Pooled (F2) without *Marmorerpeton*"),
+                     ("pooled_reported_values_only", "Pooled, reported (not digitized) values only"),
+                     ("archosaurs_Ornithischia", "Ornithischians only"),
+                     ("archosaurs_Theropoda", "Theropods (incl. birds) only"),
+                     ("archosaurs_Sauropodomorpha", "Sauropodomorphs only")]:
+        if key in e:
+            r = e[key]
+            w(f"| {lab} | {r['n']} | {f(r['rate'])} ({f(r['ci95'][0])} to {f(r['ci95'][1])}) |")
+    w("\nThe positive pooled rate rests on one point: *Marmorerpeton* (167 Ma, 36.7 pg), a stem salamander whose value "
+      "is a phylogenetic prediction anchored on the huge genomes of living salamanders. The nine Palaeozoic and "
+      "Triassic tetrapods are flat (3.0 to 4.0 pg over 366 to 249 Ma). Without it, or with reported values only, no "
+      "trend is detectable and Sharov's rate is at or beyond the upper confidence limit. Dinosaur subclades show no "
+      "trend, and the plant guard-cell proxy declines toward the present. Fossil cell-size estimates also carry "
+      "known biases (D'Emic and Benson 2013; guard-cell size tracks CO2).\n")
 
 
 def wp5_section(d, w):

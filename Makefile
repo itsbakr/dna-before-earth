@@ -1,4 +1,4 @@
-.PHONY: all reproduce reproduce-all fetch realdata prokaryotes nullmodels wp5 genecontent statistics calibration report test legacy clean
+.PHONY: all reproduce reproduce-all fetch realdata prokaryotes nullmodels wp5 genecontent fossils statistics calibration report test legacy clean
 
 # Full pipeline: data/*.csv -> results/*.json -> figures/*.png -> results/RESULTS.md
 all: reproduce
@@ -6,7 +6,7 @@ all: reproduce
 reproduce: test statistics calibration report
 
 # Adds the real-data analyses (WP3). Downloads ~500 MB of external data first.
-reproduce-all: test fetch statistics calibration realdata prokaryotes nullmodels wp5 genecontent report
+reproduce-all: test fetch statistics calibration realdata prokaryotes nullmodels wp5 genecontent fossils report
 
 fetch:
 	python3 scripts/fetch_data.py
@@ -28,6 +28,10 @@ wp5:
 genecontent:
 	python3 scripts/run_genecontent.py
 	python3 scripts/analyze_genecontent.py
+
+# Pre-registered. Uses the committed compilation data/fossil_genome_size.csv (no download needed).
+fossils:
+	python3 scripts/analyze_fossils.py
 
 test:
 	python3 -m pytest -q tests

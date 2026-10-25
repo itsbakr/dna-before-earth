@@ -23,7 +23,7 @@ We asked whether that method can be trusted, and tested it with the data availab
 | 17,198 measured genomes on the Timetree of Life | Trendless evolution reproduces the observed slopes. Different lineages imply origins from 5.5 to 16.4 billion years ago. |
 | Prokaryotes since LUCA (GTDB, 36,268 species) | Near-stasis: up to a fifth of modern species have genomes smaller than LUCA's. |
 | **Pre-registered:** gene families in ancestors (eggNOG 6) | Gene content grows about 0.19 log10 per Gyr; a constant rate extrapolates to one gene family 22.5 billion years ago, before the Big Bang. **The clock is not supported.** |
-| **Pre-registered:** genome sizes of extinct species (fossils) | [pending] |
+| **Pre-registered:** genome sizes of extinct species (fossils) | The registered criteria pass or fail depending on how plant proxies are counted; the apparent trend rests on one fossil salamander. Without it, no trend is detectable and Sharov's rate is excluded. |
 | What a terrestrial origin requires | The genome doubling every 10 to 15 million years before LUCA. |
 
 **Bottom line:** genome size and gene content cannot date the origin of life. The data are consistent with

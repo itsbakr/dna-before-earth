@@ -1,0 +1,173 @@
+{
+  "rows_total": 294,
+  "rows_extant_calibration_excluded": 31,
+  "groups": {
+    "amphibians / early tetrapods": {
+      "n_fossil_taxa": 10,
+      "age_span_myr": 198.49999999999997,
+      "age_range_ma": [
+        167.0,
+        365.5
+      ],
+      "n": 10,
+      "rate": 4.689657246837423,
+      "ci95": [
+        1.049079476101348,
+        8.330235017573498
+      ],
+      "se": 1.5787386133259256,
+      "min_detectable_rate_80pct_power": 5.043901975415531,
+      "consistent_with_H1": false
+    },
+    "archosaurs / dinosaurs+birds": {
+      "n_fossil_taxa": 40,
+      "age_span_myr": 218.35,
+      "age_range_ma": [
+        3.0,
+        221.35
+      ],
+      "n": 40,
+      "rate": 0.3611080638848548,
+      "ci95": [
+        -0.15284714274246775,
+        0.8750632705121772
+      ],
+      "se": 0.25388099599840175,
+      "min_detectable_rate_80pct_power": 0.7300543326160696,
+      "consistent_with_H1": false
+    },
+    "lobe-finned fishes": {
+      "n_fossil_taxa": 1,
+      "age_span_myr": 0.0,
+      "age_range_ma": [
+        377.23,
+        377.23
+      ]
+    },
+    "non-avian sauropsids": {
+      "n_fossil_taxa": 1,
+      "age_span_myr": 0.0,
+      "age_range_ma": [
+        275.4,
+        275.4
+      ]
+    },
+    "synapsids / mammals": {
+      "n_fossil_taxa": 1,
+      "age_span_myr": 0.0,
+      "age_range_ma": [
+        282.25,
+        282.25
+      ]
+    }
+  },
+  "relative_proxy_groups": {
+    "vascular plants": {
+      "n": 210,
+      "rate_sign": -1,
+      "rate": -2.557566817090749,
+      "ci95": [
+        -3.1821068181962024,
+        -1.933026815985295
+      ],
+      "note": "relative units; sign only (pre-registered)"
+    }
+  },
+  "F2_pooled": {
+    "n": 50,
+    "groups": [
+      "amphibians / early tetrapods",
+      "archosaurs / dinosaurs+birds"
+    ],
+    "rate": 0.997864927955052,
+    "ci95": [
+      0.20107385232486363,
+      1.7946560035852404
+    ],
+    "min_detectable_rate_80pct_power": 1.133187976994705,
+    "pass": true
+  },
+  "F3_sign_consistency": {
+    "qualifying_groups": [
+      "amphibians / early tetrapods",
+      "archosaurs / dinosaurs+birds"
+    ],
+    "signs": [
+      1,
+      1
+    ],
+    "pass": true
+  },
+  "verdict_H1_supported": true,
+  "F3_inclusive_reading": {
+    "signs_absolute_then_relative": [
+      1,
+      1,
+      -1
+    ],
+    "pass": false
+  },
+  "verdict_H1_supported_inclusive_reading": false,
+  "exploratory": {
+    "amphibians_without_Marmorerpeton": {
+      "n": 9,
+      "rate": -0.24941616106248116,
+      "ci95": [
+        -1.3226881002481659,
+        0.8238557781232034
+      ],
+      "se": 0.45388688645256886,
+      "min_detectable_rate_80pct_power": 1.4799680446124623,
+      "consistent_with_H1": false
+    },
+    "pooled_without_Marmorerpeton": {
+      "n": 49,
+      "rate": 0.3178855071422623,
+      "ci95": [
+        -0.14213401674719423,
+        0.7779050310317188
+      ]
+    },
+    "pooled_reported_values_only": {
+      "n": 40,
+      "rate": 0.3611080638848548,
+      "ci95": [
+        -0.15284714274246775,
+        0.8750632705121772
+      ]
+    },
+    "archosaurs_Ornithischia": {
+      "n": 17,
+      "rate": 0.18329056846927827,
+      "ci95": [
+        -0.9798547212846689,
+        1.3464358582232254
+      ],
+      "se": 0.545706227096487,
+      "min_detectable_rate_80pct_power": 1.6358605658174616,
+      "consistent_with_H1": false
+    },
+    "archosaurs_Theropoda": {
+      "n": 12,
+      "rate": -0.020242818624773912,
+      "ci95": [
+        -0.9246178284458206,
+        0.8841321911962727
+      ],
+      "se": 0.4058880841357089,
+      "min_detectable_rate_80pct_power": 1.2611741076959417,
+      "consistent_with_H1": false
+    },
+    "archosaurs_Sauropodomorpha": {
+      "n": 10,
+      "rate": 0.34283024958763525,
+      "ci95": [
+        -0.49887426548024777,
+        1.1845347646555182
+      ],
+      "se": 0.36500563993713797,
+      "min_detectable_rate_80pct_power": 1.1661542023338483,
+      "consistent_with_H1": false
+    }
+  }
+}
