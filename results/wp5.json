@@ -1,0 +1,95 @@
+{
+  "required_rate": {
+    "inputs": {
+      "luca_age_gya": "N(4.21, 0.06) truncated to 4.09-4.33 (Moody et al. 2024)",
+      "luca_genome_bp": "U(2.49e6, 2.99e6) (Moody et al. 2024)",
+      "habitability_onset_gya": "U(4.35, 4.50) (liquid water by about 4.4 Ga; Moon at least 4.51 Ga)"
+    },
+    "draws_used": 200000,
+    "from_1bp": {
+      "rate_median": 29.958533354791598,
+      "rate_95": [
+        18.141873955569864,
+        86.10654401451355
+      ],
+      "multiple_of_sharov_median": 33.585893297492284,
+      "multiple_of_sharov_95": [
+        20.338480381279073,
+        96.53226896118167
+      ],
+      "doubling_myr_median": 10.048222057555567,
+      "doubling_myr_95": [
+        3.4960176272435555,
+        16.593103689426847
+      ]
+    },
+    "from_100nt": {
+      "rate_median": 20.654188902485735,
+      "rate_95": [
+        12.504853665020782,
+        59.378830066196215
+      ],
+      "multiple_of_sharov_median": 23.154984805495687,
+      "multiple_of_sharov_95": [
+        14.018933300917757,
+        66.56838060512811
+      ],
+      "doubling_myr_median": 14.57476723417578,
+      "doubling_myr_95": [
+        5.0696518494621845,
+        24.073052253136336
+      ]
+    },
+    "sharov_rate": 0.8919975148324691,
+    "comparison_rates_log10_per_gyr": {
+      "sharov_average": 0.8919975148324691,
+      "markov_minima_phanerozoic_segment": 2.57,
+      "whole_genome_duplication": "+0.30 in one generation (doubling)"
+    }
+  },
+  "prior_pushforward": {
+    "m = 1 (Sharov's assumption)": {
+      "origin_median_gya": 11.372598468364195,
+      "p_origin_on_earth": 0.0,
+      "p_origin_older_than_universe": 0.0
+    },
+    "log-uniform m in [0.1, 10]": {
+      "origin_median_gya": 11.393065516421167,
+      "p_origin_on_earth": 0.0,
+      "p_origin_older_than_universe": 0.437275
+    },
+    "log-uniform m in [0.1, 100]": {
+      "origin_median_gya": 6.488708017455075,
+      "p_origin_on_earth": 0.224605,
+      "p_origin_older_than_universe": 0.292895
+    },
+    "log-uniform m in [1, 1000]": {
+      "origin_median_gya": 4.42795043144106,
+      "p_origin_on_earth": 0.558685,
+      "p_origin_older_than_universe": 0.0
+    },
+    "note": "The likelihood of every post-LUCA observation is independent of m, so each row is prior times a constant: the data cannot shift these probabilities."
+  },
+  "marzban_reproduction": {
+    "ols_slope": 0.8954989578274183,
+    "ols_origin_gya": 9.66044362578452,
+    "sigma_b2": 1.8555,
+    "ols_band_crossing": {
+      "z, SSR/(n-2)": 8.15335237857181,
+      "t(3 df), SSR/(n-2)": 7.430993356483646,
+      "z, SSR/n": 8.449872457374292,
+      "paper_fig2_reports": 7.0
+    },
+    "lambda_1p14_crossing": {
+      "eq9 as printed (last term x sigma_b^2)": 5.607401596450894,
+      "last term x sigma_w^2": 6.667741541312787,
+      "no last term": 6.882045096453693,
+      "paper_text": "band includes 4.5; figure shows the red band reaching about 4.3 to 4.4"
+    },
+    "smallest_lambda_band_reaches_4p5": {
+      "eq9 as printed": 1.31,
+      "last term x sigma_w^2": 1.42
+    },
+    "lambda_point_estimate_4p5": 2.683668393404412
+  }
+}

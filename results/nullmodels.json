@@ -1,0 +1,156 @@
+{
+  "Metazoa": {
+    "tips": 2362,
+    "root_age_myr": 936.0000000000002,
+    "bm_sigma_log10_per_sqrt_gyr": 0.5528488276682305,
+    "ou": {
+      "alpha_per_myr": 0.00012589254117941674,
+      "half_life_myr": 5505.86376338294,
+      "sigma2_per_myr": 0.00030825600228286294,
+      "loglik_ou": 1955.7044409210257,
+      "loglik_bm": 1955.4678019439643,
+      "delta_aic_bm_minus_ou": -1.52672204587725
+    },
+    "contrast_excess_kurtosis": 17.523923114655027,
+    "contrast_share_beyond_3sd": 0.014400677678949597,
+    "observed": {
+      "focal_lineages": 2360,
+      "slope_median": 1.560482928913125,
+      "slope_iqr": [
+        1.3369949885624526,
+        1.86317021197635
+      ],
+      "positive_slope_frac": 0.9991525423728813,
+      "r2_median": 0.8943127272186926,
+      "origin_median": 5.929679752239566,
+      "origin_iqr": [
+        5.095461447427198,
+        6.825500841389241
+      ],
+      "pre_earth_frac": 0.872457627118644
+    },
+    "nulls": {
+      "brownian": {
+        "slope_median_median": 1.3303738591458862,
+        "slope_median_range": [
+          0.6466777896367786,
+          2.038599639511026
+        ],
+        "r2_median_median": 0.8579278946880888,
+        "pre_earth_frac_median": 0.9802966101694914,
+        "share_runs_with_median_slope_at_least_observed": 0.2,
+        "tip_sd_median": null
+      },
+      "ou_fitted": {
+        "slope_median_median": 1.096348309340328,
+        "slope_median_range": [
+          0.6872404377106012,
+          2.095478599235298
+        ],
+        "r2_median_median": 0.8260307320948655,
+        "pre_earth_frac_median": 0.9921610169491526,
+        "share_runs_with_median_slope_at_least_observed": 0.15,
+        "tip_sd_median": null
+      },
+      "heavy_tailed": {
+        "slope_median_median": 1.6849778852160533,
+        "slope_median_range": [
+          1.0584635368029711,
+          4.181180721427464
+        ],
+        "r2_median_median": 0.8406394268692841,
+        "pre_earth_frac_median": 0.8911016949152541,
+        "share_runs_with_median_slope_at_least_observed": 0.6,
+        "tip_sd_median": null
+      },
+      "bounded": {
+        "slope_median_median": 1.2673136469327506,
+        "slope_median_range": [
+          0.49582513438429154,
+          1.8519722535614205
+        ],
+        "r2_median_median": 0.8815401569813681,
+        "pre_earth_frac_median": 0.9781779661016949,
+        "share_runs_with_median_slope_at_least_observed": 0.3,
+        "tip_sd_median": null
+      }
+    }
+  },
+  "Viridiplantae": {
+    "tips": 2708,
+    "root_age_myr": 983.0000000000003,
+    "bm_sigma_log10_per_sqrt_gyr": 1.8965636847644551,
+    "ou": {
+      "alpha_per_myr": 0.006309573444801936,
+      "half_life_myr": 109.85642478430708,
+      "sigma2_per_myr": 0.004260600592299358,
+      "loglik_ou": -450.9792616634709,
+      "loglik_bm": -541.23214490794,
+      "delta_aic_bm_minus_ou": 178.5057664889382
+    },
+    "contrast_excess_kurtosis": 8.35307790437916,
+    "contrast_share_beyond_3sd": 0.01625415589213151,
+    "observed": {
+      "focal_lineages": 2706,
+      "slope_median": 1.3077063044448347,
+      "slope_iqr": [
+        1.1217981223188227,
+        1.7800336341072311
+      ],
+      "positive_slope_frac": 0.9992609016999261,
+      "r2_median": 0.7103452168598461,
+      "origin_median": 6.5704092134949565,
+      "origin_iqr": [
+        4.978785195375786,
+        7.560587458194599
+      ],
+      "pre_earth_frac": 0.8019216555801921
+    },
+    "nulls": {
+      "brownian": {
+        "slope_median_median": 3.0854136100936493,
+        "slope_median_range": [
+          1.5295581123226567,
+          6.187457278463512
+        ],
+        "r2_median_median": 0.6818765958232917,
+        "pre_earth_frac_median": 0.021988174427198817,
+        "share_runs_with_median_slope_at_least_observed": 1.0,
+        "tip_sd_median": null
+      },
+      "ou_fitted": {
+        "slope_median_median": 1.4148303269273832,
+        "slope_median_range": [
+          0.8559540132621516,
+          2.111281206879722
+        ],
+        "r2_median_median": 0.35265271164572015,
+        "pre_earth_frac_median": 0.7958240946045825,
+        "share_runs_with_median_slope_at_least_observed": 0.6,
+        "tip_sd_median": null
+      },
+      "heavy_tailed": {
+        "slope_median_median": 5.191292530787427,
+        "slope_median_range": [
+          2.5297972390630656,
+          9.331871411000419
+        ],
+        "r2_median_median": 0.6250891006406399,
+        "pre_earth_frac_median": 0.0029563932002956393,
+        "share_runs_with_median_slope_at_least_observed": 1.0,
+        "tip_sd_median": null
+      },
+      "bounded": {
+        "slope_median_median": 2.2283868563785467,
+        "slope_median_range": [
+          0.2255138442456813,
+          3.734537710460616
+        ],
+        "r2_median_median": 0.5154125461697567,
+        "pre_earth_frac_median": 0.2882483370288248,
+        "share_runs_with_median_slope_at_least_observed": 0.65,
+        "tip_sd_median": null
+      }
+    }
+  }
+}
