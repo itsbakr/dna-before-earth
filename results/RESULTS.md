@@ -8,20 +8,21 @@ Sharov (2006) printed log10(y) = 8.64 + 0.89x, R² = 0.97, 7.8-fold per Gyr.
 
 | Dataset | n | Intercept | Rate (log10/Gyr) | R² | Fold per Gyr | Origin of 1 bp (Gya) | 95% Fieller | 99% Fieller |
 |---|---|---|---|---|---|---|---|---|
-| Sharov, mammals at 0.125 Gya (his dating) | 5 | 8.644 | 0.897 | 0.963 | 7.88 | 9.64 | 7.43 to 14.32 | 6.31 to 25.84 |
-| Sharov, mammals at 0 (old repo) | 5 | 8.596 | 0.879 | 0.967 | 7.56 | 9.78 | 7.63 to 14.12 | 6.51 to 23.67 |
+| Sharov, ages from his Fig. 1 (eukaryotes 2.05, mammals 0.10) | 5 | 8.641 | 0.892 | 0.969 | 7.80 | 9.69 | 7.62 to 13.74 | 6.53 to 22.18 |
+| Sharov, Markov et al.'s reprint (2.0, 0.125) | 5 | 8.644 | 0.897 | 0.963 | 7.88 | 9.64 | 7.43 to 14.31 | 6.31 to 25.84 |
+| Sharov, mammals at 0 (old repo) | 5 | 8.596 | 0.879 | 0.967 | 7.56 | 9.78 | 7.63 to 14.12 | 6.51 to 23.66 |
 | Markov 2010, published ages | 9 | 9.000 | 0.828 | 0.836 | 6.73 | 10.87 | 8.05 to 17.32 | 7.20 to 24.77 |
 | Markov 2010, current ages | 9 | 8.873 | 0.753 | 0.738 | 5.66 | 11.79 | 7.99 to 24.15 | 6.96 to 52.13 |
 | Extended set, corrected | 13 | 8.760 | 0.804 | 0.770 | 6.37 | 10.89 | 8.26 to 16.49 | 7.54 to 21.18 |
 
-With mammals at 0.125 Gya the intercept matches Sharov's printed 8.64; the old repo's 0.0 date caused the mismatch. The README's Markov R² of 0.914 is not reproduced (computed 0.836). Updating clade ages to current estimates lowers R² to 0.738 and moves the origin to 11.79 Gya; sampling ages uniformly within current ranges gives a 95% range of 11.41 to 12.18 Gya from age uncertainty alone.
+Sharov never prints a data table and gives mammals no date. The ages he plotted (eukaryotes 2.05, mammals 0.10) reproduce all four of his printed statistics; Markov et al.'s reprint (2.0, 0.125) matches the intercept only. Markov et al. report r = 0.914 for their exponential fit (labelled R²); the corresponding R² is 0.836. Updating clade ages to current estimates lowers R² to 0.738 and moves the origin to 11.79 Gya; sampling ages uniformly within current ranges gives a 95% range of 11.41 to 12.18 Gya from age uncertainty alone.
 
 ## 2. Within-model uncertainty is small; the straight line itself fails
 
-- **Inside the straight-line model the pre-Earth date is statistically firm.** Even the 99% Fieller interval for Sharov's data starts at 6.31 Gya.
-- **York errors-in-variables fit, using the repo's assumed error bars:** Sharov χ² = 2.7 on 3 df (p = 0.44, line acceptable); Markov χ² = 47.4 on 7 df (p = 4.7e-08). **A constant-rate line is rejected for Markov's nine points.**
-- **Deming regression** (any ratio of age error to size error) keeps Sharov's origin between 9.33 and 9.64 Gya.
-- **Measurement-error route to an Earth origin:** an attenuation-corrected slope puts the point estimate at 4.5 Gya only if every clade age carries an error SD of about 0.96 Gyr (reliability factor 2.67), including the 125 Ma mammal date. That factor is close to the λ ≈ 2.7 that Marzban et al. (2014) report; whether it is the same quantity needs checking against their full text.
+- **Inside the straight-line model the pre-Earth date is statistically firm.** Even the 99% Fieller interval for Sharov's data starts at 6.53 Gya.
+- **York errors-in-variables fit, using the repo's assumed error bars:** Sharov χ² = 2.2 on 3 df (p = 0.52, line acceptable); Markov χ² = 47.4 on 7 df (p = 4.7e-08). **A constant-rate line is rejected for Markov's nine points.**
+- **Deming regression** (any ratio of age error to size error) keeps Sharov's origin between 9.43 and 9.69 Gya.
+- **Measurement-error route to an Earth origin** (Marzban et al. 2014). Their λ = 1 + σ_w²/σ_b² is the attenuation factor on the slope. A corrected point estimate of 4.5 Gya needs λ = 2.69 (they report "about 2.7"). In a consistent structural model that means an age-error SD of 0.97 to 1.08 Gyr on every clade age, including the mammal point. With σ_b² fixed at the observed 1.86 Gyr², as in their eq. 6, it means 1.77 Gyr, larger than the SD of the dates themselves (1.37). Their own error estimate (σ_w ≈ 0.5 Gyr) gives λ = 1.13, a corrected point estimate near 8.5 Gya; their interval reaching 4.5 Gya rests on a variance term we could not reproduce (see the review, Section 4.1).
 
 ## 3. Curve shape: the best-fitting curve has no origin date
 
@@ -50,7 +51,7 @@ Origin = first point age + (its log10 size) / (m × fitted rate). The data fix t
 |---|---|---|---|
 | Sharov prokaryote, 0.5 Mb at 3.5 Gya | 7.1 | 6.4 | 48 |
 | Markov bacterium, 1.3 Mb at 4.0 Gya | 18.5 | 14.8 | 20 |
-| LUCA, 2.5 Mb at 4.2 Gya (Moody et al. 2024) | 35.7 | 23.8 | 9 |
+| LUCA, 2.5 Mb at 4.2 Gya (Moody et al. 2024) | 35.9 | 23.9 | 9 |
 
 Within the observed record, segment rates already differ from the average by factors of 0.52 to 3.11.
 

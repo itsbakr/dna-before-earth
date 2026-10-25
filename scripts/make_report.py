@@ -29,7 +29,8 @@ def main():
     w(f"Sharov (2006) printed log10(y) = {p['a']} + {p['b']}x, R² = {p['r2']}, {p['fold_per_gyr']}-fold per Gyr.\n")
     w("| Dataset | n | Intercept | Rate (log10/Gyr) | R² | Fold per Gyr | Origin of 1 bp (Gya) | 95% Fieller | 99% Fieller |")
     w("|---|---|---|---|---|---|---|---|---|")
-    for key, lab in [("sharov_mammals_0125", "Sharov, mammals at 0.125 Gya (his dating)"),
+    for key, lab in [("sharov_figure_ages", "Sharov, ages from his Fig. 1 (eukaryotes 2.05, mammals 0.10)"),
+                     ("sharov_markov_reprint_ages", "Sharov, Markov et al.'s reprint (2.0, 0.125)"),
                      ("sharov_mammals_0_legacy_repo", "Sharov, mammals at 0 (old repo)"),
                      ("markov_published_ages", "Markov 2010, published ages"),
                      ("markov_current_ages", "Markov 2010, current ages"),
@@ -38,11 +39,12 @@ def main():
         w(f"| {lab} | {r['n']} | {f(r['a'],3)} | {f(r['b'],3)} | {f(r['r2'],3)} | {f(r['fold_per_gyr'])} | "
           f"{f(r['origin_1bp'])} | {f(r['fieller95'][0])} to {f(r['fieller95'][1])} | "
           f"{f(r['fieller99'][0])} to {f(r['fieller99'][1])} |")
-    rc_ = rep["readme_claims"]
-    w(f"\nWith mammals at 0.125 Gya the intercept matches Sharov's printed {p['a']}; the old repo's "
-      f"0.0 date caused the mismatch. The README's Markov R² of {rc_['markov_r2']} is not reproduced "
-      f"(computed {f(rep['markov_published_ages']['r2'],3)}). Updating clade ages to current estimates lowers "
-      f"R² to {f(rep['markov_current_ages']['r2'],3)} and moves the origin to "
+    mr_ = rep["markov_published_r"]
+    w(f"\nSharov never prints a data table and gives mammals no date. The ages he plotted (eukaryotes 2.05, "
+      f"mammals 0.10) reproduce all four of his printed statistics; Markov et al.'s reprint (2.0, 0.125) matches "
+      f"the intercept only. Markov et al. report r = {mr_['exponential']} for their exponential fit (labelled "
+      f"R²); the corresponding R² is {f(rep['markov_published_ages']['r2'],3)}. Updating clade ages to current "
+      f"estimates lowers R² to {f(rep['markov_current_ages']['r2'],3)} and moves the origin to "
       f"{f(rep['markov_current_ages']['origin_1bp'])} Gya; sampling ages uniformly within current ranges gives "
       f"a 95% range of {f(s['current_age_sampling']['p2_5'])} to {f(s['current_age_sampling']['p97_5'])} Gya "
       f"from age uncertainty alone.\n")
@@ -50,7 +52,7 @@ def main():
     w("## 2. Within-model uncertainty is small; the straight line itself fails\n")
     ys, ym = eiv["york_sharov"], eiv["york_markov"]
     w(f"- **Inside the straight-line model the pre-Earth date is statistically firm.** Even the 99% Fieller "
-      f"interval for Sharov's data starts at {f(rep['sharov_mammals_0125']['fieller99'][0])} Gya.")
+      f"interval for Sharov's data starts at {f(rep['sharov_figure_ages']['fieller99'][0])} Gya.")
     w(f"- **York errors-in-variables fit, using the repo's assumed error bars:** Sharov χ² = {f(ys['chi2'],1)} "
       f"on {ys['dof']} df (p = {f(ys['p_line_fits'],2)}, line acceptable); Markov χ² = {f(ym['chi2'],1)} on "
       f"{ym['dof']} df (p = {ym['p_line_fits']:.1e}). **A constant-rate line is rejected for Markov's nine points.**")
@@ -58,11 +60,15 @@ def main():
     w(f"- **Deming regression** (any ratio of age error to size error) keeps Sharov's origin between "
       f"{f(min(d['origin_1bp'] for d in dem))} and {f(max(d['origin_1bp'] for d in dem))} Gya.")
     at = eiv["attenuation_route_sharov"]
-    w(f"- **Measurement-error route to an Earth origin:** an attenuation-corrected slope puts the point "
-      f"estimate at 4.5 Gya only if every clade age carries an error SD of about "
-      f"{f(at['age_error_sd_for_origin_4p5'])} Gyr (reliability factor {f(at['reliability_factor_at_that_sd'])}), "
-      f"including the 125 Ma mammal date. That factor is close to the λ ≈ 2.7 that Marzban et al. (2014) "
-      f"report; whether it is the same quantity needs checking against their full text.\n")
+    w(f"- **Measurement-error route to an Earth origin** (Marzban et al. 2014). Their λ = 1 + σ_w²/σ_b² is the "
+      f"attenuation factor on the slope. A corrected point estimate of 4.5 Gya needs λ = "
+      f"{f(at['reliability_factor_at_that_sd'])} (they report \"about 2.7\"). In a consistent structural model that "
+      f"means an age-error SD of {f(at['age_error_sd_consistent_n'])} to {f(at['age_error_sd_consistent_n1'])} Gyr on "
+      f"every clade age, including the mammal point. With σ_b² fixed at the observed 1.86 Gyr², as in their eq. 6, "
+      f"it means {f(at['age_error_sd_marzban_eq6'])} Gyr, larger than the SD of the dates themselves "
+      f"({f(at['sd_of_observed_dates'])}). Their own error estimate (σ_w ≈ 0.5 Gyr) gives λ = "
+      f"{f(at['marzban_lambda_at_sigma_w_0p5'])}, a corrected point estimate near 8.5 Gya; their interval reaching "
+      f"4.5 Gya rests on a variance term we could not reproduce (see the review, Section 4.1).\n")
 
     w("## 3. Curve shape: the best-fitting curve has no origin date\n")
     w("| Model (Markov, published ages) | k | RSS | AICc | Origin of 1 bp | Parameter at bound |")

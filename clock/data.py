@@ -26,9 +26,16 @@ class Series:
                       self.t[mask], self.y[mask], self.t_sd[mask], self.y_sd[mask])
 
 
-def load_sharov():
+def load_sharov(dates="figure"):
+    """Sharov 2006 functional genome sizes.
+
+    ``dates="figure"`` uses the ages Sharov plotted (eukaryotes 2.05, mammals 0.10), which reproduce
+    his printed regression. ``dates="markov_reprint"`` uses Markov et al. 2010's reprint
+    (eukaryotes 2.0, mammals 0.125).
+    """
     df = pd.read_csv(DATA_DIR / "sharov_2006.csv")
-    return Series("Sharov 2006", list(df.group), df.time_bya.to_numpy(float),
+    col = {"figure": "time_bya", "markov_reprint": "time_bya_markov_reprint"}[dates]
+    return Series(f"Sharov 2006 ({dates} ages)", list(df.group), df[col].to_numpy(float),
                   np.log10(df.genome_bp.to_numpy(float)),
                   df.time_sd_assumed.to_numpy(float), df.log10_sd_assumed.to_numpy(float))
 

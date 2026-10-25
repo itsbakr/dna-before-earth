@@ -11,11 +11,12 @@ def test_ols_recovers_exact_line():
     assert R.origin(f["a"], f["b"]) == pytest.approx(10)
 
 
-def test_sharov_replication_matches_printed_intercept():
-    s = data.load_sharov()
-    f = R.ols(s.t, s.y)
-    assert f["a"] == pytest.approx(8.64, abs=0.01)     # Sharov: log10 y = 8.64 + 0.89 x
-    assert f["b"] == pytest.approx(0.89, abs=0.01)
+def test_sharov_replication_matches_all_printed_statistics():
+    # Sharov 2006, Fig. 1 legend: log10(y) = 8.64 + 0.89 x, R^2 = 0.97; text: 7.8-fold per Gyr
+    f = R.ols(*(lambda s: (s.t, s.y))(data.load_sharov()))
+    assert (round(f["a"], 2), round(f["b"], 2), round(f["r2"], 2), round(10 ** f["b"], 1)) == (8.64, 0.89, 0.97, 7.8)
+    g = R.ols(*(lambda s: (s.t, s.y))(data.load_sharov("markov_reprint")))
+    assert round(g["b"], 2) != 0.89      # Markov's reprinted dates match the intercept only
 
 
 def test_fieller_interval_brackets_estimate():

@@ -1,6 +1,6 @@
-group,time_bya,genome_bp,species,time_sd_assumed,log10_sd_assumed,provenance,notes
-Prokaryotes,3.5,500000,Nanoarchaeum equitans / Mycoplasma genitalium,0.3,0.3,Sharov 2006 table (as reprinted in Markov et al. 2010),"Both parasitic/symbiotic; Sharov chose them 'to get the most conservative estimate'"
-Eukaryotes,2.0,2900000,Encephalitozoon cuniculi,0.25,0.3,Sharov 2006 table (as reprinted in Markov et al. 2010),"Intracellular parasite (microsporidian), reduced genome"
-Worms,1.0,72800000,Caenorhabditis elegans,0.15,0.15,Sharov 2006 table (as reprinted in Markov et al. 2010),"About 75% of ~97 Mb treated as functional"
-Fish,0.5,133300000,Takifugu rubripes,0.05,0.15,Sharov 2006 table (as reprinted in Markov et al. 2010),"~400 Mb genome; gene loci about one third"
-Mammals,0.125,480000000,Homo sapiens (functional fraction),0.02,0.1,Sharov 2006 table (as reprinted in Markov et al. 2010),"15% of 3.2 Gb; dated at 125 Ma (earliest placental fossil), not at the present"
+group,time_bya,time_bya_markov_reprint,genome_bp,species,time_sd_assumed,log10_sd_assumed,provenance,notes
+Prokaryotes,3.5,3.5,500000,Nanoarchaeum equitans / Mycoplasma genitalium,0.3,0.3,Sharov 2006 Results para 2,"Both parasitic or symbiotic; Sharov chose them 'to get the most conservative estimate'"
+Eukaryotes,2.05,2.0,2900000,Encephalitozoon cuniculi,0.25,0.3,Sharov 2006 Results para 2; date read from Fig. 1,"Sharov: mitochondria-bearing eukaryotes appeared 'between 2.3 and 1.8 billion years ago'; plotted at about 2.1; 2.05 is the midpoint (also used by Marzban et al. 2014)"
+Worms,1.0,1.0,72750000,Caenorhabditis elegans,0.15,0.15,Sharov 2006 Results para 2,"9.7e7 bp x 75% functional"
+Fish,0.5,0.5,133333333,Takifugu rubripes,0.05,0.15,Sharov 2006 Results para 2,"4e8 bp; gene loci one third"
+Mammals,0.10,0.125,480000000,"mouse, rat and human (functional fraction)",0.02,0.1,Sharov 2006 Results para 2; date read from Fig. 1,"3.2e9 bp x 15% (between 20% and 12% transposon-free); Sharov gives no date ('appeared just recently'), plots them at about 0.1; 0.125 is Markov et al.'s reprint"

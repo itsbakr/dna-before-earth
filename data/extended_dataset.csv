@@ -1,16 +1,16 @@
 group,time_bya,genome_mb,species,source,include,previous_value,issue
-All living beings,4.0,1.308759,Pelagibacter ubique HTCC1062,Giovannoni et al. 2005,TRUE,1.3,
-Cyanobacteria,2.7,1.658,Prochlorococcus marinus MED4,Rocap et al. 2003,TRUE,1.44,"Smallest Prochlorococcus genome is 1.66 Mb, not 1.44; 2.7 Ga cyanobacteria date is itself debated"
-Eukaryotes,2.0,9.2,Ashbya gossypii,Markov et al. 2010,TRUE,,"Plant pathogen, not free-living"
-Red algae,1.6,16.52,Cyanidioschyzon merolae,Matsuzaki et al. 2004,TRUE,13.7,"Unicellular (was labelled multicellular); genome 16.5 Mb, not 13.7; 1.6 Ga date taken from multicellular fossils and needs re-checking"
-Metazoa,1.25,19.6,Pratylenchus coffeae,Markov et al. 2010,TRUE,,"Plant-parasitic nematode"
-Fungi,1.0,9.2,Ashbya gossypii,Markov et al. 2010,FALSE,,"Duplicate: same genome already used for Eukaryotes at 2.0 Ga"
-Chordates,0.575,68.6,Oikopleura dioica,Markov et al. 2010,TRUE,,
-Vertebrates,0.54,342,Tetraodon fluviatilis,Markov et al. 2010,TRUE,,
-Land plants,0.47,61,Genlisea tuberosa,Fleischmann et al. 2014,FALSE,82,"Genlisea is a flowering plant (about 61 Mb; 82 Mb is Utricularia gibba), so it cannot stand for the earliest land plants at 470 Ma"
-Insects,0.4,99,Belgica antarctica,Kelley et al. 2014,TRUE,,
-Tetrapods,0.375,931,Limnodynastes ornatus,Markov et al. 2010 (unverified row),TRUE,,
-Amniotes,0.315,951,Phasianus colchicus,Markov et al. 2010 (unverified row),TRUE,,
-Mammals,0.22,1695,Miniopterus schreibersi,Markov et al. 2010 (unverified row),TRUE,,
-Primates,0.065,2215,Callicebus torquatus,Markov et al. 2010 (unverified row),TRUE,,
-Flowering plants,0.14,61,Genlisea tuberosa,Fleischmann et al. 2014,TRUE,63,"Smallest known angiosperm genome; replaces the unsourced '63 Mb functional' Utricularia value"
+All living beings,4.0,1.308759,Pelagibacter ubique HTCC1062,Giovannoni et al. 2005,True,1.3,
+Cyanobacteria,2.7,1.658,Prochlorococcus marinus MED4,Rocap et al. 2003,True,1.44,"Smallest Prochlorococcus genome is 1.66 Mb, not 1.44; 2.7 Ga cyanobacteria date is itself debated"
+Eukaryotes,2.0,9.2,Ashbya gossypii,Markov et al. 2010,True,,Plant pathogen (extracellular); Markov et al. call it free-living because they exclude only intracellular parasites
+Red algae,1.6,16.52,Cyanidioschyzon merolae,Matsuzaki et al. 2004,True,13.7,"Unicellular (was labelled multicellular); genome 16.5 Mb, not 13.7; 1.6 Ga date taken from multicellular fossils and needs re-checking"
+Metazoa,1.25,19.6,Pratylenchus coffeae,Markov et al. 2010,True,,Plant-parasitic nematode (extracellular); allowed by Markov et al.'s criterion
+Fungi,1.0,9.2,Ashbya gossypii,Markov et al. 2010,False,,Duplicate: same genome already used for Eukaryotes at 2.0 Ga
+Chordates,0.575,68.6,Oikopleura dioica,Markov et al. 2010,True,,
+Vertebrates,0.54,342.0,Tetraodon fluviatilis,Markov et al. 2010,True,,
+Land plants,0.47,61.0,Genlisea tuberosa,Fleischmann et al. 2014,False,82.0,"Genlisea is a flowering plant (about 61 Mb; 82 Mb is Utricularia gibba), so it cannot stand for the earliest land plants at 470 Ma"
+Insects,0.4,99.0,Belgica antarctica,Kelley et al. 2014,True,,
+Tetrapods,0.375,931.0,Limnodynastes ornatus,Markov et al. 2010,True,,
+Amniotes,0.315,951.0,Phasianus colchicus,Markov et al. 2010,True,,
+Mammals,0.22,1695.0,Miniopterus schreibersi,Markov et al. 2010,True,,
+Primates,0.065,2215.0,Callicebus torquatus,Markov et al. 2010,True,,
+Flowering plants,0.14,61.0,Genlisea tuberosa,Fleischmann et al. 2014,True,63.0,Smallest known angiosperm genome; replaces the unsourced '63 Mb functional' Utricularia value

@@ -55,23 +55,28 @@ def main():
                                        data.load_markov("current"), data.load_extended())
 
     # --- 1. Replication -------------------------------------------------------------
-    legacy = sharov.subset(np.ones(5, bool))
+    reprint = data.load_sharov("markov_reprint")
+    legacy = reprint.subset(np.ones(5, bool))
     legacy.t = legacy.t.copy()
     legacy.t[-1] = 0.0
     out["replication"] = {
         "sharov_printed": {"a": 8.64, "b": 0.89, "r2": 0.97, "fold_per_gyr": 7.8},
-        "sharov_mammals_0125": line_summary(sharov),
+        "sharov_figure_ages": line_summary(sharov),
+        "sharov_markov_reprint_ages": line_summary(reprint),
         "sharov_mammals_0_legacy_repo": line_summary(legacy),
         "markov_published_ages": line_summary(markov),
         "markov_current_ages": line_summary(markov_now),
         "extended_corrected": line_summary(ext),
-        "readme_claims": {"markov_r2": 0.914, "hyperexponential_r2": 0.979, "extended_r2": 0.713},
+        "markov_published_r": {"exponential": 0.914, "biexponential": 0.979,
+                               "note": "Markov et al. 2010 report Pearson r (labelled R2); r^2 = R^2"},
     }
 
     # --- 2. Errors in variables ----------------------------------------------------------
     deming_grid = [0, 0.1, 0.5, 1, 2, 5, 1e6]
     dem = [R.deming(sharov.t, sharov.y, r) for r in deming_grid]
     req_sd = brentq(lambda u: mom_origin(sharov.t, sharov.y, u)[0] - 4.5, 0.01, 1.2)
+    lam = mom_origin(sharov.t, sharov.y, req_sd)[2]
+    var_n, var_n1 = np.var(sharov.t), np.var(sharov.t, ddof=1)
     out["errors_in_variables"] = {
         "york_sharov": york_summary(sharov),
         "york_markov": york_summary(markov),
@@ -79,7 +84,12 @@ def main():
                           for r, d in zip(deming_grid, dem)],
         "attenuation_route_sharov": {
             "age_error_sd_for_origin_4p5": req_sd,
-            "reliability_factor_at_that_sd": mom_origin(sharov.t, sharov.y, req_sd)[2],
+            "reliability_factor_at_that_sd": lam,
+            "age_error_sd_consistent_n": float(np.sqrt(var_n * (1 - 1 / lam))),
+            "age_error_sd_consistent_n1": float(np.sqrt(var_n1 * (1 - 1 / lam))),
+            "age_error_sd_marzban_eq6": float(np.sqrt((lam - 1) * 1.86)),
+            "sd_of_observed_dates": float(np.sqrt(var_n1)),
+            "marzban_lambda_at_sigma_w_0p5": float(1 + 0.5 ** 2 / 1.86),
             "grid": [{"age_error_sd": u, "origin_1bp": mom_origin(sharov.t, sharov.y, u)[0]}
                      for u in (0, 0.3, 0.5, 0.7, 0.9, 1.0)],
         },
@@ -110,7 +120,7 @@ def main():
     }
 
     # --- 5. The unobserved early interval ------------------------------------------------
-    sh, mk = out["replication"]["sharov_mammals_0125"], out["replication"]["markov_published_ages"]
+    sh, mk = out["replication"]["sharov_figure_ages"], out["replication"]["markov_published_ages"]
     anchors = {
         "sharov_first_point": (sharov.t[0], sharov.y[0], sh["b"]),
         "markov_first_point": (markov.t[0], markov.y[0], mk["b"]),
@@ -174,7 +184,7 @@ def _jsonable(o):
 def figure_early_rate(sharov, markov, out):
     fig, ax = new_figure(6.8, 4.4)
     m = np.logspace(-1, 2, 400)
-    for s, key, color, label in [(sharov, "sharov_mammals_0125", COLORS[0], "Sharov 2006 (5 pts)"),
+    for s, key, color, label in [(sharov, "sharov_figure_ages", COLORS[0], "Sharov 2006 (5 pts)"),
                                  (markov, "markov_published_ages", COLORS[1], "Markov et al. 2010 (9 pts)")]:
         b = out["replication"][key]["b"]
         ax.plot(m, E.origin_given_multiplier(s.t[0], s.y[0], b, m), color=color, lw=2, label=label)
