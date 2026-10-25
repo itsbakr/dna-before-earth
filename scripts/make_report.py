@@ -162,8 +162,12 @@ def main():
         realdata_section(json.load(open(real_path)), w)
     if prok_path.exists():
         prokaryote_section(json.load(open(prok_path)), w)
+    for name, fn in [("nullmodels.json", nullmodel_section), ("genecontent.json", genecontent_section),
+                     ("fossils.json", fossil_section), ("wp5.json", wp5_section)]:
+        if (ROOT / "results" / name).exists():
+            fn(json.load(open(ROOT / "results" / name)), w)
 
-    w("## 9. What this means for the next stages\n")
+    w("## 14. What this means for the next stages\n")
     w("1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure "
       "a uniform clock. Their slope reflects trait spread and diversification, and on the real animal tree a "
       "no-trend model reproduces the observed slopes.")
@@ -251,6 +255,113 @@ def prokaryote_section(p, w):
       f"(every 0.34 Gyr). Across 4.2 Gyr of prokaryotic evolution the typical genome has changed little, as "
       f"Koonin argued in 2006. This does not exclude growth followed by reduction, but it leaves no room for a "
       f"steady clock in the prokaryotic era.\n")
+
+
+def nullmodel_section(d, w):
+    w("## 9. Better no-trend models on the real tree (exploratory)\n")
+    w("Brownian motion (BM) and Ornstein-Uhlenbeck (OU) were fitted by REML; contrasts were checked for heavy tails. "
+      "Each trendless model was then simulated on the same tree and Markov's nested-minimum statistic recomputed "
+      "for every focal species.\n")
+    w("| Clade | Tips | OU half-life (Myr) | ΔAIC (OU better if > 0) | Contrast excess kurtosis | Observed rate (R²) | "
+      "BM | OU (fitted) | Heavy-tailed | Bounded |")
+    w("|---|---|---|---|---|---|---|---|---|---|")
+    for clade, v in d.items():
+        o = v["observed"]
+        cells = []
+        for key in ("brownian", "ou_fitted", "heavy_tailed", "bounded"):
+            n = v["nulls"][key]
+            cells.append(f"{f(n['slope_median_median'])} ({f(n['slope_median_range'][0])} to "
+                         f"{f(n['slope_median_range'][1])}), R² {f(n['r2_median_median'])}")
+        w(f"| {clade} | {v['tips']:,} | {f(v['ou']['half_life_myr'],0)} | {f(v['ou']['delta_aic_bm_minus_ou'],1)} | "
+          f"{f(v['contrast_excess_kurtosis'],1)} | {f(o['slope_median'])} ({f(o['r2_median'])}) | " + " | ".join(cells) + " |")
+    w("\nNull cells give the median rate over runs (range of run medians) and median R². In animals BM is adequate "
+      "and every trendless model reproduces the observed rate. In plants OU fits far better than BM, and the "
+      "fitted OU reproduces the observed rate: the earlier BM overshoot was a model misfit, not a clock.\n")
+
+
+def genecontent_section(d, w):
+    t = d["tests"]
+    w("## 10. Gene content through time (WP4a, pre-registered)\n")
+    w("Pre-registration: `prereg/WP4_preregistration.md` (committed before the data were examined). "
+      "S_a counts eggNOG 6 orthologous groups spanning each node's basal split; node ages from the 2015 Timetree.\n")
+    w("| Human-lineage node | Age (Gya) | Ingroup / outgroup species | Ancestral families (S_a) | Human genes with homologs across the split (S_b) |")
+    w("|---|---|---|---|---|")
+    for r in d["counts_and_ages"]["human"]:
+        w(f"| {r['node']} | {f(r['age_gyr_timetree'],3)} | {r['n_ingroup_species']} / {r['n_outgroup_species']} | "
+          f"{r['S_a']:,} | {r['S_b']:,} |")
+    w("\n| Series | Human rate (95% CI) | R² | P1 | P2 | P4 | P5: one family at (Gya) | P6 | Verdict: H1 supported |")
+    w("|---|---|---|---|---|---|---|---|---|")
+    yes = lambda b: "pass" if b else ("n/a" if b is None else "**fail**")
+    for key, lab in [("S_a", "S_a (primary)"), ("S_b", "S_b"), ("S_a_literature_ages", "S_a, literature ages"),
+                     ("S_a_outgroup_ge3_exploratory", "S_a, nodes with >= 3 outgroup species (exploratory)")]:
+        h, v = t[key]["human"], t[key]
+        w(f"| {lab} | {f(h['P1']['rate'],3)} ({f(h['P1']['rate_ci95'][0],3)} to {f(h['P1']['rate_ci95'][1],3)}) | "
+          f"{f(h['P1']['r2'])} | {yes(h['P1']['pass'])} | {yes(h['P2']['pass'])} | {yes(v['P4']['pass'])} | "
+          f"{f(h['P5_age_at_one_family_gya'],1)} ({yes(h['P5']['pass'])}) | {yes(h['P6']['pass'])} | "
+          f"{'yes' if v['verdict_H1_supported'] else '**no**'} |")
+    w("\nDeviations from the pre-registration:\n")
+    for dev in d["deviations"]:
+        w(f"- {dev}")
+    w("")
+    a = t["S_a"]
+    w(f"Arabidopsis and yeast lineages: rates {f(a['arabidopsis']['P1']['rate'],3)} and {f(a['yeast']['P1']['rate'],3)}, "
+      f"R² {f(a['arabidopsis']['P1']['r2'])} and {f(a['yeast']['P1']['r2'])}; one family at "
+      f"{f(a['arabidopsis']['P5_age_at_one_family_gya'],1)} and {f(a['yeast']['P5_age_at_one_family_gya'],1)} Gya.\n")
+    w("**Pre-registered verdict: gene content does not support a constant-rate clock.** Ancestral gene content does "
+      "grow along every lineage, at about 0.2 log10 per Gyr (roughly a fifth of Sharov's genome-size rate), but a "
+      "constant rate extrapolates to a single gene family before the Big Bang, and log-linearity misses the "
+      "registered threshold. The LUCA count (2,728 families) agrees with Moody et al.'s independent estimate of "
+      "about 2,600 proteins. Both known biases (coarser clustering and weaker homology detection at deep nodes) "
+      "make old ancestors look smaller, so the true early content, and the implied origin, are if anything older.\n")
+
+
+def fossil_section(d, w):
+    w("## 11. Genome sizes of extinct species (WP4b, pre-registered)\n")
+    w(f"Rows: {d['rows_total']} ({d['rows_extant_calibration_excluded']} extant calibrators excluded). "
+      "Sources and proxy methods: `data/fossil_SOURCES.md`.\n")
+    w("| Lineage group | Fossil taxa | Age range (Ma) | Rate toward present (95% CI) | Detectable at 80% power | Consistent with H1 (0.89) |")
+    w("|---|---|---|---|---|---|")
+    for g, r in d["groups"].items():
+        if "rate" in r:
+            w(f"| {g} | {r['n_fossil_taxa']} | {f(r['age_range_ma'][1],0)} to {f(r['age_range_ma'][0],0)} | "
+              f"{f(r['rate'])} ({f(r['ci95'][0])} to {f(r['ci95'][1])}) | {f(r['min_detectable_rate_80pct_power'])} | "
+              f"{'yes' if r['consistent_with_H1'] else 'no'} |")
+        else:
+            w(f"| {g} | {r['n_fossil_taxa']} | {f(r['age_range_ma'][1],0)} to {f(r['age_range_ma'][0],0)} | "
+              f"not tested (fewer than 5 taxa or under 50 Myr) | | |")
+    p = d["F2_pooled"]
+    if p.get("rate") is not None:
+        w(f"\nF2 pooled rate: {f(p['rate'])} (95% CI {f(p['ci95'][0])} to {f(p['ci95'][1])}; detectable at 80% power: "
+          f"{f(p['min_detectable_rate_80pct_power'])}). F3 signs: {d['F3_sign_consistency']['signs']}. ")
+    for g, r in d["relative_proxy_groups"].items():
+        w(f"Relative proxy, {g}: sign {r['rate_sign']} (n = {r['n']}). ")
+    w(f"\n**Pre-registered verdict: H1 {'supported' if d['verdict_H1_supported'] else 'not supported'} by the fossil data.**\n")
+
+
+def wp5_section(d, w):
+    r = d["required_rate"]
+    w("## 12. Before LUCA (WP5, exploratory)\n")
+    for key, lab in [("from_1bp", "from 1 bp"), ("from_100nt", "from a 100-nucleotide replicator")]:
+        x = r[key]
+        w(f"- A terrestrial origin {lab} needs a median {f(x['multiple_of_sharov_median'],0)}x Sharov's rate "
+          f"(95%: {f(x['multiple_of_sharov_95'][0],0)} to {f(x['multiple_of_sharov_95'][1],0)}x), i.e. a genome doubling "
+          f"every {f(x['doubling_myr_median'],1)} Myr ({f(x['doubling_myr_95'][0],1)} to {f(x['doubling_myr_95'][1],1)}).")
+    w("\nInputs: " + "; ".join(f"{k}: {v}" for k, v in r["inputs"].items()) + ".\n")
+    w("| Prior on early rate ÷ fitted rate | Median origin (Gya) | P(origin on Earth) | P(older than universe) |")
+    w("|---|---|---|---|")
+    for k, v in d["prior_pushforward"].items():
+        if isinstance(v, dict):
+            w(f"| {k} | {f(v['origin_median_gya'],1)} | {v['p_origin_on_earth']:.2f} | {v['p_origin_older_than_universe']:.2f} |")
+    w(f"\n{d['prior_pushforward']['note']}\n")
+    m = d["marzban_reproduction"]
+    w("## 13. Reproducing Marzban et al. (2014)\n")
+    w(f"Sharov's points as in their Fig. 2: OLS origin {f(m['ols_origin_gya'])} Gya. Lower edge of the OLS 95% prediction "
+      f"band reaches 1 bp at {f(m['ols_band_crossing']['z, SSR/(n-2)'])} Gya (z) or "
+      f"{f(m['ols_band_crossing']['t(3 df), SSR/(n-2)'])} Gya (t, 3 df); the paper shows about 7.0. At λ = 1.14 their eq. 9 "
+      f"as printed gives {f(m['lambda_1p14_crossing']['eq9 as printed (last term x sigma_b^2)'])} Gya (paper: includes 4.5). "
+      f"The band first reaches 4.5 Gya at λ = {m['smallest_lambda_band_reaches_4p5']['eq9 as printed']} as printed. "
+      f"The corrected point estimate reaches 4.5 at λ = {f(m['lambda_point_estimate_4p5'])} (paper: about 2.7). "
+      "A query to the authors is drafted in `review/drafts/`.\n")
 
 
 if __name__ == "__main__":

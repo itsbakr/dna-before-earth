@@ -160,7 +160,79 @@ GTDB v232: species representatives; CheckM2 completeness >= 95%, contamination <
 
 LUCA's genome sits inside the modern range. Growth from LUCA to the median modern isolate implies 0.056 log10/Gyr, a doubling about every 5.4 Gyr, against Sharov's 0.89 (every 0.34 Gyr). Across 4.2 Gyr of prokaryotic evolution the typical genome has changed little, as Koonin argued in 2006. This does not exclude growth followed by reduction, but it leaves no room for a steady clock in the prokaryotic era.
 
-## 9. What this means for the next stages
+## 9. Better no-trend models on the real tree (exploratory)
+
+Brownian motion (BM) and Ornstein-Uhlenbeck (OU) were fitted by REML; contrasts were checked for heavy tails. Each trendless model was then simulated on the same tree and Markov's nested-minimum statistic recomputed for every focal species.
+
+| Clade | Tips | OU half-life (Myr) | ΔAIC (OU better if > 0) | Contrast excess kurtosis | Observed rate (R²) | BM | OU (fitted) | Heavy-tailed | Bounded |
+|---|---|---|---|---|---|---|---|---|---|
+| Metazoa | 2,362 | 5506 | -1.5 | 17.5 | 1.56 (0.89) | 1.33 (0.65 to 2.04), R² 0.86 | 1.10 (0.69 to 2.10), R² 0.83 | 1.68 (1.06 to 4.18), R² 0.84 | 1.27 (0.50 to 1.85), R² 0.88 |
+| Viridiplantae | 2,708 | 110 | 178.5 | 8.4 | 1.31 (0.71) | 3.09 (1.53 to 6.19), R² 0.68 | 1.41 (0.86 to 2.11), R² 0.35 | 5.19 (2.53 to 9.33), R² 0.63 | 2.23 (0.23 to 3.73), R² 0.52 |
+
+Null cells give the median rate over runs (range of run medians) and median R². In animals BM is adequate and every trendless model reproduces the observed rate. In plants OU fits far better than BM, and the fitted OU reproduces the observed rate: the earlier BM overshoot was a model misfit, not a clock.
+
+## 10. Gene content through time (WP4a, pre-registered)
+
+Pre-registration: `prereg/WP4_preregistration.md` (committed before the data were examined). S_a counts eggNOG 6 orthologous groups spanning each node's basal split; node ages from the 2015 Timetree.
+
+| Human-lineage node | Age (Gya) | Ingroup / outgroup species | Ancestral families (S_a) | Human genes with homologs across the split (S_b) |
+|---|---|---|---|---|
+| LUCA | 4.247 | 1746 / 10655 | 2,728 | 4,802 |
+| LECA | 1.725 | 1111 / 169 | 8,514 | 15,683 |
+| Opisthokonta | 1.303 | 463 / 637 | 12,936 | 10,801 |
+| Metazoa | 0.936 | 459 / 1 | 6,921 | 10,383 |
+| Bilateria | 0.847 | 271 / 183 | 19,588 | 14,779 |
+| Chordata | 0.733 | 268 / 1 | 8,510 | 11,527 |
+| Vertebrata | 0.631 | 264 / 2 | 9,833 | 13,346 |
+| Sarcopterygii | 0.412 | 185 / 1 | 12,746 | 14,692 |
+| Mammalia | 0.179 | 112 / 1 | 12,982 | 13,982 |
+| Euarchontoglires | 0.091 | 29 / 28 | 20,543 | 18,834 |
+| Primates | 0.076 | 23 / 4 | 18,745 | 18,376 |
+| Haplorrhini | 0.068 | 22 / 1 | 15,051 | 15,007 |
+| Simiiformes | 0.043 | 18 / 4 | 18,377 | 17,584 |
+| Catarrhini | 0.029 | 6 / 12 | 19,966 | 18,678 |
+| Hominoidea | 0.020 | 5 / 1 | 17,422 | 16,314 |
+| Hominidae | 0.016 | 4 / 1 | 16,427 | 16,033 |
+
+| Series | Human rate (95% CI) | R² | P1 | P2 | P4 | P5: one family at (Gya) | P6 | Verdict: H1 supported |
+|---|---|---|---|---|---|---|---|---|
+| S_a (primary) | 0.188 (0.129 to 0.247) | 0.77 | **fail** | pass | pass | 22.5 (**fail**) | pass | **no** |
+| S_b | 0.121 (0.086 to 0.156) | 0.79 | **fail** | **fail** | pass | 34.9 (**fail**) | pass | **no** |
+| S_a, literature ages | 0.187 (0.125 to 0.249) | 0.75 | **fail** | pass | pass | 22.6 (**fail**) | pass | **no** |
+| S_a, nodes with >= 3 outgroup species (exploratory) | 0.205 (0.161 to 0.249) | 0.96 | pass | **fail** | pass | 21.1 (**fail**) | pass | **no** |
+
+Deviations from the pre-registration:
+
+- Sarcopterygii outgroup: NCBI has no 'Dipnoi'/'Actinistia'; used Dipnomorpha (7878) and Coelacanthimorpha (118072).
+- Euarchontoglires ingroup: NCBI has no 'Euarchonta'; used Euarchontoglires minus Glires.
+- Yeast focal species: S. cerevisiae S288C (559292) or 4932, whichever eggNOG uses.
+- Dropped (no outgroup or ingroup species in eggNOG): yeast: Saccharomycetales
+
+Arabidopsis and yeast lineages: rates 0.166 and 0.169, R² 0.74 and 0.69; one family at 24.8 and 24.8 Gya.
+
+**Pre-registered verdict: gene content does not support a constant-rate clock.** Ancestral gene content does grow along every lineage, at about 0.2 log10 per Gyr (roughly a fifth of Sharov's genome-size rate), but a constant rate extrapolates to a single gene family before the Big Bang, and log-linearity misses the registered threshold. The LUCA count (2,728 families) agrees with Moody et al.'s independent estimate of about 2,600 proteins. Both known biases (coarser clustering and weaker homology detection at deep nodes) make old ancestors look smaller, so the true early content, and the implied origin, are if anything older.
+
+## 12. Before LUCA (WP5, exploratory)
+
+- A terrestrial origin from 1 bp needs a median 34x Sharov's rate (95%: 20 to 97x), i.e. a genome doubling every 10.0 Myr (3.5 to 16.6).
+- A terrestrial origin from a 100-nucleotide replicator needs a median 23x Sharov's rate (95%: 14 to 67x), i.e. a genome doubling every 14.6 Myr (5.1 to 24.1).
+
+Inputs: luca_age_gya: N(4.21, 0.06) truncated to 4.09-4.33 (Moody et al. 2024); luca_genome_bp: U(2.49e6, 2.99e6) (Moody et al. 2024); habitability_onset_gya: U(4.35, 4.50) (liquid water by about 4.4 Ga; Moon at least 4.51 Ga).
+
+| Prior on early rate ÷ fitted rate | Median origin (Gya) | P(origin on Earth) | P(older than universe) |
+|---|---|---|---|
+| m = 1 (Sharov's assumption) | 11.4 | 0.00 | 0.00 |
+| log-uniform m in [0.1, 10] | 11.4 | 0.00 | 0.44 |
+| log-uniform m in [0.1, 100] | 6.5 | 0.22 | 0.29 |
+| log-uniform m in [1, 1000] | 4.4 | 0.56 | 0.00 |
+
+The likelihood of every post-LUCA observation is independent of m, so each row is prior times a constant: the data cannot shift these probabilities.
+
+## 13. Reproducing Marzban et al. (2014)
+
+Sharov's points as in their Fig. 2: OLS origin 9.66 Gya. Lower edge of the OLS 95% prediction band reaches 1 bp at 8.15 Gya (z) or 7.43 Gya (t, 3 df); the paper shows about 7.0. At λ = 1.14 their eq. 9 as printed gives 5.61 Gya (paper: includes 4.5). The band first reaches 4.5 Gya at λ = 1.31 as printed. The corrected point estimate reaches 4.5 at λ = 2.68 (paper: about 2.7). A query to the authors is drafted in `review/drafts/`.
+
+## 14. What this means for the next stages
 
 1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure a uniform clock. Their slope reflects trait spread and diversification, and on the real animal tree a no-trend model reproduces the observed slopes.
 2. The same argument means extant-only reconstructions on a time-calibrated tree cannot identify a uniform trend either, since every tip has evolved for the same time. WP4 needs fossil genome-size proxies or gene-family histories, which carry information about the past directly.

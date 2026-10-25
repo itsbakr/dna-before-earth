@@ -18,6 +18,15 @@
 - **Every species as its own focal lineage** (5,212 species on the 2015 Timetree of Life). 99.9% show a positive "clock" with median R² 0.90. In animals, a no-trend model at the animals' own measured rate gives rates of 0.65 to 2.38 log10/Gyr (median 1.25) against the observed 1.56. The lineages also disagree on the origin date: mammals 5.5 Gya, vertebrates 5.9, plants 7.8, arthropods 8.3, fungi 16.4 Gya. A universal clock would give one date.
 - **Prokaryotes show stasis** (GTDB R232; 36,268 high-quality isolate species). The median genome is 4.3 Mb, and 13 to 21% of species have genomes smaller than LUCA's estimated 2.5 to 3.0 Mb (65 to 76% of all archaeal species). LUCA to the median modern isolate implies 0.056 log10/Gyr, about 16 times slower than Sharov's rate.
 
+### 0.2 Pre-registered and exploratory tests (added 25 October 2026)
+
+- **Pre-registration** (`prereg/WP4_preregistration.md`) committed at 11:06 UTC, before the eggNOG and fossil data were examined.
+- **Gene content (pre-registered, eggNOG 6):** LUCA carried about 2,728 gene families (Moody et al. independently estimate about 2,600). Ancestral gene content grows along the human, *Arabidopsis* and yeast lineages at about 0.19 log10 per Gyr. **Verdict: the clock is not supported.** Log-linearity misses the registered threshold (R² 0.77), and a constant rate extrapolates to one gene family at 22.5 Gya, before the Big Bang.
+- **Better no-trend models (exploratory):** in animals every trendless model reproduces the observed nested-minimum slope. In plants an Ornstein-Uhlenbeck model fits far better than Brownian motion (ΔAIC 178) and reproduces the plant slope too.
+- **Before LUCA (exploratory):** a terrestrial origin needs the genome to double every 10 to 15 Myr before LUCA (23 to 34 times Sharov's rate). The inferred origin is entirely determined by the prior on that early rate.
+- **Marzban et al. (2014):** their prediction bands cannot be reproduced from their printed equations; a query to the authors is drafted (`review/drafts/`, not sent).
+- **Manuscript draft:** `paper/manuscript.md`. The fossil test (WP4b) is pending the data compilation.
+
 ---
 
 ## 1. The hypothesis as the repo states it
