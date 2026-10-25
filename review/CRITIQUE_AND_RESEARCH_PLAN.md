@@ -12,6 +12,12 @@
 3. **The method cannot see a clock, and reports one when there is none.** Every data point is a living species, so a uniform clock shifts all of them by the same amount and leaves the fitted slope unchanged. Coupled simulations confirm this exactly: the slope is 0.516 with or without a +0.8 log10/Gyr clock. With no clock at all, the method still reports a positive rate with R² around 0.9. For simulation settings that reproduce Markov's observed slope, it infers a pre-Earth origin in 88 to 100% of runs, although life began on Earth in every run. See `results/RESULTS.md`, Section 6.
 4. **There is still a strong paper here, just not the one the README announces.** The strongest version is a *calibrated, pre-registered test* of the genome-complexity clock using modern data. That means 10^4 to 10^5 genome sizes, TimeTree ages, ancestral reconstructions, gene-family histories and fossil cell-size proxies. It gives the pre-Earth hypothesis a fair chance to pass, and it is publishable whichever way the result comes out. Sections 5 to 8 lay it out.
 
+### 0.1 Results on real data (added 25 October 2026; full tables in `results/RESULTS.md`)
+
+- **Markov's table rebuilt from 17,198 measured genomes** (GoaT) with TimeTree crown ages. The minima match Markov's values closely. The implied clock depends on which statistic is tracked: the clade minimum gives 1.63 log10/Gyr, the 1st percentile 1.00, and the median only 0.19 (R² 0.53). Typical genomes barely change between nested clades; the trend is in the extremes.
+- **Every species as its own focal lineage** (5,212 species on the 2015 Timetree of Life). 99.9% show a positive "clock" with median R² 0.90. In animals, a no-trend model at the animals' own measured rate gives rates of 0.65 to 2.38 log10/Gyr (median 1.25) against the observed 1.56. The lineages also disagree on the origin date: mammals 5.5 Gya, vertebrates 5.9, plants 7.8, arthropods 8.3, fungi 16.4 Gya. A universal clock would give one date.
+- **Prokaryotes show stasis** (GTDB R232; 36,268 high-quality isolate species). The median genome is 4.3 Mb, and 13 to 21% of species have genomes smaller than LUCA's estimated 2.5 to 3.0 Mb (65 to 76% of all archaeal species). LUCA to the median modern isolate implies 0.056 log10/Gyr, about 16 times slower than Sharov's rate.
+
 ---
 
 ## 1. The hypothesis as the repo states it
@@ -313,7 +319,7 @@ Keep the philosophy, the AI-augmentation narrative and the critics-scorecard out
 2. ~~Fix the dataset errors (Section 2 #5) and make the CSVs the single source of truth.~~ **Done** (`data/`, `clock/data.py`).
 3. Get the exact Sharov, Markov and Marzban numbers. *Partly done: Sharov's dating fixed and his intercept reproduced; Markov's last four rows and Marzban's exact method still need the full texts.*
 4. ~~Turn `review/pilot/` into a tested module~~ **Done** (`clock/`, `tests/`, `make reproduce`). Drafting the OSF pre-registration from Section 5 is still open.
-5. Pull the GoaT, TimeTree and eggNOG exports (Section 4.3) and build the taxid-joined master table. *Blocked by the network policy; hosts listed in `data/external/README.md`.*
+5. ~~Pull the GoaT, TimeTree and eggNOG exports and build the taxid-joined master table.~~ **Done for GoaT, TimeTree, NCBI taxonomy and GTDB** (`make fetch`, `scripts/run_realdata.py`, `scripts/run_prokaryotes.py`). eggNOG / OrthoDB gene-content histories (WP4) are next.
 
 ---
 
