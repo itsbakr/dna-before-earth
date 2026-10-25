@@ -52,3 +52,13 @@ def test_biexponential_recovers_synthetic_parameters():
     f = curves.fit_curve("biexponential", t, y)
     np.testing.assert_allclose(f["params"], [6.0, 3.5, 0.8], atol=1e-4)
     assert f["origin_1bp"] is None      # floors at 10^6 bp: never reaches 1 bp
+
+
+def test_quick_fit_matches_ols():
+    from clock import phylo
+    s = data.load_sharov()
+    f = R.ols(s.t, s.y)
+    b, o, r2 = phylo.quick_fit(s.t, s.y)
+    assert b == pytest.approx(f["b"]) and r2 == pytest.approx(f["r2"])
+    assert o == pytest.approx(R.origin(f["a"], f["b"]))
+    assert np.isnan(phylo.quick_fit([3, 2, 1], [5, 5, 5])[2])

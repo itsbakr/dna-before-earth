@@ -151,18 +151,100 @@ def main():
     w(f"With a reflecting floor at 10^5.5 bp (random focal): fitted rate {f(fl['random']['nested_slope_median'])}, "
       f"median R² {f(fl['random']['r2_median'])}, inferred origin {f(fl['random']['inferred_origin_median'],1)} Gya.\n")
 
-    w("## 7. What this means for the next stages\n")
+    real_path, prok_path = ROOT / "results" / "realdata.json", ROOT / "results" / "prokaryotes.json"
+    if real_path.exists():
+        realdata_section(json.load(open(real_path)), w)
+    if prok_path.exists():
+        prokaryote_section(json.load(open(prok_path)), w)
+
+    w("## 9. What this means for the next stages\n")
     w("1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure "
-      "a uniform clock. Their slope reflects trait spread and diversification.")
+      "a uniform clock. Their slope reflects trait spread and diversification, and on the real animal tree a "
+      "no-trend model reproduces the observed slopes.")
     w("2. The same argument means extant-only reconstructions on a time-calibrated tree cannot identify a "
       "uniform trend either, since every tip has evolved for the same time. WP4 needs fossil genome-size proxies "
       "or gene-family histories, which carry information about the past directly.")
     w("3. Focal lineages must be chosen without regard to their genome size, or the selection must be modelled.")
-    w("4. WP3 must estimate σ and diversification rates from real trees to place the observed slope against "
-      "the no-clock expectation.\n")
+    w("4. Brownian motion fits plants poorly (whole-genome duplications inflate the rate). Bounded and "
+      "jump models (Ornstein-Uhlenbeck, Lévy) are the next null models to fit.\n")
 
     (ROOT / "results" / "RESULTS.md").write_text("\n".join(L))
     print("wrote results/RESULTS.md")
+
+
+def realdata_section(r, w):
+    inp = r["inputs"]
+    w("## 7. Real data (WP3)\n")
+    w(f"Inputs: {inp['goat_species']:,} eukaryote species with directly measured genome sizes (GoaT), "
+      f"{inp['tree_tips']:,}-tip Timetree of Life (2015), NCBI taxonomy. Raw files are not redistributed "
+      f"(see `data/external/README.md`); rebuild them with `make fetch`. Sources: GoaT (Challis et al. 2023), "
+      f"TimeTree (Hedges et al. 2015; Kumar et al. 2022), NCBI Taxonomy, GTDB (Parks et al.).\n")
+    w("### 7.1 Markov et al.'s table rebuilt from current data\n")
+    w("| Group | Species with size | Minimum (Mb) | Smallest species | 1st percentile (Mb) | Median (Mb) | "
+      "TimeTree crown age (Gya) | Markov MGS (Mb) | Markov age (Gya) |")
+    w("|---|---|---|---|---|---|---|---|---|")
+    for row in r["markov_recomputed"]["table"]:
+        w(f"| {row['group']} | {row['n_species_with_size']:,} | {f(row['min_mb'])} | *{row['min_species']}* | "
+          f"{f(row['p01_mb'],1)} | {f(row['median_mb'],0)} | {f(row['crown_age_gya_timetree'],3)} | "
+          f"{f(row['markov_mgs_mb'],1)} | {f(row['markov_age_gya'],3)} |")
+    fits = r["markov_recomputed"]["fits"]
+    w("\n| Statistic tracked per clade | Rate (log10/Gyr) | R² | Implied origin of 1 bp (Gya) |")
+    w("|---|---|---|---|")
+    for key, lab in [("min_mb", "Minimum (Markov's statistic)"), ("p01_mb", "1st percentile"),
+                     ("median_mb", "Median (typical genome)")]:
+        w(f"| {lab} | {f(fits[key]['b'])} | {f(fits[key]['r2'])} | {f(fits[key]['origin_1bp'],1)} |")
+    w("\nThe measured minima match Markov's values closely; the true eukaryote minimum is a parasitic "
+      "microsporidian. The implied clock depends entirely on which statistic is tracked. Typical genomes "
+      "barely change between nested clades: the trend lives in the extremes.\n")
+
+    w("### 7.2 Every species as focal lineage, against a no-trend null on the same tree\n")
+    w("For each species, the minimum genome size below each of its ancestral nodes is regressed on node age, "
+      "as in Markov's construction. The null simulates Brownian motion with no trend on the same pruned "
+      f"tree, at the rate estimated by independent contrasts ({r['calibration']['Metazoa']['null_bm']['runs']} runs).\n")
+    w("| Tree | Tips | σ (log10/√Gyr) | Observed rate, median (IQR) | Observed R² | Null rate, median of runs (range) | "
+      "Null R² | Share pre-Earth: observed / null |")
+    w("|---|---|---|---|---|---|---|---|")
+    for name in ("Eukaryota", "Metazoa", "Viridiplantae"):
+        c = r["calibration"][name]
+        o, n = c["observed"], c["null_bm"]
+        med = sorted(n["slope_median"])[len(n["slope_median"]) // 2]
+        w(f"| {name} | {c['tips']:,} | {f(c['sigma_log10_per_sqrt_gyr'])} | {f(o['slope_median'])} "
+          f"({f(o['slope_iqr'][0])} to {f(o['slope_iqr'][1])}) | {f(o['r2_median'])} | {f(med)} "
+          f"({f(min(n['slope_median']))} to {f(max(n['slope_median']))}) | "
+          f"{f(sorted(n['r2_median'])[len(n['r2_median']) // 2])} | "
+          f"{o['pre_earth_frac']*100:.0f}% / {sorted(n['pre_earth_frac'])[len(n['pre_earth_frac']) // 2]*100:.0f}% |")
+    w("\nIn animals the observed rates fall inside the no-trend range. In plants the Brownian null overshoots, "
+      "because whole-genome duplications inflate the rate estimate; the observed plant rates are lower than "
+      "a trendless random walk would give, which is the opposite of what a clock would add.\n")
+    w("**Different lineages imply different origins.** Median implied origin by focal clade:\n")
+    w("| Focal clade | Focal species | Median rate | Median implied origin (Gya) | IQR |")
+    w("|---|---|---|---|---|")
+    for row in r["calibration"]["origin_by_focal_clade"]:
+        w(f"| {row['clade']} | {row['focal_lineages']:,} | {f(row['slope_median'])} | {f(row['origin_median'],1)} | "
+          f"{f(row['origin_iqr'][0],1)} to {f(row['origin_iqr'][1],1)} |")
+    meds = [row["origin_median"] for row in r["calibration"]["origin_by_focal_clade"]]
+    w(f"\nA universal clock would give one date. These span {f(max(meds) - min(meds), 1)} Gyr "
+      f"({f(min(meds), 1)} to {f(max(meds), 1)} Gya); estimates above 13.8 are older than the universe.\n")
+
+
+def prokaryote_section(p, w):
+    w("## 8. Prokaryotes: has the genome grown since LUCA? (WP3)\n")
+    w(f"GTDB {p['gtdb_version']}: {p['filters']}. LUCA estimate: "
+      f"{p['luca_mb_interval'][0]} to {p['luca_mb_interval'][1]} Mb about 4.2 Gya (Moody et al. 2024).\n")
+    w("| Set | Species | 5% | Median | 95% | Max | Share smaller than LUCA (2.49 / 2.99 Mb) |")
+    w("|---|---|---|---|---|---|---|")
+    rows = [("Bacteria, all", p["bacteria"]["all"]), ("Bacteria, isolates", p["bacteria"]["isolates"]),
+            ("Archaea, all", p["archaea"]["all"]), ("Archaea, isolates", p["archaea"]["isolates"]),
+            ("All prokaryote isolates", p["all_prokaryotes_isolates"])]
+    for lab, d in rows:
+        w(f"| {lab} | {d['n']:,} | {f(d['q05_mb'])} | {f(d['q50_mb'])} | {f(d['q95_mb'])} | {f(d['max_mb'])} | "
+          f"{d['frac_below_luca_low']*100:.0f}% / {d['frac_below_luca_high']*100:.0f}% |")
+    rate = p["implied_rate_luca_to_present_log10_per_gyr"]
+    w(f"\nLUCA's genome sits inside the modern range. Growth from LUCA to the median modern isolate implies "
+      f"{f(rate,3)} log10/Gyr, a doubling about every {f(0.30103 / rate, 1)} Gyr, against Sharov's 0.89 "
+      f"(every 0.34 Gyr). Across 4.2 Gyr of prokaryotic evolution the typical genome has changed little, as "
+      f"Koonin argued in 2006. This does not exclude growth followed by reduction, but it leaves no room for a "
+      f"steady clock in the prokaryotic era.\n")
 
 
 if __name__ == "__main__":

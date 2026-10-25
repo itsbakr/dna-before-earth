@@ -1,10 +1,14 @@
 # External datasets for WP3 and WP4 (not yet downloaded)
 
-These sources are needed for the large-scale tests in the research plan
-(`review/CRITIQUE_AND_RESEARCH_PLAN.md`, Sections 4.3 and 6). They could not be fetched from the
-analysis environment because its network policy blocks the hosts below. To enable them, add the hosts
-under **Allowed domains** in the environment's Network access settings
-(https://code.claude.com/docs/en/cloud-environments#network-access).
+These sources feed the real-data analyses (WP3). Download them with `make fetch`
+(`scripts/fetch_data.py`), which writes `manifest.json` with each file's URL, retrieval date and SHA-256.
+Raw files are git-ignored and must not be redistributed: TimeTree's terms forbid redistribution of its
+data and transformations, and the other sources have their own licences. Only derived summary
+statistics (`results/realdata.json`, `results/prokaryotes.json`) are committed.
+
+Status (2026-10-25): GoaT, TimeTree (2015 Timetree of Life; TimeTree 6 tetrapods), NCBI taxonomy and
+GTDB R232 are downloaded and used. eggNOG, OrthoDB, Open Tree and the fossil cell-size tables are
+reachable but not yet used (WP4).
 
 | Dataset | What we need from it | Host(s) to allow |
 |---|---|---|
@@ -20,4 +24,3 @@ under **Allowed domains** in the environment's Network access settings
 | Zenodo / Dryad / journal supplements | LUCA proteome (Moody et al. 2024), consensus LUCA (Crapitto et al. 2022), fossil cell-size tables | `zenodo.org`, `datadryad.org`, `static-content.springer.com` |
 | Full texts for citation checks | Sharov 2006, Marzban 2014, Markov 2010, Sharov & Gordon 2013/2018 | `pmc.ncbi.nlm.nih.gov`, `biologydirect.biomedcentral.com`, `arxiv.org`, `link.springer.com` |
 
-Downloads will go in this folder with a manifest recording URL, date, release and checksum.

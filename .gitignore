@@ -9,3 +9,6 @@ dist/
 build/
 .venv/
 venv/
+
+# Raw external downloads (licences vary; TimeTree forbids redistribution). Rebuild with scripts/fetch_data.py
+data/external/*/

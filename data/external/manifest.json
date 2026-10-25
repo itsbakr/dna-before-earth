@@ -1,0 +1,58 @@
+{
+  "goat/eukaryote_genome_size_direct.tsv": {
+    "file": "goat/eukaryote_genome_size_direct.tsv",
+    "url": "https://goat.genomehubs.org/api/v2/search?query=tax_tree%282759%29%20AND%20tax_rank%28species%29%20AND%20genome_size&result=taxon&fields=genome_size%2Cc_value&taxonomy=ncbi&size=50000&includeEstimates=false&excludeAncestral%5B0%5D=genome_size&excludeDescendant%5B0%5D=genome_size&tidyData=false",
+    "retrieved": "2026-10-25",
+    "bytes": 1083794,
+    "sha256": "62e2884cbd3b1c1a04c3e0ebe3eb821963b0e4a02c6df1c26425e2b96d0c8b5c"
+  },
+  "timetree/TimetreeOfLife2015.nwk": {
+    "file": "timetree/TimetreeOfLife2015.nwk",
+    "url": "https://timetree.org/public/data/TimetreeOfLife2015.nwk",
+    "retrieved": "2026-10-25",
+    "bytes": 1885646,
+    "sha256": "f0adac64250e816506d6a55a683b8345941a72d8edba1d9ed4fe432ea81709c9"
+  },
+  "timetree/TT6_Tetrapods.nwk": {
+    "file": "timetree/TT6_Tetrapods.nwk",
+    "url": "https://timetree.org/downloads/biodiversity/TT6_Tetrapods.nwk",
+    "retrieved": "2026-10-25",
+    "bytes": 970018,
+    "sha256": "91e0ac26eed51f738af365f40f18b05d5433115d250999a0f449dc45f74b4743"
+  },
+  "timetree/TT6_Tetrapods_tip_metrics.csv": {
+    "file": "timetree/TT6_Tetrapods_tip_metrics.csv",
+    "url": "https://timetree.org/downloads/biodiversity/TT6_Tetrapods_tip_metrics.csv",
+    "retrieved": "2026-10-25",
+    "bytes": 1623463,
+    "sha256": "34a839f320f29b09d0fc0734bc2a5bf4dad22344773526b5c84bcf659f172dad"
+  },
+  "ncbi/new_taxdump.tar.gz": {
+    "file": "ncbi/new_taxdump.tar.gz",
+    "url": "https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz",
+    "retrieved": "2026-10-25",
+    "bytes": 162526743,
+    "sha256": "cf08e9c5ca8988a8a54765332047839ec6f977500cc833d0f66a3e38cf924bde"
+  },
+  "gtdb/VERSION.txt": {
+    "file": "gtdb/VERSION.txt",
+    "url": "https://data.gtdb.ecogenomic.org/releases/latest/VERSION.txt",
+    "retrieved": "2026-10-25",
+    "bytes": 29,
+    "sha256": "7aaa7dca8b101daaab5635cad0895051ff427223292b04913f8791ad8c53d591"
+  },
+  "gtdb/bac120_metadata.tsv.gz": {
+    "file": "gtdb/bac120_metadata.tsv.gz",
+    "url": "https://data.gtdb.ecogenomic.org/releases/latest/bac120_metadata.tsv.gz",
+    "retrieved": "2026-10-25",
+    "bytes": 289043801,
+    "sha256": "1650d3164666e5839c20ee15d82511909a5bbd5269035a7b564b9048dd777893"
+  },
+  "gtdb/ar53_metadata.tsv.gz": {
+    "file": "gtdb/ar53_metadata.tsv.gz",
+    "url": "https://data.gtdb.ecogenomic.org/releases/latest/ar53_metadata.tsv.gz",
+    "retrieved": "2026-10-25",
+    "bytes": 7015869,
+    "sha256": "d6ddc0f95d269a6e31af8329e0c3c2af0d90d5dad48f5b3e9d820f340951d8c3"
+  }
+}

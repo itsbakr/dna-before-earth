@@ -95,9 +95,73 @@ Settings whose no-clock slope is within 0.1 of the observed 0.83 infer a pre-Ear
 
 With a reflecting floor at 10^5.5 bp (random focal): fitted rate 0.28, median R² 0.72, inferred origin 22.5 Gya.
 
-## 7. What this means for the next stages
+## 7. Real data (WP3)
 
-1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure a uniform clock. Their slope reflects trait spread and diversification.
+Inputs: 17,198 eukaryote species with directly measured genome sizes (GoaT), 50,645-tip Timetree of Life (2015), NCBI taxonomy. Raw files are not redistributed (see `data/external/README.md`); rebuild them with `make fetch`. Sources: GoaT (Challis et al. 2023), TimeTree (Hedges et al. 2015; Kumar et al. 2022), NCBI Taxonomy, GTDB (Parks et al.).
+
+### 7.1 Markov et al.'s table rebuilt from current data
+
+| Group | Species with size | Minimum (Mb) | Smallest species | 1st percentile (Mb) | Median (Mb) | TimeTree crown age (Gya) | Markov MGS (Mb) | Markov age (Gya) |
+|---|---|---|---|---|---|---|---|---|
+| Eukaryotes | 16,960 | 2.19 | *Encephalitozoon romaleae* | 29.0 | 1257 | 2.041 | 9.2 | 2.000 |
+| Metazoa | 5,152 | 19.56 | *Hemicycliophora conida* | 97.8 | 1301 | 0.936 | 19.6 | 1.250 |
+| Chordates | 3,267 | 58.68 | *Phallusia mammillata* | 479.2 | 1447 | 0.733 | 68.6 | 0.575 |
+| Vertebrates | 3,261 | 332.52 | *Sphoeroides spengleri* | 494.9 | 1457 | 0.631 | 342.0 | 0.540 |
+| Tetrapods | 1,864 | 938.88 | *Chrysuronia oenone* | 1030.0 | 2152 | 0.356 | 931.0 | 0.375 |
+| Amniotes | 1,457 | 938.88 | *Chrysuronia oenone* | 1017.1 | 1623 | 0.321 | 951.0 | 0.315 |
+| Mammals | 460 | 1594.14 | *Lophostoma carrikeri* | 1883.5 | 2954 | 0.179 | 1695.0 | 0.220 |
+| Primates | 66 | 2210.28 | *Cheracebus torquatus* | 2235.7 | 3440 | 0.076 | 2215.0 | 0.065 |
+
+| Statistic tracked per clade | Rate (log10/Gyr) | R² | Implied origin of 1 bp (Gya) |
+|---|---|---|---|
+| Minimum (Markov's statistic) | 1.63 | 0.92 | 5.8 |
+| 1st percentile | 1.00 | 0.92 | 9.4 |
+| Median (typical genome) | 0.19 | 0.53 | 48.6 |
+
+The measured minima match Markov's values closely; the true eukaryote minimum is a parasitic microsporidian. The implied clock depends entirely on which statistic is tracked. Typical genomes barely change between nested clades: the trend lives in the extremes.
+
+### 7.2 Every species as focal lineage, against a no-trend null on the same tree
+
+For each species, the minimum genome size below each of its ancestral nodes is regressed on node age, as in Markov's construction. The null simulates Brownian motion with no trend on the same pruned tree, at the rate estimated by independent contrasts (20 runs).
+
+| Tree | Tips | σ (log10/√Gyr) | Observed rate, median (IQR) | Observed R² | Null rate, median of runs (range) | Null R² | Share pre-Earth: observed / null |
+|---|---|---|---|---|---|---|---|
+| Eukaryota | 5,212 | 1.42 | 1.26 (1.05 to 1.63) | 0.90 | 2.20 (1.48 to 3.19) | 0.79 | 94% / 18% |
+| Metazoa | 2,362 | 0.55 | 1.56 (1.34 to 1.86) | 0.89 | 1.25 (0.65 to 2.38) | 0.86 | 87% / 98% |
+| Viridiplantae | 2,708 | 1.90 | 1.31 (1.12 to 1.78) | 0.71 | 3.63 (1.69 to 6.06) | 0.69 | 80% / 2% |
+
+In animals the observed rates fall inside the no-trend range. In plants the Brownian null overshoots, because whole-genome duplications inflate the rate estimate; the observed plant rates are lower than a trendless random walk would give, which is the opposite of what a clock would add.
+
+**Different lineages imply different origins.** Median implied origin by focal clade:
+
+| Focal clade | Focal species | Median rate | Median implied origin (Gya) | IQR |
+|---|---|---|---|---|
+| Viridiplantae | 2,708 | 1.09 | 7.8 | 6.8 to 8.4 |
+| Fungi | 97 | 0.45 | 16.4 | 15.6 to 17.9 |
+| Metazoa | 2,362 | 1.54 | 6.0 | 5.5 to 6.5 |
+| Arthropoda | 275 | 1.03 | 8.3 | 6.5 to 8.8 |
+| Vertebrata | 1,995 | 1.58 | 5.9 | 5.5 to 6.4 |
+| Mammalia | 399 | 1.73 | 5.5 | 5.4 to 5.7 |
+
+A universal clock would give one date. These span 11.0 Gyr (5.5 to 16.4 Gya); estimates above 13.8 are older than the universe.
+
+## 8. Prokaryotes: has the genome grown since LUCA? (WP3)
+
+GTDB v232: species representatives; CheckM2 completeness >= 95%, contamination <= 5%; size / completeness. LUCA estimate: 2.49 to 2.99 Mb about 4.2 Gya (Moody et al. 2024).
+
+| Set | Species | 5% | Median | 95% | Max | Share smaller than LUCA (2.49 / 2.99 Mb) |
+|---|---|---|---|---|---|---|
+| Bacteria, all | 88,346 | 1.01 | 3.61 | 7.92 | 16.23 | 25% / 36% |
+| Bacteria, isolates | 35,359 | 1.89 | 4.35 | 9.05 | 14.24 | 13% / 20% |
+| Archaea, all | 2,613 | 0.97 | 2.03 | 4.27 | 6.53 | 65% / 76% |
+| Archaea, isolates | 909 | 1.54 | 3.12 | 4.67 | 5.99 | 34% / 47% |
+| All prokaryote isolates | 36,268 | 1.86 | 4.31 | 9.02 | 14.24 | 13% / 21% |
+
+LUCA's genome sits inside the modern range. Growth from LUCA to the median modern isolate implies 0.056 log10/Gyr, a doubling about every 5.4 Gyr, against Sharov's 0.89 (every 0.34 Gyr). Across 4.2 Gyr of prokaryotic evolution the typical genome has changed little, as Koonin argued in 2006. This does not exclude growth followed by reduction, but it leaves no room for a steady clock in the prokaryotic era.
+
+## 9. What this means for the next stages
+
+1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure a uniform clock. Their slope reflects trait spread and diversification, and on the real animal tree a no-trend model reproduces the observed slopes.
 2. The same argument means extant-only reconstructions on a time-calibrated tree cannot identify a uniform trend either, since every tip has evolved for the same time. WP4 needs fossil genome-size proxies or gene-family histories, which carry information about the past directly.
 3. Focal lineages must be chosen without regard to their genome size, or the selection must be modelled.
-4. WP3 must estimate σ and diversification rates from real trees to place the observed slope against the no-clock expectation.
+4. Brownian motion fits plants poorly (whole-genome duplications inflate the rate). Bounded and jump models (Ornstein-Uhlenbeck, Lévy) are the next null models to fit.
