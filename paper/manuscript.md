@@ -49,7 +49,10 @@ leading to primates and found an accelerating (biexponential) trend, while cauti
 "beyond the scope" of their paper. Marzban, Viswanathan and Yurtsever (2014) introduced measurement-error
 models and prediction intervals and concluded that a terrestrial origin is consistent with the data.
 
-None of this work asked whether the method can recover a known answer. Here we (i) reproduce the published
+Related proposals followed: a "C-value clock" (Li and Zhang 2010) and, recently, growth models fitted to
+reconstructed ancestral genome sizes (Arroyo et al. 2025). Among about 170 works citing these papers, the
+only substantive critique is Marzban et al.'s statistical one. None of this work asked whether the method
+can recover a known answer. Here we (i) reproduce the published
 analyses exactly; (ii) separate within-model from structural uncertainty; (iii) calibrate the method on
 simulated histories where the origin is known; (iv) test it on modern data at the scale of thousands of
 species; and (v) test the clock directly on the two data types that carry information about the past,
@@ -136,8 +139,11 @@ to the median modern isolate implies 0.056 log10 per Gyr, about 16 times slower 
 consistent with Koonin's stasis argument.
 
 ### 3.6 Pre-registered test: ancestral gene content
-LUCA is inferred to have carried 2,728 gene families, close to Moody et al.'s independent estimate of about
-2,600 proteins. Along the human lineage, ancestral families rise to 8,514 at LECA and to roughly 15,000 to
+LUCA is inferred to have carried 2,728 gene families, close to Moody et al.'s independent estimate of 2,657
+proteins (2,451 to 2,855). Our LECA estimate (8,514 families) lies between earlier estimates of about 4,100
+genes (Koonin 2010) and 10,233 families (Vosseberg et al. 2021). The steep early accumulation agrees with
+phylostratigraphy, where about 60% of human genes date to the origin of cellular life or of eukaryotes
+(Domazet-Lošo and Tautz 2008). Along the human lineage, ancestral families rise to 8,514 at LECA and to roughly 15,000 to
 20,000 in mammals and primates. The rate is 0.188 log10 per Gyr (95% CI 0.129 to 0.247), similar for
 *Arabidopsis* (0.166) and yeast (0.169). By the pre-registered rules the clock is not supported: log-linearity
 fails (R² 0.77 < 0.80) and a constant rate extrapolates to one gene family 22.5 Gya, before the Big Bang.
@@ -163,6 +169,23 @@ of how the points were chosen, not of how genomes evolved. Minimum or leading-ed
 form a log-linear series under any process that spreads genome sizes out across a diversifying tree, and a
 uniform directional trend leaves no trace in such data. This is a general caution for any "complexity
 clock" built from living representatives.
+
+**Relation to previous work.** That extreme values can masquerade as trends is an old insight in
+palaeobiology (Gould 1988; McShea 1994). Trammer (2005) found that maximum body size tracks diversification,
+scaling roughly with the square root of the diversification rate, which matches the speed σ√(2r) of a
+branching random walk (Hammersley 1974; Biggins 1977; Bramson 1978). Cladogenetic diffusion models explain
+the shapes of body-size distributions without a drive (Clauset and Erwin 2008), although large directional
+increases can exceed what neutral drift produces (Heim et al. 2015). That a trend uniform in time cannot be
+estimated from contemporaneous tips of an ultrametric tree is known in comparative methods: the likelihood
+surface is flat with respect to the trend (Pennell et al. 2014; Gill et al. 2017), and fossils are needed to
+recover it (Slater et al. 2012; Hunt and Slater 2016; Finarelli and Flynn 2006). Selecting large or
+successful clades biases inferences about their past (Budd and Mann 2018, 2020). What is new here is
+bringing these strands together for complexity clocks: an exact demonstration that a uniform clock is
+invisible to clade-minimum and leading-edge statistics; the link between the fitted "rate" and trait
+variance and diversification; calibration on real trees; and a pre-registered test on ancestral gene
+content. Trends that vary among branches can be detected from living species with appropriate models (Baker
+et al. 2015; Gill et al. 2017). Testing whether particular lineages show driven increases in complexity is a
+natural next step, but it is a different hypothesis from a universal clock.
 
 **What the data do say.** The direct evidence about the past points the other way. Gene content in ancestors
 grows, but slowly, and a constant rate is physically impossible when extrapolated. The prokaryotic genome
@@ -197,6 +220,26 @@ are reproducible from the repository.
 ## References (to be completed and checked)
 
 - Adams FC, Spergel DN (2005) Astrobiology 5.
+- Arroyo et al. (2025) bioRxiv doi:10.1101/2025.10.22.684021
+- Baker J et al. (2015) PNAS 112:5093-5098.
+- Biggins JD (1977) J Appl Probab 14:630-636.
+- Bramson M (1978) Commun Pure Appl Math 31:531-581.
+- Budd GE, Mann RP (2018) Evolution 72:2276-2291; (2020) Interface Focus 10:20190110.
+- Clauset A, Erwin DH (2008) Science 321:399-401.
+- Domazet-Lošo T, Tautz D (2008) Mol Biol Evol 25:2699-2707.
+- Finarelli JA, Flynn JJ (2006) Syst Biol 55:301-313.
+- Gill MS et al. (2017) Syst Biol. doi:10.1093/sysbio/syw093
+- Gould SJ (1988) J Paleontol 62:319-329.
+- Hammersley JM (1974) Ann Probab 2:652-680.
+- Heim NA et al. (2015) Science 347:867-870.
+- Hunt G, Slater GJ (2016) Annu Rev Ecol Evol Syst 47:189-213.
+- Koonin EV (2010) Genome Biol 11:209.
+- Li DJ, Zhang S (2010) Biochem Biophys Res Commun 392:240-245.
+- Paps J, Holland PWH (2018) Nat Commun 9:1730.
+- Pennell MW et al. (2014) geiger v2.0. Bioinformatics 30:2216-2218.
+- Slater GJ, Harmon LJ, Alfaro ME (2012) Evolution 66:3931-3944.
+- Trammer J (2005) Evolution 59:941-947.
+- Vosseberg J et al. (2021) Nat Ecol Evol 5:92-100.
 - Challis R et al. (2023) Genomes on a Tree (GoaT). Wellcome Open Res.
 - Christmas MJ et al. (2023) Zoonomia constraint. Science.
 - dos Reis M et al. (2015) Curr Biol. doi:10.1016/j.cub.2015.09.066
