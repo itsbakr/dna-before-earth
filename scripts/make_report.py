@@ -167,16 +167,14 @@ def main():
         if (ROOT / "results" / name).exists():
             fn(json.load(open(ROOT / "results" / name)), w)
 
-    w("## 14. What this means for the next stages\n")
-    w("1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure "
-      "a uniform clock. Their slope reflects trait spread and diversification, and on the real animal tree a "
-      "no-trend model reproduces the observed slopes.")
-    w("2. The same argument means extant-only reconstructions on a time-calibrated tree cannot identify a "
-      "uniform trend either, since every tip has evolved for the same time. WP4 needs fossil genome-size proxies "
-      "or gene-family histories, which carry information about the past directly.")
-    w("3. Focal lineages must be chosen without regard to their genome size, or the selection must be modelled.")
-    w("4. Brownian motion fits plants poorly (whole-genome duplications inflate the rate). Bounded and "
-      "jump models (Ornstein-Uhlenbeck, Lévy) are the next null models to fit.\n")
+    w("## 14. Summary and remaining work\n")
+    w("1. Statistics built only from living species cannot measure a uniform clock; on real trees, trendless "
+      "models (BM in animals, OU in plants) reproduce the observed slopes.")
+    w("2. Direct evidence about the past does not support a constant-rate clock: ancestral gene content fails the "
+      "pre-registered criteria, and fossil genome sizes show no common trend once one influential prediction is set aside.")
+    w("3. Remaining: confirm the Marzban reproduction with the authors; add fossil fish (Davesne et al. 2021) and "
+      "Organ et al. 2011 data when accessible; test branch-varying (driven) trends with models that can detect them "
+      "from extant data (Baker et al. 2015); repeat the real-tree analyses on TimeTree 6 when a full tree is released.\n")
 
     (ROOT / "results" / "RESULTS.md").write_text("\n".join(L))
     print("wrote results/RESULTS.md")

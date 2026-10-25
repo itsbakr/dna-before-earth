@@ -262,9 +262,8 @@ The likelihood of every post-LUCA observation is independent of m, so each row i
 
 Sharov's points as in their Fig. 2: OLS origin 9.66 Gya. Lower edge of the OLS 95% prediction band reaches 1 bp at 8.15 Gya (z) or 7.43 Gya (t, 3 df); the paper shows about 7.0. At λ = 1.14 their eq. 9 as printed gives 5.61 Gya (paper: includes 4.5). The band first reaches 4.5 Gya at λ = 1.31 as printed. The corrected point estimate reaches 4.5 at λ = 2.68 (paper: about 2.7). A query to the authors is drafted in `review/drafts/`.
 
-## 14. What this means for the next stages
+## 14. Summary and remaining work
 
-1. Statistics built only from living species (clade minima, maxima, representatives) cannot measure a uniform clock. Their slope reflects trait spread and diversification, and on the real animal tree a no-trend model reproduces the observed slopes.
-2. The same argument means extant-only reconstructions on a time-calibrated tree cannot identify a uniform trend either, since every tip has evolved for the same time. WP4 needs fossil genome-size proxies or gene-family histories, which carry information about the past directly.
-3. Focal lineages must be chosen without regard to their genome size, or the selection must be modelled.
-4. Brownian motion fits plants poorly (whole-genome duplications inflate the rate). Bounded and jump models (Ornstein-Uhlenbeck, Lévy) are the next null models to fit.
+1. Statistics built only from living species cannot measure a uniform clock; on real trees, trendless models (BM in animals, OU in plants) reproduce the observed slopes.
+2. Direct evidence about the past does not support a constant-rate clock: ancestral gene content fails the pre-registered criteria, and fossil genome sizes show no common trend once one influential prediction is set aside.
+3. Remaining: confirm the Marzban reproduction with the authors; add fossil fish (Davesne et al. 2021) and Organ et al. 2011 data when accessible; test branch-varying (driven) trends with models that can detect them from extant data (Baker et al. 2015); repeat the real-tree analyses on TimeTree 6 when a full tree is released.
