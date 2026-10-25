@@ -28,6 +28,8 @@ SOURCES = {
     "gtdb/VERSION.txt": ("https://data.gtdb.ecogenomic.org/releases/latest/VERSION.txt", {}),
     "gtdb/bac120_metadata.tsv.gz": ("https://data.gtdb.ecogenomic.org/releases/latest/bac120_metadata.tsv.gz", {}),
     "gtdb/ar53_metadata.tsv.gz": ("https://data.gtdb.ecogenomic.org/releases/latest/ar53_metadata.tsv.gz", {}),
+    "eggnog/e6.og2seqs_and_species.tsv":
+        ("https://eggnog6.embl.de/download/eggnog_6.0/e6.og2seqs_and_species.tsv", {}),
     "ncbi/new_taxdump.tar.gz": ("https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz", {}),
 }
 

@@ -1,4 +1,4 @@
-.PHONY: all reproduce reproduce-all fetch realdata prokaryotes statistics calibration report test legacy clean
+.PHONY: all reproduce reproduce-all fetch realdata prokaryotes nullmodels wp5 genecontent statistics calibration report test legacy clean
 
 # Full pipeline: data/*.csv -> results/*.json -> figures/*.png -> results/RESULTS.md
 all: reproduce
@@ -6,7 +6,7 @@ all: reproduce
 reproduce: test statistics calibration report
 
 # Adds the real-data analyses (WP3). Downloads ~500 MB of external data first.
-reproduce-all: test fetch statistics calibration realdata prokaryotes report
+reproduce-all: test fetch statistics calibration realdata prokaryotes nullmodels wp5 genecontent report
 
 fetch:
 	python3 scripts/fetch_data.py
@@ -17,6 +17,17 @@ realdata:
 
 prokaryotes:
 	python3 scripts/run_prokaryotes.py
+
+nullmodels:
+	python3 scripts/run_nullmodels.py
+
+wp5:
+	python3 scripts/run_wp5.py
+
+# Pre-registered (prereg/WP4_preregistration.md). Needs eggnog/e6.og2seqs_and_species.tsv (10.6 GB).
+genecontent:
+	python3 scripts/run_genecontent.py
+	python3 scripts/analyze_genecontent.py
 
 test:
 	python3 -m pytest -q tests

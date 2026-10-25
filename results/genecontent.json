@@ -1,0 +1,896 @@
+{
+  "counts_and_ages": {
+    "human": [
+      {
+        "node": "LUCA",
+        "level": 1,
+        "n_ingroup_species": 1746,
+        "n_outgroup_species": 10655,
+        "S_a": 2728,
+        "S_b": 4802,
+        "S_c": 939,
+        "ogs_at_level": 614535,
+        "age_gyr_timetree": 4.246666666666675,
+        "age_gyr_literature": 4.2
+      },
+      {
+        "node": "LECA",
+        "level": 2759,
+        "n_ingroup_species": 1111,
+        "n_outgroup_species": 169,
+        "S_a": 8514,
+        "S_b": 15683,
+        "S_c": 4518,
+        "ogs_at_level": 241997,
+        "age_gyr_timetree": 1.7247288142857151,
+        "age_gyr_literature": 1.735
+      },
+      {
+        "node": "Opisthokonta",
+        "level": 33154,
+        "n_ingroup_species": 463,
+        "n_outgroup_species": 637,
+        "S_a": 12936,
+        "S_b": 10801,
+        "S_c": 5215,
+        "ogs_at_level": 268596,
+        "age_gyr_timetree": 1.302500184615385,
+        "age_gyr_literature": 1.302500184615385
+      },
+      {
+        "node": "Metazoa",
+        "level": 33208,
+        "n_ingroup_species": 459,
+        "n_outgroup_species": 1,
+        "S_a": 6921,
+        "S_b": 10383,
+        "S_c": 5441,
+        "ogs_at_level": 148444,
+        "age_gyr_timetree": 0.936000000000005,
+        "age_gyr_literature": 0.742
+      },
+      {
+        "node": "Bilateria",
+        "level": 33213,
+        "n_ingroup_species": 271,
+        "n_outgroup_species": 183,
+        "S_a": 19588,
+        "S_b": 14779,
+        "S_c": 8466,
+        "ogs_at_level": 152020,
+        "age_gyr_timetree": 0.8469994058823581,
+        "age_gyr_literature": 0.8469994058823581
+      },
+      {
+        "node": "Chordata",
+        "level": 7711,
+        "n_ingroup_species": 268,
+        "n_outgroup_species": 1,
+        "S_a": 8510,
+        "S_b": 11527,
+        "S_c": 7027,
+        "ogs_at_level": 59833,
+        "age_gyr_timetree": 0.733000000000005,
+        "age_gyr_literature": 0.733000000000005
+      },
+      {
+        "node": "Vertebrata",
+        "level": 7742,
+        "n_ingroup_species": 264,
+        "n_outgroup_species": 2,
+        "S_a": 9833,
+        "S_b": 13346,
+        "S_c": 8275,
+        "ogs_at_level": 61357,
+        "age_gyr_timetree": 0.6313210880000052,
+        "age_gyr_literature": 0.6313210880000052
+      },
+      {
+        "node": "Sarcopterygii",
+        "level": 8287,
+        "n_ingroup_species": 185,
+        "n_outgroup_species": 1,
+        "S_a": 12746,
+        "S_b": 14692,
+        "S_c": 10750,
+        "ogs_at_level": 43409,
+        "age_gyr_timetree": 0.411858103917652,
+        "age_gyr_literature": 0.411858103917652
+      },
+      {
+        "node": "Mammalia",
+        "level": 40674,
+        "n_ingroup_species": 112,
+        "n_outgroup_species": 1,
+        "S_a": 12982,
+        "S_b": 13982,
+        "S_c": 11267,
+        "ogs_at_level": 33603,
+        "age_gyr_timetree": 0.179193062500005,
+        "age_gyr_literature": 0.179193062500005
+      },
+      {
+        "node": "Euarchontoglires",
+        "level": 314146,
+        "n_ingroup_species": 29,
+        "n_outgroup_species": 28,
+        "S_a": 20543,
+        "S_b": 18834,
+        "S_c": 16628,
+        "ogs_at_level": 28601,
+        "age_gyr_timetree": 0.09089549959778197,
+        "age_gyr_literature": 0.09089549959778197
+      },
+      {
+        "node": "Primates",
+        "level": 9443,
+        "n_ingroup_species": 23,
+        "n_outgroup_species": 4,
+        "S_a": 18745,
+        "S_b": 18376,
+        "S_c": 16742,
+        "ogs_at_level": 24579,
+        "age_gyr_timetree": 0.07587189947368825,
+        "age_gyr_literature": 0.07587189947368825
+      },
+      {
+        "node": "Haplorrhini",
+        "level": 376913,
+        "n_ingroup_species": 22,
+        "n_outgroup_species": 1,
+        "S_a": 15051,
+        "S_b": 15007,
+        "S_c": 14025,
+        "ogs_at_level": 24760,
+        "age_gyr_timetree": 0.06763684000000376,
+        "age_gyr_literature": 0.06763684000000376
+      },
+      {
+        "node": "Simiiformes",
+        "level": 314293,
+        "n_ingroup_species": 18,
+        "n_outgroup_species": 4,
+        "S_a": 18377,
+        "S_b": 17584,
+        "S_c": 16334,
+        "ogs_at_level": 25645,
+        "age_gyr_timetree": 0.04305953744186445,
+        "age_gyr_literature": 0.04305953744186445
+      },
+      {
+        "node": "Catarrhini",
+        "level": 9526,
+        "n_ingroup_species": 6,
+        "n_outgroup_species": 12,
+        "S_a": 19966,
+        "S_b": 18678,
+        "S_c": 17470,
+        "ogs_at_level": 24756,
+        "age_gyr_timetree": 0.029126380116963446,
+        "age_gyr_literature": 0.029126380116963446
+      },
+      {
+        "node": "Hominoidea",
+        "level": 314295,
+        "n_ingroup_species": 5,
+        "n_outgroup_species": 1,
+        "S_a": 17422,
+        "S_b": 16314,
+        "S_c": 15615,
+        "ogs_at_level": 20886,
+        "age_gyr_timetree": 0.019908674285718915,
+        "age_gyr_literature": 0.019908674285718915
+      },
+      {
+        "node": "Hominidae",
+        "level": 9604,
+        "n_ingroup_species": 4,
+        "n_outgroup_species": 1,
+        "S_a": 16427,
+        "S_b": 16033,
+        "S_c": 15433,
+        "ogs_at_level": 20841,
+        "age_gyr_timetree": 0.015781416041671038,
+        "age_gyr_literature": 0.015781416041671038
+      }
+    ],
+    "arabidopsis": [
+      {
+        "node": "LUCA",
+        "level": 1,
+        "n_ingroup_species": 1746,
+        "n_outgroup_species": 10655,
+        "S_a": 2728,
+        "S_b": 8896,
+        "S_c": 1078,
+        "ogs_at_level": 614535,
+        "age_gyr_timetree": 4.246666666666675,
+        "age_gyr_literature": 4.2
+      },
+      {
+        "node": "LECA",
+        "level": 2759,
+        "n_ingroup_species": 1111,
+        "n_outgroup_species": 169,
+        "S_a": 8514,
+        "S_b": 19826,
+        "S_c": 3822,
+        "ogs_at_level": 241997,
+        "age_gyr_timetree": 1.7247288142857151,
+        "age_gyr_literature": 1.735
+      },
+      {
+        "node": "Viridiplantae",
+        "level": 33090,
+        "n_ingroup_species": 104,
+        "n_outgroup_species": 19,
+        "S_a": 8940,
+        "S_b": 12446,
+        "S_c": 6237,
+        "ogs_at_level": 75153,
+        "age_gyr_timetree": 0.983000000000005,
+        "age_gyr_literature": 0.983000000000005
+      },
+      {
+        "node": "Streptophyta",
+        "level": 35493,
+        "n_ingroup_species": 103,
+        "n_outgroup_species": 1,
+        "S_a": 7570,
+        "S_b": 10889,
+        "S_c": 5978,
+        "ogs_at_level": 72536,
+        "age_gyr_timetree": 0.8492737500000048,
+        "age_gyr_literature": 0.8492737500000048
+      },
+      {
+        "node": "Streptophytina",
+        "level": 131221,
+        "n_ingroup_species": 102,
+        "n_outgroup_species": 1,
+        "S_a": 5905,
+        "S_b": 8937,
+        "S_c": 4953,
+        "ogs_at_level": 80568,
+        "age_gyr_timetree": 0.716999910000005,
+        "age_gyr_literature": 0.716999910000005
+      },
+      {
+        "node": "Magnoliopsida",
+        "level": 3398,
+        "n_ingroup_species": 99,
+        "n_outgroup_species": 1,
+        "S_a": 12555,
+        "S_b": 16968,
+        "S_c": 10224,
+        "ogs_at_level": 88461,
+        "age_gyr_timetree": 0.18796495000000504,
+        "age_gyr_literature": 0.18796495000000504
+      },
+      {
+        "node": "Brassicaceae",
+        "level": 3700,
+        "n_ingroup_species": 3,
+        "n_outgroup_species": 4,
+        "S_a": 21554,
+        "S_b": 23596,
+        "S_c": 20326,
+        "ogs_at_level": 30853,
+        "age_gyr_timetree": 0.04175731700000597,
+        "age_gyr_literature": 0.04175731700000597
+      }
+    ],
+    "yeast": [
+      {
+        "node": "LUCA",
+        "level": 1,
+        "n_ingroup_species": 1746,
+        "n_outgroup_species": 10655,
+        "S_a": 2728,
+        "S_b": 2178,
+        "S_c": 856,
+        "ogs_at_level": 614535,
+        "age_gyr_timetree": 4.246666666666675,
+        "age_gyr_literature": 4.2
+      },
+      {
+        "node": "LECA",
+        "level": 2759,
+        "n_ingroup_species": 1111,
+        "n_outgroup_species": 169,
+        "S_a": 8514,
+        "S_b": 4804,
+        "S_c": 2840,
+        "ogs_at_level": 241997,
+        "age_gyr_timetree": 1.7247288142857151,
+        "age_gyr_literature": 1.735
+      },
+      {
+        "node": "Opisthokonta",
+        "level": 33154,
+        "n_ingroup_species": 463,
+        "n_outgroup_species": 637,
+        "S_a": 12936,
+        "S_b": 4059,
+        "S_c": 2988,
+        "ogs_at_level": 268596,
+        "age_gyr_timetree": 1.302500184615385,
+        "age_gyr_literature": 1.302500184615385
+      },
+      {
+        "node": "Fungi",
+        "level": 4751,
+        "n_ingroup_species": 566,
+        "n_outgroup_species": 71,
+        "S_a": 11119,
+        "S_b": 4315,
+        "S_c": 3336,
+        "ogs_at_level": 165514,
+        "age_gyr_timetree": 1.119460614285715,
+        "age_gyr_literature": 1.119460614285715
+      },
+      {
+        "node": "Dikarya",
+        "level": 451864,
+        "n_ingroup_species": 426,
+        "n_outgroup_species": 140,
+        "S_a": 14236,
+        "S_b": 4123,
+        "S_c": 3275,
+        "ogs_at_level": 156393,
+        "age_gyr_timetree": 0.7965957272727323,
+        "age_gyr_literature": 0.7965957272727323
+      },
+      {
+        "node": "Ascomycota",
+        "level": 4890,
+        "n_ingroup_species": 417,
+        "n_outgroup_species": 9,
+        "S_a": 6014,
+        "S_b": 4056,
+        "S_c": 3285,
+        "ogs_at_level": 120996,
+        "age_gyr_timetree": 0.7639951500000052,
+        "age_gyr_literature": 0.7639951500000052
+      },
+      {
+        "node": "Saccharomycetales",
+        "level": 4892,
+        "n_ingroup_species": 20,
+        "n_outgroup_species": 0,
+        "S_a": 0,
+        "S_b": 0,
+        "S_c": 0,
+        "ogs_at_level": 13183,
+        "age_gyr_timetree": 0.18181843333333791,
+        "age_gyr_literature": 0.18181843333333791
+      }
+    ]
+  },
+  "deviations": [
+    "Sarcopterygii outgroup: NCBI has no 'Dipnoi'/'Actinistia'; used Dipnomorpha (7878) and Coelacanthimorpha (118072).",
+    "Euarchontoglires ingroup: NCBI has no 'Euarchonta'; used Euarchontoglires minus Glires.",
+    "Yeast focal species: S. cerevisiae S288C (559292) or 4932, whichever eggNOG uses.",
+    "Dropped (no outgroup or ingroup species in eggNOG): yeast: Saccharomycetales"
+  ],
+  "tests": {
+    "S_a": {
+      "human": {
+        "P1": {
+          "rate": 0.18766718695807466,
+          "rate_ci95": [
+            0.1287984091846731,
+            0.2465359647314762
+          ],
+          "r2": 0.7695445669954767,
+          "aicc_line": -63.48797573308447,
+          "aicc_two_segment_with_break": -56.968121380867004,
+          "break_gya": 0.19124738182340698,
+          "rate_older": 0.16727680039092518,
+          "rate_younger": 0.6968221006556752,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 13,
+          "LECA": {
+            "observed": 3.9301336458411176,
+            "predicted": 3.7260378850720812,
+            "pi95": [
+              3.333357285028243,
+              4.118718485115919
+            ],
+            "inside": true
+          },
+          "LUCA": {
+            "observed": 3.4358443659844413,
+            "predicted": 2.953356539073633,
+            "pi95": [
+              2.095845544493111,
+              3.8108675336541555
+            ],
+            "inside": true
+          },
+          "pass": true
+        },
+        "P5_age_at_one_family_gya": 22.53539956684595,
+        "P6": {
+          "rate_luca_to_leca": 0.1959958209874276,
+          "half_lineage_rate": 0.09383359347903733,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "arabidopsis": {
+        "P1": {
+          "rate": 0.1664026230160224,
+          "rate_ci95": [
+            0.05232222012501955,
+            0.28048302590702523
+          ],
+          "r2": 0.737659727061877,
+          "aicc_line": -14.39270672664675,
+          "aicc_two_segment_with_break": 35.00525782917733,
+          "break_gya": 0.2651892647882317,
+          "rate_older": 0.12351598623940752,
+          "rate_younger": 1.6232562240257566,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 5,
+          "LECA": {
+            "observed": 3.9301336458411176,
+            "predicted": 3.5000182329638965,
+            "pi95": [
+              2.7013870496365557,
+              4.298649416291237
+            ],
+            "inside": true
+          },
+          "LUCA": {
+            "observed": 3.4358443659844413,
+            "predicted": 2.406649540548508,
+            "pi95": [
+              0.35920421150765813,
+              4.454094869589358
+            ],
+            "inside": true
+          },
+          "pass": true
+        },
+        "P5_age_at_one_family_gya": 24.773016080197937,
+        "P6": {
+          "rate_luca_to_leca": 0.1959958209874276,
+          "half_lineage_rate": 0.0832013115080112,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "yeast": {
+        "P1": {
+          "rate": 0.16896400601025222,
+          "rate_ci95": [
+            0.010072510673289292,
+            0.32785550134721514
+          ],
+          "r2": 0.6854595273667345,
+          "aicc_line": -5.806671517729637,
+          "aicc_two_segment_with_break": Infinity,
+          "break_gya": 0.7965957272727323,
+          "rate_older": 0.20821108577566605,
+          "rate_younger": -11.444976406329033,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 2,
+          "pass": null
+        },
+        "P5_age_at_one_family_gya": 24.796458658980114,
+        "P6": {
+          "rate_luca_to_leca": 0.1959958209874276,
+          "half_lineage_rate": 0.08448200300512611,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "P4": {
+        "pairwise_ci_overlap": {
+          "human-arabidopsis": true,
+          "human-yeast": true,
+          "arabidopsis-yeast": true
+        },
+        "pass": true
+      },
+      "verdict_H1_supported": false
+    },
+    "S_b": {
+      "human": {
+        "P1": {
+          "rate": 0.12095379724094514,
+          "rate_ci95": [
+            0.08560179907515217,
+            0.1563057954067381
+          ],
+          "r2": 0.7936600720705184,
+          "aicc_line": -79.8065659868346,
+          "aicc_two_segment_with_break": -72.91457250468288,
+          "break_gya": 1.7247288142857151,
+          "rate_older": 0.14846271700804634,
+          "rate_younger": 0.09201866054736432,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 13,
+          "LECA": {
+            "observed": 4.195429142457063,
+            "predicted": 3.91907271001423,
+            "pi95": [
+              3.7542128892105984,
+              4.083932530817862
+            ],
+            "inside": false
+          },
+          "LUCA": {
+            "observed": 3.6814221557210085,
+            "predicted": 3.453311891000253,
+            "pi95": [
+              3.0933014680562456,
+              3.8133223139442602
+            ],
+            "inside": true
+          },
+          "pass": false
+        },
+        "P5_age_at_one_family_gya": 34.94045283889826,
+        "P6": {
+          "rate_luca_to_leca": 0.20381429552309574,
+          "half_lineage_rate": 0.06047689862047257,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "arabidopsis": {
+        "P1": {
+          "rate": 0.05847115126134452,
+          "rate_ci95": [
+            -0.05932891006416365,
+            0.1762712125868527
+          ],
+          "r2": 0.2456249321213716,
+          "aicc_line": -13.943512477725115,
+          "aicc_two_segment_with_break": 38.56188691174795,
+          "break_gya": 0.326968716618813,
+          "rate_older": 0.020134421074554987,
+          "rate_younger": 0.9787650937060228,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 5,
+          "LECA": {
+            "observed": 4.297235101842306,
+            "predicted": 3.7455529677291945,
+            "pi95": [
+              3.155121955300852,
+              4.335983980157537
+            ],
+            "inside": true
+          },
+          "LUCA": {
+            "observed": 3.949194774237982,
+            "predicted": 2.9007225018351304,
+            "pi95": [
+              1.3870385338729383,
+              4.414406469797322
+            ],
+            "inside": true
+          },
+          "pass": true
+        },
+        "P5_age_at_one_family_gya": 71.93719416919583,
+        "P6": {
+          "rate_luca_to_leca": 0.13800511669061913,
+          "half_lineage_rate": 0.02923557563067226,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "yeast": {
+        "P1": {
+          "rate": 0.08249722070464055,
+          "rate_ci95": [
+            0.023302731883418637,
+            0.14169170952586246
+          ],
+          "r2": 0.7891685130140622,
+          "aicc_line": -17.65538879790796,
+          "aicc_two_segment_with_break": Infinity,
+          "break_gya": 1.7247288142857151,
+          "rate_older": 0.13031361900329536,
+          "rate_younger": -0.06350013739954462,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 2,
+          "pass": null
+        },
+        "P5_age_at_one_family_gya": 45.067265684048145,
+        "P6": {
+          "rate_luca_to_leca": 0.1362226761404019,
+          "half_lineage_rate": 0.041248610352320275,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "P4": {
+        "pairwise_ci_overlap": {
+          "human-arabidopsis": true,
+          "human-yeast": true,
+          "arabidopsis-yeast": true
+        },
+        "pass": true
+      },
+      "verdict_H1_supported": false
+    },
+    "S_a_literature_ages": {
+      "human": {
+        "P1": {
+          "rate": 0.1870170998931329,
+          "rate_ci95": [
+            0.12485846851941015,
+            0.24917573126685563
+          ],
+          "r2": 0.7483899333274632,
+          "aicc_line": -62.08280709105452,
+          "aicc_two_segment_with_break": -55.72964969861239,
+          "break_gya": 0.20951676054558918,
+          "rate_older": 0.16390055811725734,
+          "rate_younger": 0.6908085845923889,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 13,
+          "LECA": {
+            "observed": 3.9301336458411176,
+            "predicted": 3.7165106570874142,
+            "pi95": [
+              3.2763238111287603,
+              4.156697503046068
+            ],
+            "inside": true
+          },
+          "LUCA": {
+            "observed": 3.4358443659844413,
+            "predicted": 2.958170460902177,
+            "pi95": [
+              1.9896495720250802,
+              3.9266913497792735
+            ],
+            "inside": true
+          },
+          "pass": true
+        },
+        "P5_age_at_one_family_gya": 22.596867946311903,
+        "P6": {
+          "rate_luca_to_leca": 0.20052303442461514,
+          "half_lineage_rate": 0.09350854994656645,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "arabidopsis": {
+        "P1": {
+          "rate": 0.1682362463969654,
+          "rate_ci95": [
+            0.05288079581290145,
+            0.2835916969810294
+          ],
+          "r2": 0.7375994150015683,
+          "aicc_line": -14.391097610765513,
+          "aicc_two_segment_with_break": 35.133711961131006,
+          "break_gya": 0.26570540477387417,
+          "rate_older": 0.1247102831352096,
+          "rate_younger": 1.6153679601060316,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 5,
+          "LECA": {
+            "observed": 3.9301336458411176,
+            "predicted": 3.4955652315216206,
+            "pi95": [
+              2.6925671540087994,
+              4.298563309034441
+            ],
+            "inside": true
+          },
+          "LUCA": {
+            "observed": 3.4358443659844413,
+            "predicted": 2.4268815507324843,
+            "pi95": [
+              0.40382301139178356,
+              4.449940090073185
+            ],
+            "inside": true
+          },
+          "pass": true
+        },
+        "P5_age_at_one_family_gya": 24.51143767149466,
+        "P6": {
+          "rate_luca_to_leca": 0.20052303442461514,
+          "half_lineage_rate": 0.0841181231984827,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "yeast": {
+        "P1": {
+          "rate": 0.17109080560123516,
+          "rate_ci95": [
+            0.009470637637848611,
+            0.3327109735646217
+          ],
+          "r2": 0.6835077811897621,
+          "aicc_line": -5.769556120816837,
+          "aicc_two_segment_with_break": Infinity,
+          "break_gya": 0.7965957272727323,
+          "rate_older": 0.21136903544232766,
+          "rate_younger": -11.498659395093025,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 2,
+          "pass": null
+        },
+        "P5_age_at_one_family_gya": 24.502774973332425,
+        "P6": {
+          "rate_luca_to_leca": 0.20052303442461514,
+          "half_lineage_rate": 0.08554540280061758,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "P4": {
+        "pairwise_ci_overlap": {
+          "human-arabidopsis": true,
+          "human-yeast": true,
+          "arabidopsis-yeast": true
+        },
+        "pass": true
+      },
+      "verdict_H1_supported": false
+    },
+    "S_a_outgroup_ge3_exploratory": {
+      "human": {
+        "P1": {
+          "rate": 0.20507581848119702,
+          "rate_ci95": [
+            0.16071085978096028,
+            0.24944077718143376
+          ],
+          "r2": 0.9552017580720683,
+          "aicc_line": -32.958820484057824,
+          "aicc_two_segment_with_break": -10.946300014802922,
+          "break_gya": 0.33037991640011033,
+          "rate_older": 0.2387543927936479,
+          "rate_younger": -0.2244634171981818,
+          "pass": true
+        },
+        "P2": {
+          "n_train": 5,
+          "LECA": {
+            "observed": 3.9301336458411176,
+            "predicted": 4.298568257988545,
+            "pi95": [
+              4.125322631508701,
+              4.471813884468388
+            ],
+            "inside": false
+          },
+          "LUCA": {
+            "observed": 3.4358443659844413,
+            "predicted": 4.315543422044343,
+            "pi95": [
+              3.8959992730858124,
+              4.735087571002874
+            ],
+            "inside": false
+          },
+          "pass": false
+        },
+        "P5_age_at_one_family_gya": 21.110659288205408,
+        "P6": {
+          "rate_luca_to_leca": 0.1959958209874276,
+          "half_lineage_rate": 0.10253790924059851,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "arabidopsis": {
+        "P1": {
+          "rate": 0.19912004563172572,
+          "rate_ci95": [
+            0.06094474763428817,
+            0.33729534362916325
+          ],
+          "r2": 0.9505503323935631,
+          "aicc_line": Infinity,
+          "aicc_two_segment_with_break": Infinity,
+          "break_gya": 0.983000000000005,
+          "rate_older": 0.16767549013820185,
+          "rate_younger": 0.3582715604762447,
+          "pass": true
+        },
+        "P2": {
+          "n_train": 2,
+          "pass": null
+        },
+        "P5_age_at_one_family_gya": 21.399048020810845,
+        "P6": {
+          "rate_luca_to_leca": 0.1959958209874276,
+          "half_lineage_rate": 0.09956002281586286,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "yeast": {
+        "P1": {
+          "rate": 0.16896400601025222,
+          "rate_ci95": [
+            0.010072510673289292,
+            0.32785550134721514
+          ],
+          "r2": 0.6854595273667345,
+          "aicc_line": -5.806671517729637,
+          "aicc_two_segment_with_break": Infinity,
+          "break_gya": 0.7965957272727323,
+          "rate_older": 0.20821108577566605,
+          "rate_younger": -11.444976406329033,
+          "pass": false
+        },
+        "P2": {
+          "n_train": 2,
+          "pass": null
+        },
+        "P5_age_at_one_family_gya": 24.796458658980114,
+        "P6": {
+          "rate_luca_to_leca": 0.1959958209874276,
+          "half_lineage_rate": 0.08448200300512611,
+          "pass": true
+        },
+        "P5": {
+          "pass": false
+        }
+      },
+      "P4": {
+        "pairwise_ci_overlap": {
+          "human-arabidopsis": true,
+          "human-yeast": true,
+          "arabidopsis-yeast": true
+        },
+        "pass": true
+      },
+      "verdict_H1_supported": false
+    }
+  }
+}

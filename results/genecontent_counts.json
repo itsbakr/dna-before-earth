@@ -1,0 +1,317 @@
+{
+  "source": "eggNOG 6.0 e6.og2seqs_and_species.tsv",
+  "deviations": [
+    "Sarcopterygii outgroup: NCBI has no 'Dipnoi'/'Actinistia'; used Dipnomorpha (7878) and Coelacanthimorpha (118072).",
+    "Euarchontoglires ingroup: NCBI has no 'Euarchonta'; used Euarchontoglires minus Glires.",
+    "Yeast focal species: S. cerevisiae S288C (559292) or 4932, whichever eggNOG uses."
+  ],
+  "species_at_relevant_levels": 12535,
+  "lineages": {
+    "human": [
+      {
+        "node": "LUCA",
+        "level": 1,
+        "n_ingroup_species": 1746,
+        "n_outgroup_species": 10655,
+        "S_a": 2728,
+        "S_b": 4802,
+        "S_c": 939,
+        "ogs_at_level": 614535
+      },
+      {
+        "node": "LECA",
+        "level": 2759,
+        "n_ingroup_species": 1111,
+        "n_outgroup_species": 169,
+        "S_a": 8514,
+        "S_b": 15683,
+        "S_c": 4518,
+        "ogs_at_level": 241997
+      },
+      {
+        "node": "Opisthokonta",
+        "level": 33154,
+        "n_ingroup_species": 463,
+        "n_outgroup_species": 637,
+        "S_a": 12936,
+        "S_b": 10801,
+        "S_c": 5215,
+        "ogs_at_level": 268596
+      },
+      {
+        "node": "Metazoa",
+        "level": 33208,
+        "n_ingroup_species": 459,
+        "n_outgroup_species": 1,
+        "S_a": 6921,
+        "S_b": 10383,
+        "S_c": 5441,
+        "ogs_at_level": 148444
+      },
+      {
+        "node": "Bilateria",
+        "level": 33213,
+        "n_ingroup_species": 271,
+        "n_outgroup_species": 183,
+        "S_a": 19588,
+        "S_b": 14779,
+        "S_c": 8466,
+        "ogs_at_level": 152020
+      },
+      {
+        "node": "Chordata",
+        "level": 7711,
+        "n_ingroup_species": 268,
+        "n_outgroup_species": 1,
+        "S_a": 8510,
+        "S_b": 11527,
+        "S_c": 7027,
+        "ogs_at_level": 59833
+      },
+      {
+        "node": "Vertebrata",
+        "level": 7742,
+        "n_ingroup_species": 264,
+        "n_outgroup_species": 2,
+        "S_a": 9833,
+        "S_b": 13346,
+        "S_c": 8275,
+        "ogs_at_level": 61357
+      },
+      {
+        "node": "Sarcopterygii",
+        "level": 8287,
+        "n_ingroup_species": 185,
+        "n_outgroup_species": 1,
+        "S_a": 12746,
+        "S_b": 14692,
+        "S_c": 10750,
+        "ogs_at_level": 43409
+      },
+      {
+        "node": "Mammalia",
+        "level": 40674,
+        "n_ingroup_species": 112,
+        "n_outgroup_species": 1,
+        "S_a": 12982,
+        "S_b": 13982,
+        "S_c": 11267,
+        "ogs_at_level": 33603
+      },
+      {
+        "node": "Euarchontoglires",
+        "level": 314146,
+        "n_ingroup_species": 29,
+        "n_outgroup_species": 28,
+        "S_a": 20543,
+        "S_b": 18834,
+        "S_c": 16628,
+        "ogs_at_level": 28601
+      },
+      {
+        "node": "Primates",
+        "level": 9443,
+        "n_ingroup_species": 23,
+        "n_outgroup_species": 4,
+        "S_a": 18745,
+        "S_b": 18376,
+        "S_c": 16742,
+        "ogs_at_level": 24579
+      },
+      {
+        "node": "Haplorrhini",
+        "level": 376913,
+        "n_ingroup_species": 22,
+        "n_outgroup_species": 1,
+        "S_a": 15051,
+        "S_b": 15007,
+        "S_c": 14025,
+        "ogs_at_level": 24760
+      },
+      {
+        "node": "Simiiformes",
+        "level": 314293,
+        "n_ingroup_species": 18,
+        "n_outgroup_species": 4,
+        "S_a": 18377,
+        "S_b": 17584,
+        "S_c": 16334,
+        "ogs_at_level": 25645
+      },
+      {
+        "node": "Catarrhini",
+        "level": 9526,
+        "n_ingroup_species": 6,
+        "n_outgroup_species": 12,
+        "S_a": 19966,
+        "S_b": 18678,
+        "S_c": 17470,
+        "ogs_at_level": 24756
+      },
+      {
+        "node": "Hominoidea",
+        "level": 314295,
+        "n_ingroup_species": 5,
+        "n_outgroup_species": 1,
+        "S_a": 17422,
+        "S_b": 16314,
+        "S_c": 15615,
+        "ogs_at_level": 20886
+      },
+      {
+        "node": "Hominidae",
+        "level": 9604,
+        "n_ingroup_species": 4,
+        "n_outgroup_species": 1,
+        "S_a": 16427,
+        "S_b": 16033,
+        "S_c": 15433,
+        "ogs_at_level": 20841
+      }
+    ],
+    "arabidopsis": [
+      {
+        "node": "LUCA",
+        "level": 1,
+        "n_ingroup_species": 1746,
+        "n_outgroup_species": 10655,
+        "S_a": 2728,
+        "S_b": 8896,
+        "S_c": 1078,
+        "ogs_at_level": 614535
+      },
+      {
+        "node": "LECA",
+        "level": 2759,
+        "n_ingroup_species": 1111,
+        "n_outgroup_species": 169,
+        "S_a": 8514,
+        "S_b": 19826,
+        "S_c": 3822,
+        "ogs_at_level": 241997
+      },
+      {
+        "node": "Viridiplantae",
+        "level": 33090,
+        "n_ingroup_species": 104,
+        "n_outgroup_species": 19,
+        "S_a": 8940,
+        "S_b": 12446,
+        "S_c": 6237,
+        "ogs_at_level": 75153
+      },
+      {
+        "node": "Streptophyta",
+        "level": 35493,
+        "n_ingroup_species": 103,
+        "n_outgroup_species": 1,
+        "S_a": 7570,
+        "S_b": 10889,
+        "S_c": 5978,
+        "ogs_at_level": 72536
+      },
+      {
+        "node": "Streptophytina",
+        "level": 131221,
+        "n_ingroup_species": 102,
+        "n_outgroup_species": 1,
+        "S_a": 5905,
+        "S_b": 8937,
+        "S_c": 4953,
+        "ogs_at_level": 80568
+      },
+      {
+        "node": "Magnoliopsida",
+        "level": 3398,
+        "n_ingroup_species": 99,
+        "n_outgroup_species": 1,
+        "S_a": 12555,
+        "S_b": 16968,
+        "S_c": 10224,
+        "ogs_at_level": 88461
+      },
+      {
+        "node": "Brassicaceae",
+        "level": 3700,
+        "n_ingroup_species": 3,
+        "n_outgroup_species": 4,
+        "S_a": 21554,
+        "S_b": 23596,
+        "S_c": 20326,
+        "ogs_at_level": 30853
+      }
+    ],
+    "yeast": [
+      {
+        "node": "LUCA",
+        "level": 1,
+        "n_ingroup_species": 1746,
+        "n_outgroup_species": 10655,
+        "S_a": 2728,
+        "S_b": 2178,
+        "S_c": 856,
+        "ogs_at_level": 614535
+      },
+      {
+        "node": "LECA",
+        "level": 2759,
+        "n_ingroup_species": 1111,
+        "n_outgroup_species": 169,
+        "S_a": 8514,
+        "S_b": 4804,
+        "S_c": 2840,
+        "ogs_at_level": 241997
+      },
+      {
+        "node": "Opisthokonta",
+        "level": 33154,
+        "n_ingroup_species": 463,
+        "n_outgroup_species": 637,
+        "S_a": 12936,
+        "S_b": 4059,
+        "S_c": 2988,
+        "ogs_at_level": 268596
+      },
+      {
+        "node": "Fungi",
+        "level": 4751,
+        "n_ingroup_species": 566,
+        "n_outgroup_species": 71,
+        "S_a": 11119,
+        "S_b": 4315,
+        "S_c": 3336,
+        "ogs_at_level": 165514
+      },
+      {
+        "node": "Dikarya",
+        "level": 451864,
+        "n_ingroup_species": 426,
+        "n_outgroup_species": 140,
+        "S_a": 14236,
+        "S_b": 4123,
+        "S_c": 3275,
+        "ogs_at_level": 156393
+      },
+      {
+        "node": "Ascomycota",
+        "level": 4890,
+        "n_ingroup_species": 417,
+        "n_outgroup_species": 9,
+        "S_a": 6014,
+        "S_b": 4056,
+        "S_c": 3285,
+        "ogs_at_level": 120996
+      },
+      {
+        "node": "Saccharomycetales",
+        "level": 4892,
+        "n_ingroup_species": 20,
+        "n_outgroup_species": 0,
+        "S_a": 0,
+        "S_b": 0,
+        "S_c": 0,
+        "ogs_at_level": 13183
+      }
+    ]
+  }
+}

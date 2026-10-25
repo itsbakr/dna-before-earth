@@ -54,5 +54,12 @@
     "retrieved": "2026-10-25",
     "bytes": 7015869,
     "sha256": "d6ddc0f95d269a6e31af8329e0c3c2af0d90d5dad48f5b3e9d820f340951d8c3"
+  },
+  "eggnog/e6.og2seqs_and_species.tsv": {
+    "file": "eggnog/e6.og2seqs_and_species.tsv",
+    "url": "https://eggnog6.embl.de/download/eggnog_6.0/e6.og2seqs_and_species.tsv",
+    "retrieved": "2026-10-25",
+    "bytes": 10631056830,
+    "sha256": "3984e7742d24bc96c64b426fc14e9e4e543a35f16756b09530b93a47392933e1"
   }
 }
